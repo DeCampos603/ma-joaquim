@@ -1,0 +1,381 @@
+{
+ "marca": "coel",
+ "fonte": [
+  "Portifólio Automação.pptx",
+  "Folder refrigeração 2026.pdf"
+ ],
+ "itens": [
+  {
+   "codigo": "VF20",
+   "tipo": "Inversor de frequência",
+   "secao": "Inversores de frequência",
+   "linha": "Coel",
+   "spec": [
+    "Nossos inversores de frequência são destinados a aplicações gerais com dimensões compactas e funções de alto desempenho",
+    "A linha VF20 possui comunicação serial RS485 Modbus RTU integrada em todas as versões, E/S digitais e analógicas, e é destinada a motores indutivos de corrente alternada",
+    "Alimentação/Entrada: monofásico 220V 50/60Hz",
+    "Saída: trifásico 220V",
+    "Range de frequência: 0.1 a 600Hz",
+    "Instalação em trilho DIN",
+    "Comunicação serial ModBus RS485"
+   ],
+   "img": "catalogo/coel/vf20.webp",
+   "pagina": 3
+  },
+  {
+   "codigo": "VFES",
+   "tipo": "Inversor de Frequência Porta de Painel",
+   "secao": "Inversores de frequência",
+   "linha": "Coel",
+   "spec": [
+    "O inversor de frequência de linha VFES destina-se a aplicações gerais com pequenas dimensões e funções inteligentes",
+    "A linha VFES possui comunicação serial RS485 Modbus RTU integrada em todas as versões, E/S digitais, entrada analógica e é destinada a motores indutivos CA assíncronos trifásicos",
+    "Alim/Entrada: monofásico 220V 50/60Hz",
+    "Saida: trifásico 220V",
+    "Range de frequencia: 0.1 a 300Hz",
+    "Instalação em porta de painel",
+    "Suporta entrada analógica de 0 a 5 V",
+    "Comunicação serial ModBus RS485"
+   ],
+   "img": "catalogo/coel/vfes.webp",
+   "pagina": 4
+  },
+  {
+   "codigo": "RIS1",
+   "tipo": "Relé de Interface Slim",
+   "secao": "Relés",
+   "linha": "Coel",
+   "spec": [
+    "Relé de interface Slim Compacto",
+    "Bobina de 24Vcc",
+    "Relé Extraível 6A @ 250VCA/30VCC",
+    "Duração aprox. 100.000 operações",
+    "Contatos NA e NF"
+   ],
+   "img": "catalogo/coel/ris1.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "KM1B",
+   "tipo": "Controlador de temperatura",
+   "secao": "Controladores de temperatura e processo",
+   "linha": "Coel",
+   "spec": [
+    "Display LED duplo",
+    "4 dígitos cada  |  2 cores",
+    "Entrada para termopar tipo J, K e PT100",
+    "1 saída relé ou relé de estado solido SSR",
+    "PID com função autotuning manual",
+    "2 alimentações disponíveis",
+    "100-240VCA | 24VCA/VCC"
+   ],
+   "img": "catalogo/coel/km1b.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "KM1",
+   "tipo": "Controlador de processos",
+   "secao": "Controladores de temperatura e processo",
+   "linha": "Coel",
+   "spec": [
+    "Display LED duplo",
+    "4 dígitos cada  |  3 cores dinâmicas",
+    "Entrada universal / 2 entradas digitais",
+    "2 saídas à relé/tensão VCC para SSR",
+    "PID com função autotuning",
+    "Função horímetro",
+    "Função temporização",
+    "Porta TTL para chave de comunicação"
+   ],
+   "img": "catalogo/coel/km1.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "KM3",
+   "tipo": "Controlador de processos",
+   "secao": "Controladores de temperatura e processo",
+   "linha": "Coel",
+   "spec": [
+    "Display LED duplo",
+    "4 dígitos cada  |  3 cores dinâmicas",
+    "Entrada universal | 2 entradas digitais",
+    "2 ou 3 saídas",
+    "Relé | Tensão VCC para SSR (relé de estado sólido)",
+    "1 saída analógica para drivers e servomotores",
+    "Função rampa e patamar 4 segmentos",
+    "Horímetro | Watímetro | 5 funções de temporização"
+   ],
+   "img": "catalogo/coel/km3.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "KM5",
+   "tipo": "Controlador de processos",
+   "secao": "Controladores de temperatura e processo",
+   "linha": "Coel",
+   "spec": [
+    "Display LED duplo",
+    "4 dígitos cada  |  3 cores dinâmicas",
+    "Entrada universal | 2 entradas digitais",
+    "2 ou 3 saídas",
+    "Relé | Tensão VCC para SSR (relé de estado sólido)",
+    "1 saída analógica para drivers e servomotores",
+    "Função rampa e patamar: 2 páginas com 48 segmentos divididos em 8 programas",
+    "TTL  |  Comunicação serial RS-485"
+   ],
+   "img": "catalogo/coel/km5.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "KM7",
+   "tipo": "Controlador de processos",
+   "secao": "Controladores de temperatura e processo",
+   "linha": "Coel",
+   "spec": [
+    "Display LED duplo",
+    "4 dígitos cada  |  3 cores dinâmicas",
+    "Entrada universal | 2 entradas digitais",
+    "2 ou 3 saídas",
+    "Relé | SSR | Alarme",
+    "1 saída de tensão (controle de velocidade)",
+    "Função rampa e patamar 4 segmentos",
+    "Função de controle para servomotor"
+   ],
+   "img": "catalogo/coel/km7.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "B05 + P03",
+   "tipo": "Controlador modular (módulo + display)",
+   "secao": "Controladores para refrigeração",
+   "linha": "Cervejeiros",
+   "spec": [
+    "4 saídas: compressor, degelo, ventilador e iluminação ou auxiliar",
+    "Bivolt automático",
+    "Teclado touch e buzina",
+    "Display e módulo vendidos separadamente",
+    "Compatível com Coel Online"
+   ],
+   "img": "catalogo/coel/b05-p03.webp"
+  },
+  {
+   "codigo": "TLB30S",
+   "tipo": "Controlador de temperatura",
+   "secao": "Controladores para refrigeração",
+   "linha": "Cervejeiros",
+   "spec": [
+    "4 saídas: compressor, degelo, ventilador e iluminação ou auxiliar",
+    "Bivolt automático",
+    "Teclado touch e buzina",
+    "Opcional: teclas de atalho para 4 setpoints",
+    "Kit completo para instalação"
+   ],
+   "img": "catalogo/coel/tlb30s.webp"
+  },
+  {
+   "codigo": "TLJ29",
+   "tipo": "Controlador para tanque de leite · caixa retangular",
+   "secao": "Controladores para refrigeração",
+   "linha": "Tanques de leite",
+   "spec": [
+    "2 saídas: compressor e agitador",
+    "Monitor de tensão",
+    "Sensor NTC com ponta de inox (1 sonda inclusa)"
+   ],
+   "img": "catalogo/coel/tlj29.webp"
+  },
+  {
+   "codigo": "KLJ29",
+   "tipo": "Controlador para tanque de leite · caixa circular",
+   "secao": "Controladores para refrigeração",
+   "linha": "Tanques de leite",
+   "spec": [
+    "2 saídas: compressor e agitador",
+    "Monitor de tensão",
+    "Sensor NTC com ponta de inox (1 sonda inclusa)"
+   ],
+   "img": "catalogo/coel/klj29.webp"
+  },
+  {
+   "codigo": "ET1",
+   "tipo": "Termostato digital · 1 saída",
+   "secao": "Controladores para refrigeração",
+   "linha": "Resfriados e congelados",
+   "spec": [
+    "Botão knob",
+    "Comunicação NFC",
+    "Monitor de tensão integrado",
+    "Conectores Faston 6,3 mm",
+    "Montagem horizontal ou vertical"
+   ],
+   "img": "catalogo/coel/et1.webp"
+  },
+  {
+   "codigo": "ET3",
+   "tipo": "Termostato digital · 3 saídas",
+   "secao": "Controladores para refrigeração",
+   "linha": "Resfriados e congelados",
+   "spec": [
+    "Botão knob",
+    "Comunicação NFC",
+    "Monitor de tensão integrado",
+    "Entrada digital configurável",
+    "Montagem horizontal ou vertical"
+   ],
+   "img": "catalogo/coel/et3.webp"
+  },
+  {
+   "codigo": "TLY25",
+   "tipo": "Controlador de temperatura",
+   "secao": "Controladores para refrigeração",
+   "linha": "Sorvetes e congelados",
+   "spec": [
+    "4 saídas: compressor, degelo, ventilador e iluminação ou alarme",
+    "Bivolt automático",
+    "Opcional: relógio em tempo real para degelo",
+    "Degelo avançado (dreno)"
+   ],
+   "img": "catalogo/coel/tly25.webp"
+  },
+  {
+   "codigo": "E34B",
+   "tipo": "Controlador de temperatura · compatível com Coel Online",
+   "secao": "Controladores para refrigeração",
+   "linha": "Sorvetes e congelados",
+   "spec": [
+    "4 saídas: compressor, degelo, ventilador e iluminação ou alarme",
+    "Opcional: Wi-Fi (Coel Online)",
+    "Opcional: relógio em tempo real para degelo"
+   ],
+   "img": "catalogo/coel/e34b.webp"
+  },
+  {
+   "codigo": "Z31",
+   "tipo": "Controlador de temperatura · 1 saída",
+   "secao": "Controladores para refrigeração",
+   "linha": "Resfriados",
+   "spec": [
+    "Alimentação 100 a 240 Vca ou 12 a 24 Vca/Vcc",
+    "Opcionais: buzina e teclado touch",
+    "Degelo por parada do compressor"
+   ],
+   "img": "catalogo/coel/z31.webp"
+  },
+  {
+   "codigo": "E31",
+   "tipo": "Controlador de temperatura · 1 saída",
+   "secao": "Controladores para refrigeração",
+   "linha": "Resfriados",
+   "spec": [
+    "Alimentação 127 ou 220 Vca",
+    "Terminais faston ou extraível",
+    "Moldura preta ou branca"
+   ],
+   "img": "catalogo/coel/e31.webp"
+  },
+  {
+   "codigo": "Y39",
+   "tipo": "Controlador de temperatura · 3 saídas",
+   "secao": "Controladores para refrigeração",
+   "linha": "Congelados",
+   "spec": [
+    "Saídas para compressor, degelo e ventilador",
+    "2 sondas inclusas",
+    "Opcionais: buzina e teclado touch",
+    "Degelo elétrico, gás quente ou dinâmico"
+   ],
+   "img": "catalogo/coel/y39.webp"
+  },
+  {
+   "codigo": "E33",
+   "tipo": "Controlador de temperatura · 3 saídas",
+   "secao": "Controladores para refrigeração",
+   "linha": "Congelados",
+   "spec": [
+    "Saídas para compressor, degelo e ventilador",
+    "2 sondas inclusas",
+    "Terminais faston ou extraível",
+    "Alimentação 127 ou 220 Vca"
+   ],
+   "img": "catalogo/coel/e33.webp"
+  },
+  {
+   "codigo": "AEGM",
+   "tipo": "Temporizador analógico multiescala",
+   "secao": "Controladores para refrigeração",
+   "linha": "Painéis e automação",
+   "spec": [
+    "Escalas de 1 s a 60 min, selecionáveis no frontal",
+    "Função retardo ou pulso na energização"
+   ],
+   "img": "catalogo/coel/aegm.webp"
+  },
+  {
+   "codigo": "BVF1",
+   "tipo": "Monitor de falta de fase",
+   "secao": "Controladores para refrigeração",
+   "linha": "Redes trifásicas",
+   "spec": [
+    "Instalação em redes de 208 a 480 Vca"
+   ],
+   "img": "catalogo/coel/bvf1.webp"
+  },
+  {
+   "codigo": "BVS1",
+   "tipo": "Monitor de falta e sequência de fase",
+   "secao": "Controladores para refrigeração",
+   "linha": "Redes trifásicas",
+   "spec": [
+    "Instalação em redes de 208 a 480 Vca"
+   ],
+   "img": "catalogo/coel/bvs1.webp"
+  },
+  {
+   "codigo": "BWT-40 REC",
+   "tipo": "Interruptor horário para painel",
+   "secao": "Controladores para refrigeração",
+   "linha": "Painéis e automação",
+   "spec": [
+    "40 programações (20 liga + 20 desliga)",
+    "Até 2 saídas a relé",
+    "Bateria recarregável"
+   ],
+   "img": "catalogo/coel/bwt-40-rec.webp"
+  },
+  {
+   "codigo": "RTST20",
+   "tipo": "Interruptor horário",
+   "secao": "Controladores para refrigeração",
+   "linha": "Painéis e automação",
+   "spec": [
+    "1 saída a relé de 16 A",
+    "20 programações (10 liga + 10 desliga)",
+    "Bateria recarregável"
+   ],
+   "img": "catalogo/coel/rtst20.webp"
+  },
+  {
+   "codigo": "RTDF",
+   "tipo": "Temporizador para degelo",
+   "secao": "Controladores para refrigeração",
+   "linha": "Refrigeração",
+   "spec": [
+    "1 saída reversível a relé de 16 A",
+    "Intervalo entre degelos de até 12 h",
+    "Duração de até 60 min"
+   ],
+   "img": "catalogo/coel/rtdf.webp"
+  },
+  {
+   "codigo": "KLZ10",
+   "tipo": "Controlador para refrigeração · 1 saída",
+   "secao": "Controladores para refrigeração",
+   "linha": "Chopeiras",
+   "spec": [
+    "Saída para compressor",
+    "Muito usado em chopeiras"
+   ],
+   "img": "catalogo/coel/klz10.webp"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "nome": "M.A Joaquim Representação",
+ "razao_social": "M A Joaquim Representação",
+ "cnpj": "10.934.112/0001-73",
+ "desde": 2009,
+ "dominio": "representacaorj.com",
+ "email": "majoaquim@representacaorj.com",
+ "horario": "Segunda a sexta, das 8h às 19h",
+ "horario_curto": "Seg. a sex., 8h às 19h",
+ "area": "Rio de Janeiro",
+ "contatos": [
+  {
+   "nome": "Alexandre Bunn",
+   "papel": "Representante comercial",
+   "whatsapp": "5521996147784",
+   "telefone": "(21) 99614-7784",
+   "foto": "img/alexandre-bunn-site.webp",
+   "principal": true
+  },
+  {
+   "nome": "Deivid",
+   "papel": "Representante comercial",
+   "whatsapp": "5522998872392",
+   "telefone": "(22) 99887-2392",
+   "foto": "",
+   "principal": false
+  }
+ ],
+ "marcas": [
+  {
+   "slug": "suryha",
+   "nome": "Suryha",
+   "logo": "img/marcas/suryha.png",
+   "logo_negativo": "img/marcas/suryha-negativo.png",
+   "cor": "#f47b20",
+   "resumo": "Ferramentas e equipamentos para refrigeração e climatização.",
+   "texto": "Manifolds, bombas de vácuo, recolhedoras, flangeadores, brasagem e instrumentos de medição para quem instala e faz manutenção. Tem também linha de capacitores e linha automotiva.",
+   "catalogo_nota": "Códigos do Folder Suryha 2026, do folder Automotivo e da tabela de capacitores 2025/26."
+  },
+  {
+   "slug": "sibb",
+   "nome": "SIBB",
+   "nome_longo": "Sigma International Brands Brasil",
+   "logo": "img/marcas/sibb.png",
+   "logo_negativo": "img/marcas/sibb.png",
+   "cor": "#b5121b",
+   "resumo": "Peças de reposição para linha branca e ar-condicionado.",
+   "texto": "A Sigma International Brands Brasil, de Sorocaba (SP), fabrica e importa peças de reposição para lava e seca, ar-condicionado, refrigeração e micro-ondas, além de capacitores, turbinas e correias.",
+   "catalogo_nota": "Códigos e fotos do catálogo SIBB de novembro de 2026."
+  },
+  {
+   "slug": "coel",
+   "nome": "Coel",
+   "logo": "img/marcas/coel-bruto.png",
+   "logo_negativo": "img/marcas/coel-bruto.png",
+   "cor": "#d98a00",
+   "resumo": "Controladores para refrigeração e automação.",
+   "texto": "Controladores e termostatos para refrigeração (cervejeiras, tanques de leite, resfriados, congelados e sorvetes), temporizadores, interruptores horários e monitores de fase, além de inversores de frequência, relés de interface e controladores de processo.",
+   "catalogo_nota": "Modelos e especificações do folder Controladores para Refrigeração 2026 e do portfólio de automação Coel."
+  },
+  {
+   "slug": "perfiltec",
+   "nome": "Perfiltec",
+   "logo": "img/marcas/perfiltec.png",
+   "logo_negativo": "img/marcas/perfiltec-negativo.png",
+   "cor": "#1d2733",
+   "resumo": "Canaletas e acessórios para instalação de ar-condicionado.",
+   "texto": "Canaletas e acessórios para split, em branco e preto, com a nova linha SPLITEC FIT de clique FastFit. Três bitolas: 30 mm para dreno, 60 mm para splits até 12.000 BTUs e 80 mm para splits acima de 12.000 BTUs.",
+   "catalogo_nota": "Códigos e SKUs do Catálogo Climatização 2026 da Perfiltec (edição de agosto de 2026)."
+  }
+ ]
+}

@@ -1,0 +1,324 @@
+{
+ "marca": "perfiltec",
+ "fonte": [
+  "Catalogo-Climatizacao-2026-PT.pdf",
+  "Catálogo de Produtos — Perfiltec Indústria de Perfis.pdf"
+ ],
+ "itens": [
+  {
+   "codigo": "FIT60",
+   "tipo": "Canaleta SPLITEC FIT 60 · kit base + tampa",
+   "secao": "SPLITEC FIT (lançamento)",
+   "linha": "Split residencial até 12.000 BTUs · barra 2 m · clique FastFit · PVC virgem com proteção UV",
+   "sku": "Branca 11020005 · Preta 11020006",
+   "multiplo": "Caixa com 6 conjuntos de 2 m",
+   "img": "catalogo/perfiltec/splitec-fit.webp"
+  },
+  {
+   "codigo": "FIT80",
+   "tipo": "Canaleta SPLITEC FIT 80 · kit base + tampa",
+   "secao": "SPLITEC FIT (lançamento)",
+   "linha": "Split acima de 12.000 BTUs · barra 2 m · clique FastFit · PVC virgem com proteção UV",
+   "sku": "Branca 11020007 · Preta 11020008",
+   "multiplo": "Caixa com 4 conjuntos de 2 m",
+   "img": "catalogo/perfiltec/splitec-fit.webp"
+  },
+  {
+   "codigo": "CLIPE-FIT60",
+   "tipo": "Clipe FastFit FIT 60 (reposição)",
+   "secao": "SPLITEC FIT (lançamento)",
+   "linha": "Trava a tampa na base",
+   "sku": "11021049",
+   "multiplo": "",
+   "img": ""
+  },
+  {
+   "codigo": "CLIPE-FIT80",
+   "tipo": "Clipe FastFit FIT 80 (reposição)",
+   "secao": "SPLITEC FIT (lançamento)",
+   "linha": "Trava a tampa na base",
+   "sku": "11021050",
+   "multiplo": "",
+   "img": ""
+  },
+  {
+   "codigo": "CDR60",
+   "tipo": "Curva Plana 90°",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021000 · Preta 11021025",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdr60.webp"
+  },
+  {
+   "codigo": "CDRA60",
+   "tipo": "Curva Ajustável",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021005 · Preta 11021030",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdra60.webp"
+  },
+  {
+   "codigo": "CDAI60",
+   "tipo": "Ângulo Interno",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021008 · Preta 11021033",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdai60.webp"
+  },
+  {
+   "codigo": "CDAE60",
+   "tipo": "Ângulo Externo",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021010 · Preta 11021035",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdae60.webp"
+  },
+  {
+   "codigo": "CDTD60",
+   "tipo": "Transição de Parede Direita",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021017 · Preta 11021042",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdtd60.webp"
+  },
+  {
+   "codigo": "CDTE60",
+   "tipo": "Transição de Parede Esquerda",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021018 · Preta 11021043",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdte60.webp"
+  },
+  {
+   "codigo": "TDR60",
+   "tipo": "Terminal de Acabamento",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021002 · Preta 11021027",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/tdr60.webp"
+  },
+  {
+   "codigo": "APR60",
+   "tipo": "Passagem de Parede",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021013 · Preta 11021038",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/apr60.webp"
+  },
+  {
+   "codigo": "ABR60",
+   "tipo": "Acabamento Bipartido",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV e modificador de impacto",
+   "sku": "Branca 11021004 · Preta 11021028",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/abr60.webp"
+  },
+  {
+   "codigo": "LDR60",
+   "tipo": "Luva de Emenda",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021015 · Preta 11021040",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/ldr60.webp"
+  },
+  {
+   "codigo": "PDR60",
+   "tipo": "Canaleta tradicional",
+   "secao": "Linha 60 mm · splits até 12.000 BTUs",
+   "linha": "PVC virgem com proteção UV",
+   "sku": "Branca 2 m 11020000 · Branca 1 m 11020003",
+   "multiplo": "6 cj · Conjunto",
+   "img": "catalogo/perfiltec/pdr60.webp"
+  },
+  {
+   "codigo": "CDR80",
+   "tipo": "Curva Plana 90°",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021001 · Preta 11021026",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdr80.webp"
+  },
+  {
+   "codigo": "CDAI80",
+   "tipo": "Ângulo Interno",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021009 · Preta 11021034",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdai80.webp"
+  },
+  {
+   "codigo": "CDAE80",
+   "tipo": "Ângulo Externo",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021011 · Preta 11021036",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdae80.webp"
+  },
+  {
+   "codigo": "CDTD80",
+   "tipo": "Transição de Parede Direita",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021022 · Preta 11021047",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdtd80.webp"
+  },
+  {
+   "codigo": "CDTE80",
+   "tipo": "Transição de Parede Esquerda",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021023 · Preta 11021048",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdte80.webp"
+  },
+  {
+   "codigo": "TDR80",
+   "tipo": "Terminal de Acabamento",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021003 · Preta 11021029",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/tdr80.webp"
+  },
+  {
+   "codigo": "APR80",
+   "tipo": "Passagem de Parede",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021014 · Preta 11021039",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/apr80.webp"
+  },
+  {
+   "codigo": "LDR80",
+   "tipo": "Luva de Emenda",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021016 · Preta 11021041",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/ldr80.webp"
+  },
+  {
+   "codigo": "ATDR80",
+   "tipo": "Derivação em T",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021019 · Preta 11021044",
+   "multiplo": "24 pç · Peça",
+   "img": "catalogo/perfiltec/atdr80.webp"
+  },
+  {
+   "codigo": "ADR8060",
+   "tipo": "Redução 80 → 60",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021020 · Preta 11021045",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/adr8060.webp"
+  },
+  {
+   "codigo": "ADR6030",
+   "tipo": "Redução 60 → 30",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021021 · Preta 11021046",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/adr6030.webp"
+  },
+  {
+   "codigo": "PDR80",
+   "tipo": "Canaleta tradicional",
+   "secao": "Linha 80 mm · splits acima de 12.000 BTUs",
+   "linha": "PVC virgem com proteção UV",
+   "sku": "Branca 2 m 11020001 · Branca 1 m 11020004",
+   "multiplo": "4 cj · Conjunto",
+   "img": "catalogo/perfiltec/pdr80.webp"
+  },
+  {
+   "codigo": "PDR30",
+   "tipo": "Canaleta para Dreno",
+   "secao": "Linha 30 mm · dreno",
+   "linha": "PVC virgem com proteção UV",
+   "sku": "Branca 11020002 · Preta 11020009",
+   "multiplo": "30 cj · Conjunto",
+   "img": "catalogo/perfiltec/pdr30.webp"
+  },
+  {
+   "codigo": "CDR30",
+   "tipo": "Curva Plana 90°",
+   "secao": "Linha 30 mm · dreno",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021006 · Preta 11021032",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/cdr30.webp"
+  },
+  {
+   "codigo": "TDR30",
+   "tipo": "Terminal de Acabamento",
+   "secao": "Linha 30 mm · dreno",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021007 · Preta 11021031",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/tdr30.webp"
+  },
+  {
+   "codigo": "APR30",
+   "tipo": "Passagem de Parede",
+   "secao": "Linha 30 mm · dreno",
+   "linha": "ABS com proteção UV",
+   "sku": "Branca 11021012 · Preta 11021037",
+   "multiplo": "25 pç · Peça",
+   "img": "catalogo/perfiltec/apr30.webp"
+  },
+  {
+   "codigo": "MANG12",
+   "tipo": "Mangueira Lisa 1/2\"",
+   "secao": "Linha 30 mm · dreno",
+   "linha": "PVC cristal · parede 2 mm",
+   "sku": "11211016",
+   "multiplo": "50 m · Metro",
+   "img": "catalogo/perfiltec/mang12.webp"
+  },
+  {
+   "codigo": "MANG58",
+   "tipo": "Mangueira Lisa 5/8\"",
+   "secao": "Linha 30 mm · dreno",
+   "linha": "PVC cristal · parede 2 mm",
+   "sku": "11211032",
+   "multiplo": "50 m · Metro",
+   "img": "catalogo/perfiltec/mang58.webp"
+  },
+  {
+   "codigo": "MANG516",
+   "tipo": "Mangueira Lisa 5/16\"",
+   "secao": "Linha 30 mm · dreno",
+   "linha": "PVC cristal",
+   "sku": "11211047",
+   "multiplo": "50 m · Metro",
+   "img": ""
+  },
+  {
+   "codigo": "FDR60",
+   "tipo": "Duto flexível para canaletas 60 e 80 mm",
+   "secao": "Outros acessórios",
+   "linha": "PVC branco",
+   "sku": "11021024",
+   "multiplo": "",
+   "img": "catalogo/perfiltec/fdr60.webp"
+  }
+ ]
+}

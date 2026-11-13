@@ -1,0 +1,365 @@
+/* M.A Joaquim Representação — interações do site. Sem dependências. */
+(() => {
+  'use strict';
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ponteiroFino = matchMedia('(pointer: fine)').matches;
+  const semAcento = (t) => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const raf = (fn) => { let p = false; return (...a) => { if (!p) { p = true; requestAnimationFrame(() => { p = false; fn(...a); }); } }; };
+
+  /* ---------- topo, progresso, barra de WhatsApp ---------- */
+  const topo = $('[data-topo]');
+  const barraZap = $('.barra-zap');
+  const aoRolar = raf(() => {
+    const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
+    topo && topo.classList.toggle('rolou', y > 40);
+    document.documentElement.style.setProperty('--p', h > 0 ? (y / h).toFixed(4) : 0);
+    barraZap && barraZap.classList.toggle('mostra', y > innerHeight * .6);
+  });
+  addEventListener('scroll', aoRolar, { passive: true });
+  aoRolar();
+
+  const btnMenu = $('[data-menu]'), menu = $('#menu');
+  if (btnMenu && menu) {
+    btnMenu.addEventListener('click', () => {
+      const aberto = btnMenu.getAttribute('aria-expanded') === 'true';
+      btnMenu.setAttribute('aria-expanded', String(!aberto));
+      menu.classList.toggle('aberto', !aberto);
+    });
+    menu.addEventListener('click', (e) => { if (e.target.closest('a')) { btnMenu.setAttribute('aria-expanded', 'false'); menu.classList.remove('aberto'); } });
+  }
+
+  /* ---------- revelar ao rolar ---------- */
+  $$('.revela-grupo').forEach((g) => [...g.children].forEach((c, i) => { c.classList.add('revela'); c.style.setProperty('--i', i); }));
+  const io = new IntersectionObserver((ents) => ents.forEach((en) => {
+    if (en.isIntersecting) { en.target.classList.add('visivel'); io.unobserve(en.target); }
+  }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+  $$('.revela, [data-passos]').forEach((el) => io.observe(el));
+
+  /* ---------- inclinação 3D no cursor ---------- */
+  if (ponteiroFino && !calmo) {
+    $$('[data-tilt]').forEach((el) => {
+      const max = el.classList.contains('quem__foto') ? 5 : 7;
+      el.addEventListener('pointermove', (e) => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        el.classList.add('tilt-ativo');
+        el.style.setProperty('--ry', ((x - .5) * max * 2).toFixed(2) + 'deg');
+        el.style.setProperty('--rx', ((.5 - y) * max * 2).toFixed(2) + 'deg');
+        const a = el.querySelector('a'); if (a) { a.style.setProperty('--mx', x * 100 + '%'); a.style.setProperty('--my', y * 100 + '%'); }
+      });
+      el.addEventListener('pointerleave', () => { el.classList.remove('tilt-ativo'); el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+    });
+  }
+
+  /* ---------- órbita 3D (herói e vitrine das marcas) ---------- */
+  $$('[data-orbita]').forEach((orb) => {
+    const anel = $('[data-anel]', orb), itens = $$('.orbita__item', anel), n = itens.length;
+    if (!n) return;
+    const passo = 360 / n;
+    let rot = 0, alvo = 0, vel = calmo ? 0 : -0.08, arrastando = false, x0 = 0, rot0 = 0, visivel = true, ultimo = 0;
+    itens.forEach((it, i) => it.style.setProperty('--i', i));
+    anel.style.setProperty('--passo', passo + 'deg');
+    if (orb.classList.contains('orbita--marca')) anel.style.setProperty('--inc', '-4deg');
+    const medir = () => {
+      const w = itens[0].offsetWidth || 180;
+      const raio = Math.max(w * 1.05, (w * 1.08) / (2 * Math.tan(Math.PI / n)));
+      // nos lados o item fica de perfil: o anel ocupa ~2R. Mantém dentro da coluna.
+      const largura = orb.clientWidth;
+      anel.style.setProperty('--raio-orb', Math.max(w * .7, Math.min(raio, largura * .48)) + 'px');
+    };
+    const pintar = () => {
+      anel.style.setProperty('--rot', rot.toFixed(2) + 'deg');
+      itens.forEach((it, i) => {
+        const a = ((i * passo + rot) % 360 + 360) % 360;
+        const perto = (Math.cos(a * Math.PI / 180) + 1) / 2;
+        it.style.setProperty('--perto', perto.toFixed(3));
+        it.style.zIndex = Math.round(perto * 100);
+      });
+    };
+    const quadro = (t) => {
+      const dt = Math.min(50, t - (ultimo || t)); ultimo = t;
+      if (visivel) {
+        if (!arrastando) {
+          if (alvo !== null) { rot += (alvo - rot) * .12; if (Math.abs(alvo - rot) < .05) { rot = alvo; alvo = null; } }
+          else if (!orb.matches(':hover') && document.activeElement !== orb) rot += vel * dt * .6;
+        }
+        pintar();
+      }
+      requestAnimationFrame(quadro);
+    };
+    alvo = null;
+    medir(); pintar();
+    addEventListener('resize', raf(medir));
+    new IntersectionObserver(([en]) => { visivel = en.isIntersecting; }).observe(orb);
+    requestAnimationFrame(quadro);
+    const ir = (d) => { const base = Math.round(rot / passo) * passo; alvo = base + d * passo; };
+    $('[data-ant]', orb).addEventListener('click', () => ir(1));
+    $('[data-prox]', orb).addEventListener('click', () => ir(-1));
+    orb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') { ir(1); e.preventDefault(); } if (e.key === 'ArrowRight') { ir(-1); e.preventDefault(); } });
+    const palco = $('.orbita__palco', orb);
+    palco.addEventListener('pointerdown', (e) => { arrastando = true; alvo = null; x0 = e.clientX; rot0 = rot; orb.classList.add('arrastando'); palco.setPointerCapture(e.pointerId); });
+    palco.addEventListener('pointermove', (e) => { if (arrastando) rot = rot0 + (e.clientX - x0) * .35; });
+    const soltar = () => { if (!arrastando) return; arrastando = false; orb.classList.remove('arrastando'); alvo = Math.round(rot / passo) * passo; };
+    palco.addEventListener('pointerup', soltar);
+    palco.addEventListener('pointercancel', soltar);
+  });
+
+  /* ---------- lista de cotação (fica só no navegador) ---------- */
+  const CHAVE = 'majoaquim:lista';
+  const ler = () => { try { return JSON.parse(localStorage.getItem(CHAVE)) || []; } catch { return []; } };
+  const gravar = (l) => { try { localStorage.setItem(CHAVE, JSON.stringify(l)); } catch { /* modo privado */ } };
+  let lista = ler();
+  const gaveta = $('[data-lista]');
+  const botoesLista = $$('[data-abrir-lista]');
+
+  function desenharLista() {
+    $$('[data-lista-n]').forEach((el) => { el.textContent = lista.length; });
+    if (!gaveta) return;
+    const ul = $('[data-lista-itens]', gaveta);
+    ul.innerHTML = '';
+    lista.forEach((it, k) => {
+      const li = document.createElement('li');
+      li.className = 'lista__item';
+      li.innerHTML = `<img alt=""><div><b></b><small></small></div>
+        <div class="lista__qtd"><label class="sr">Quantidade</label><input type="number" min="1" inputmode="numeric">
+        <button type="button" class="icone-btn" aria-label="Remover"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg></button></div>`;
+      // dados do localStorage entram só por propriedade, nunca como HTML
+      $('img', li).src = it.img;
+      $('input', li).id = `q${k}`; $('label', li).htmlFor = `q${k}`;
+      $('input', li).value = it.qtd;
+      $('b', li).textContent = it.nome;
+      $('small', li).textContent = `${it.marca}${it.cod ? ' · ' + it.cod : ''}`;
+      $('input', li).addEventListener('change', (e) => { it.qtd = Math.max(1, parseInt(e.target.value, 10) || 1); e.target.value = it.qtd; gravar(lista); });
+      $('button', li).addEventListener('click', () => { lista.splice(k, 1); gravar(lista); desenharLista(); marcarCartoes(); });
+      ul.appendChild(li);
+    });
+    $('[data-lista-vazia]', gaveta).hidden = lista.length > 0;
+    $('[data-lista-enviar]', gaveta).disabled = lista.length === 0;
+  }
+  function marcarCartoes() {
+    const ids = new Set(lista.map((i) => i.id));
+    $$('.cartao').forEach((c) => {
+      const b = $('[data-add]', c); if (!b) return;
+      const tem = ids.has(c.dataset.id);
+      b.classList.toggle('na-lista', tem);
+      b.querySelector('span') && (b.querySelector('span').textContent = tem ? 'Na lista' : 'Lista');
+    });
+  }
+  function adicionar(d) {
+    const ja = lista.find((i) => i.id === d.id);
+    if (ja) { lista = lista.filter((i) => i.id !== d.id); }
+    else { lista.push({ id: d.id, marca: d.marca, cod: d.cod, nome: d.nome, img: new URL(d.img, location.href).pathname, qtd: 1 }); }  // caminho absoluto: a lista é lida em qualquer página
+    gravar(lista); desenharLista(); marcarCartoes();
+    botoesLista.forEach((b) => { b.classList.remove('pulsa'); void b.offsetWidth; b.classList.add('pulsa'); });
+    return !ja;
+  }
+  function abrirLista() {
+    if (!gaveta) return;
+    gaveta.hidden = false; document.body.style.overflow = 'hidden';
+    botoesLista.forEach((b) => b.setAttribute('aria-expanded', 'true'));
+    $('[data-fechar-lista]', gaveta.querySelector('.lista__topo')).focus();
+  }
+  function fecharLista() {
+    if (!gaveta) return;
+    gaveta.hidden = true; document.body.style.overflow = '';
+    botoesLista.forEach((b) => b.setAttribute('aria-expanded', 'false'));
+    botoesLista[0] && botoesLista[0].focus();
+  }
+  botoesLista.forEach((b) => b.addEventListener('click', abrirLista));
+  if (gaveta) {
+    $$('[data-fechar-lista]', gaveta).forEach((b) => b.addEventListener('click', fecharLista));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !gaveta.hidden) fecharLista(); });
+    $('[data-lista-limpar]', gaveta).addEventListener('click', () => { lista = []; gravar(lista); desenharLista(); marcarCartoes(); });
+    $('[data-lista-enviar]', gaveta).addEventListener('click', () => {
+      if (!lista.length) return;
+      const linhas = lista.map((i) => `• ${i.marca}${i.cod ? ' ' + i.cod : ''} – ${i.nome} – qtd ${i.qtd}`);
+      const obs = $('[data-lista-obs]', gaveta).value.trim();
+      const msg = `Olá, Alexandre! Vim pelo site e quero cotação destes itens:\n${linhas.join('\n')}${obs ? '\n\nObs.: ' + obs : ''}`;
+      window.open(`https://wa.me/${gaveta.dataset.zap}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+  }
+  addEventListener('storage', (e) => { if (e.key === CHAVE) { lista = ler(); desenharLista(); marcarCartoes(); } });
+  desenharLista(); marcarCartoes();
+
+  /* ---------- janela do produto ---------- */
+  const dlg = $('[data-produto]');
+  let atual = null;
+  function abrirProduto(c) {
+    if (!dlg) return;
+    atual = { id: c.dataset.id, marca: c.dataset.marca, cod: c.dataset.cod, nome: c.dataset.nome, img: c.dataset.img };
+    const img = $('[data-produto-img]', dlg);
+    img.src = c.dataset.img; img.alt = `${c.dataset.nome} ${c.dataset.cod}`.trim();
+    $('[data-produto-marca]', dlg).textContent = c.dataset.marca;
+    $('[data-produto-nome]', dlg).textContent = c.dataset.nome;
+    $('[data-produto-cod]', dlg).textContent = c.dataset.cod ? `Código ${c.dataset.cod}` : '';
+    $('[data-produto-secao]', dlg).textContent = [c.dataset.sec, c.dataset.det].filter(Boolean).join(' · ');
+    const ul = $('[data-produto-spec]', dlg); ul.innerHTML = '';
+    if (c.dataset.spec) JSON.parse(c.dataset.spec).forEach((s) => { const li = document.createElement('li'); li.textContent = s; ul.appendChild(li); });
+    const naLista = lista.some((i) => i.id === atual.id);
+    $('[data-produto-add]', dlg).lastChild.textContent = naLista ? ' Tirar da lista' : ' Adicionar à lista';
+    const msg = `Olá, Alexandre! Vim pelo site e quero cotação do item ${c.dataset.marca}${c.dataset.cod ? ' ' + c.dataset.cod : ''} – ${c.dataset.nome}.`;
+    $('[data-produto-zap]', dlg).href = `https://wa.me/${gaveta ? gaveta.dataset.zap : ''}?text=${encodeURIComponent(msg)}`;
+    dlg.showModal();
+  }
+  if (dlg) {
+    $('[data-produto-add]', dlg).addEventListener('click', () => {
+      if (!atual) return;
+      const entrou = adicionar(atual);
+      $('[data-produto-add]', dlg).lastChild.textContent = entrou ? ' Tirar da lista' : ' Adicionar à lista';
+    });
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    const palco = $('.produto__palco', dlg), img = $('img', palco);
+    if (!calmo) {
+      palco.addEventListener('pointermove', (e) => {
+        const r = palco.getBoundingClientRect();
+        img.style.setProperty('--ry', (((e.clientX - r.left) / r.width - .5) * 30).toFixed(1) + 'deg');
+        img.style.setProperty('--rx', ((.5 - (e.clientY - r.top) / r.height) * 24).toFixed(1) + 'deg');
+      });
+      palco.addEventListener('pointerleave', () => { img.style.setProperty('--rx', '0deg'); img.style.setProperty('--ry', '0deg'); });
+    }
+  }
+  document.addEventListener('click', (e) => {
+    const add = e.target.closest('[data-add]');
+    if (add) { const c = add.closest('.cartao'); adicionar({ id: c.dataset.id, marca: c.dataset.marca, cod: c.dataset.cod, nome: c.dataset.nome, img: c.dataset.img }); return; }
+    const ab = e.target.closest('[data-abrir-produto]');
+    if (ab) abrirProduto(ab.closest('.cartao'));
+  });
+
+  /* ---------- catálogo da marca: busca, seção e paginação ---------- */
+  $$('[data-catalogo]').forEach((sec) => {
+    const cartoes = $$('.cartao', sec), entrada = $('[data-busca]', sec), chips = $$('[data-secao-filtro]', sec);
+    const cont = $('[data-contagem]', sec), vazio = $('[data-vazio]', sec), mais = $('[data-mais]', sec);
+    const POR = 36; let limite = POR, secao = '';
+    cartoes.forEach((c) => { c._t = semAcento(c.dataset.busca); });
+    const aplicar = () => {
+      const termos = semAcento(entrada.value).split(/\s+/).filter(Boolean);
+      let n = 0, mostrados = 0;
+      cartoes.forEach((c) => {
+        const ok = (!secao || c.dataset.secao === secao) && termos.every((t) => c._t.includes(t));
+        if (ok) n++;
+        const ver = ok && n <= limite;
+        c.hidden = !ver; if (ver) mostrados++;
+      });
+      cont.textContent = n === cartoes.length ? `${n} itens` : `${n} de ${cartoes.length} itens`;
+      vazio.hidden = n > 0;
+      mais.hidden = n <= limite;
+      mais.textContent = `Mostrar mais (${n - mostrados} restantes)`;
+    };
+    let tm;
+    entrada.addEventListener('input', () => { clearTimeout(tm); tm = setTimeout(() => { limite = POR; aplicar(); }, 120); });
+    chips.forEach((ch) => ch.addEventListener('click', () => {
+      chips.forEach((x) => x.setAttribute('aria-pressed', String(x === ch)));
+      secao = ch.dataset.secaoFiltro; limite = POR; aplicar();
+    }));
+    mais.addEventListener('click', () => { limite += POR; aplicar(); });
+    const q = new URLSearchParams(location.search).get('q');
+    if (q) { entrada.value = q; }
+    aplicar();
+  });
+
+  /* ---------- busca em todas as marcas (início) ---------- */
+  const bg = $('[data-busca-global]');
+  if (bg) {
+    const idx = JSON.parse($('#indice-catalogo').textContent).map((i) => ({ ...i, t: semAcento(`${i.m} ${i.c} ${i.n} ${i.x}`) }));
+    const inp = $('[data-busca-global-input]', bg), res = $('[data-busca-global-res]', bg), info = $('[data-busca-global-info]', bg);
+    let tm;
+    inp.addEventListener('input', () => {
+      clearTimeout(tm);
+      tm = setTimeout(() => {
+        const termos = semAcento(inp.value).split(/\s+/).filter(Boolean);
+        res.innerHTML = '';
+        if (inp.value.trim().length < 2) { info.textContent = 'Digite pelo menos 2 letras.'; return; }
+        const achados = idx.filter((i) => termos.every((t) => i.t.includes(t)));
+        info.textContent = achados.length ? `${achados.length} ${achados.length === 1 ? 'item encontrado' : 'itens encontrados'}${achados.length > 24 ? '. Mostrando os 24 primeiros' : ''}.` : 'Nada encontrado. Mande a foto ou o código pelo WhatsApp que eu procuro na fábrica.';
+        achados.slice(0, 24).forEach((i) => {
+          const li = document.createElement('li');
+          li.className = 'resultado';
+          const a = document.createElement('a');
+          a.href = `marcas/${i.s}/?q=${encodeURIComponent(i.c || i.n)}#catalogo`;
+          a.innerHTML = '<img alt="" loading="lazy"><small></small><b></b>';
+          $('img', a).src = i.i;
+          $('small', a).textContent = `${i.m}${i.c ? ' · ' + i.c : ''}`;
+          $('b', a).textContent = i.n;
+          li.appendChild(a); res.appendChild(li);
+        });
+      }, 140);
+    });
+  }
+
+  /* ---------- folheador 3D ---------- */
+  $$('[data-livro]').forEach((livro) => {
+    const docs = JSON.parse(livro.dataset.docs);
+    const palco = $('[data-livro-palco]', livro), pagEl = $('[data-livro-pag]', livro);
+    const abas = $$('[data-doc]', livro.parentElement);
+    let doc = 0, i = 0, dois = false, ocupado = false;
+    const pags = () => docs[doc].paginas;
+    const novaImg = (p, cls) => { const im = new Image(); im.decoding = 'async'; im.alt = ''; if (p) { im.src = p.src; im.width = p.w; im.height = p.h; } im.className = cls; return im; };
+    const preCarregar = (k) => { const p = pags()[k]; if (p) { const im = new Image(); im.src = p.src; } };
+    function montar() {
+      const p0 = pags()[0];
+      dois = livro.clientWidth >= 760;
+      if (!dois) i = Math.max(0, i); else i -= i % 2;
+      palco.classList.toggle('um', !dois);
+      livro.style.setProperty('--razao', ((dois ? 2 : 1) * p0.w / p0.h).toFixed(4));
+      palco.innerHTML = '';
+      if (dois) { palco.append(novaImg(pags()[i], 'livro__pag-img esq'), novaImg(pags()[i + 1], 'livro__pag-img dir')); }
+      else palco.append(novaImg(pags()[i], 'livro__pag-img'));
+      $$('.livro__pag-img', palco).forEach((im) => { if (!im.getAttribute('src')) im.style.visibility = 'hidden'; });
+      const ze = document.createElement('button'), zd = document.createElement('button');
+      ze.className = 'livro__zona e'; zd.className = 'livro__zona d'; ze.type = zd.type = 'button';
+      ze.setAttribute('aria-label', 'Página anterior'); zd.setAttribute('aria-label', 'Próxima página'); ze.tabIndex = zd.tabIndex = -1;
+      ze.style.background = zd.style.background = 'none'; ze.style.border = zd.style.border = '0';
+      ze.onclick = () => voltar(); zd.onclick = () => avancar();
+      palco.append(ze, zd);
+      const tot = pags().length;
+      pagEl.textContent = dois ? `${i + 1}${pags()[i + 1] ? '–' + (i + 2) : ''} de ${tot}` : `${i + 1} de ${tot}`;
+      preCarregar(i + 2); preCarregar(i + 3);
+    }
+    function virar(dir) {
+      const passo = dois ? 2 : 1, tot = pags().length;
+      const novo = i + dir * passo;
+      if (ocupado || novo < 0 || novo >= tot) return;
+      if (calmo) { i = novo; montar(); return; }
+      ocupado = true;
+      const folha = document.createElement('div');
+      folha.className = 'folha ' + (dir > 0 ? 'vai' : 'volta');
+      let frente, verso;
+      if (dois) {
+        if (dir > 0) { frente = pags()[i + 1]; verso = pags()[novo]; $('.dir', palco).src = pags()[novo + 1] ? pags()[novo + 1].src : ''; if (!pags()[novo + 1]) $('.dir', palco).style.visibility = 'hidden'; }
+        else { frente = pags()[i]; verso = pags()[novo + 1]; $('.esq', palco).src = pags()[novo].src; }
+      } else {
+        frente = pags()[dir > 0 ? i : novo]; verso = null;
+        if (dir > 0) $('.livro__pag-img', palco).src = pags()[novo].src;
+      }
+      const f = novaImg(frente, 'frente'); folha.append(f);
+      if (verso) folha.append(novaImg(verso, 'verso')); else { const v = document.createElement('div'); v.className = 'verso-branco verso'; folha.append(v); }
+      if (!dois && dir < 0) folha.style.transform = 'rotateY(-180deg)';
+      palco.append(folha);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        folha.classList.add('virando');
+        if (dois) folha.style.transform = dir > 0 ? 'rotateY(-180deg)' : 'rotateY(180deg)';
+        else folha.style.transform = dir > 0 ? 'rotateY(-180deg)' : 'rotateY(0deg)';
+      }));
+      const fim = () => { i = novo; ocupado = false; montar(); };
+      folha.addEventListener('transitionend', fim, { once: true });
+      setTimeout(() => { if (ocupado) fim(); }, 1200);
+    }
+    const avancar = () => virar(1), voltar = () => virar(-1);
+    $('[data-livro-prox]', livro).addEventListener('click', avancar);
+    $('[data-livro-ant]', livro).addEventListener('click', voltar);
+    livro.tabIndex = 0;
+    livro.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') avancar(); if (e.key === 'ArrowLeft') voltar(); });
+    let x0 = null;
+    palco.addEventListener('pointerdown', (e) => { x0 = e.clientX; });
+    palco.addEventListener('pointerup', (e) => { if (x0 === null) return; const dx = e.clientX - x0; x0 = null; if (Math.abs(dx) > 40) (dx < 0 ? avancar : voltar)(); });
+    abas.forEach((a) => a.addEventListener('click', () => {
+      abas.forEach((b) => b.setAttribute('aria-selected', String(b === a)));
+      doc = +a.dataset.doc; i = 0; montar();
+    }));
+    let larg = livro.clientWidth;
+    addEventListener('resize', raf(() => { if (Math.abs(livro.clientWidth - larg) > 40) { larg = livro.clientWidth; montar(); } }));
+    new IntersectionObserver(([en], obs) => { if (en.isIntersecting) { montar(); obs.disconnect(); } }, { rootMargin: '400px' }).observe(livro);
+  });
+})();

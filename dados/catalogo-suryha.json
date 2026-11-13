@@ -1,0 +1,1829 @@
+{
+ "marca": "suryha",
+ "fonte": [
+  "Folder Suryha 2026 (1).pdf",
+  "Folder Suryha 2025 - Automotivo.pdf"
+ ],
+ "itens": [
+  {
+   "codigo": "80150.215",
+   "tipo": "Manifold R22/R134A com mangueira 150 cm",
+   "linha": "2 engates para R134A e maleta premium",
+   "img": "catalogo/suryha/aut-94.webp",
+   "secao": "Automotivo"
+  },
+  {
+   "codigo": "80150.231",
+   "tipo": "Caixa anel O-ring ar-condicionado automotivo",
+   "linha": "",
+   "img": "catalogo/suryha/f26-347.webp",
+   "secao": "Automotivo"
+  },
+  {
+   "codigo": "80150.232",
+   "tipo": "Kit guia selo do compressor automotivo com 7 peças",
+   "linha": "",
+   "img": "catalogo/suryha/f26-345.webp",
+   "secao": "Automotivo"
+  },
+  {
+   "codigo": "80150.251",
+   "tipo": "Engate rápido ajustável R1234YF alta",
+   "linha": "",
+   "img": "catalogo/suryha/f26-351.webp",
+   "secao": "Automotivo"
+  },
+  {
+   "codigo": "80150.252",
+   "tipo": "Engate rápido ajustável R1234YF baixa",
+   "linha": "",
+   "img": "catalogo/suryha/f26-335.webp",
+   "secao": "Automotivo"
+  },
+  {
+   "codigo": "80150.001",
+   "tipo": "Manifold com mangueiras 90 cm com maleta",
+   "linha": "R22 | R134 | R404",
+   "img": "catalogo/suryha/aut-74.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.002",
+   "tipo": "Manômetro alta",
+   "linha": "R22/404/134",
+   "img": "catalogo/suryha/f26-273.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.003",
+   "tipo": "Manômetro baixa",
+   "linha": "R22/404/134",
+   "img": "catalogo/suryha/f26-275.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.004",
+   "tipo": "Conjunto de mangueiras 90 cm",
+   "linha": "R22 | R404 | R134",
+   "img": "catalogo/suryha/f26-257.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.011",
+   "tipo": "Engate rápido alta",
+   "linha": "",
+   "img": "catalogo/suryha/aut-84.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.012",
+   "tipo": "Engate rápido baixa",
+   "linha": "",
+   "img": "catalogo/suryha/aut-84.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.030",
+   "tipo": "Manifold com mangueiras 90 cm",
+   "linha": "R22 | R134 | R404",
+   "img": "catalogo/suryha/f26-277.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.033",
+   "tipo": "Manifold com mangueiras 90 cm",
+   "linha": "R410A | R32",
+   "img": "catalogo/suryha/f26-277.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.034",
+   "tipo": "Conjunto de mangueiras 90 cm",
+   "linha": "R410",
+   "img": "catalogo/suryha/f26-257.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.035",
+   "tipo": "Manifold com mangueiras 90 cm com maleta premium",
+   "linha": "R410A | R32",
+   "img": "catalogo/suryha/f26-395.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.037",
+   "tipo": "Conjunto de mangueiras 150 cm",
+   "linha": "R22 | R404 | R134",
+   "img": "catalogo/suryha/f26-257.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.051",
+   "tipo": "Engate rápido ajustável alta",
+   "linha": "",
+   "img": "catalogo/suryha/aut-76.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.052",
+   "tipo": "Engate rápido ajustável baixa",
+   "linha": "",
+   "img": "catalogo/suryha/aut-76.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.054",
+   "tipo": "Manômetro alta",
+   "linha": "R410/R32",
+   "img": "catalogo/suryha/f26-267.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.055",
+   "tipo": "Manômetro baixa",
+   "linha": "R410/R32",
+   "img": "catalogo/suryha/f26-275.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.095",
+   "tipo": "Mangueira para vácuo 3/8\" 1,8 m",
+   "linha": "",
+   "img": "catalogo/suryha/f26-424.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.106",
+   "tipo": "Manifold 1 via baixa",
+   "linha": "R22, R134a, R404, R410",
+   "img": "catalogo/suryha/f26-265.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.107",
+   "tipo": "Manifold 1 via alta",
+   "linha": "R22, R134a, R404, R410",
+   "img": "catalogo/suryha/f26-265.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.110",
+   "tipo": "Reparo para mangueiras manifold",
+   "linha": "6 vedações e 3 acionadores",
+   "img": "catalogo/suryha/f26-261.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.111",
+   "tipo": "Manifold com mangueiras 90 cm",
+   "linha": "R600 | R290",
+   "img": "catalogo/suryha/f26-275.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.119",
+   "tipo": "Conjunto de mangueiras 200 cm",
+   "linha": "R22 | R404 | R134",
+   "img": "catalogo/suryha/aut-88.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.120",
+   "tipo": "Conjunto de mangueiras 150 cm",
+   "linha": "R410",
+   "img": "catalogo/suryha/f26-257.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.164",
+   "tipo": "Reparo para mangueira de vácuo 3/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-90.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.183",
+   "tipo": "Conjunto de mangueiras 150 cm premium",
+   "linha": "R22 | R134 | R404",
+   "img": "catalogo/suryha/f26-428.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.184",
+   "tipo": "Conjunto de mangueiras 150 cm premium",
+   "linha": "R410",
+   "img": "catalogo/suryha/f26-422.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.186",
+   "tipo": "Mangueira para nitrogênio",
+   "linha": "8 m | 1/4\" SAE com registro bola 1/4\"",
+   "img": "catalogo/suryha/aut-117.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.204",
+   "tipo": "Manifold digital 2 vias com bluetooth premium",
+   "linha": "",
+   "img": "catalogo/suryha/f26-287.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.208",
+   "tipo": "Manifold digital smart sem mangueira",
+   "linha": "",
+   "img": "catalogo/suryha/aut-92.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.214",
+   "tipo": "Mangueira para nitrogênio",
+   "linha": "16 m | 1/4\" SAE com registro bola 1/4\"",
+   "img": "catalogo/suryha/aut-117.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.223",
+   "tipo": "Manômetro pressurização",
+   "linha": "",
+   "img": "catalogo/suryha/f26-432.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.226",
+   "tipo": "Manifold digital 2 vias com bluetooth",
+   "linha": "",
+   "img": "catalogo/suryha/f26-287.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.227",
+   "tipo": "Manifold digital 4 vias com mangueiras e bluetooth premium",
+   "linha": "",
+   "img": "catalogo/suryha/f26-403.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.248",
+   "tipo": "Manifold ON/OFF mangueira 1/4\" 150 cm",
+   "linha": "Maleta premium | R22, R134A, R407C | manípulos metálicos",
+   "img": "catalogo/suryha/f26-395.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.249",
+   "tipo": "Manifold Inverter mangueira 5/16\" 150 cm",
+   "linha": "Maleta premium | R410A, R32, R454B | manípulos metálicos",
+   "img": "catalogo/suryha/f26-395.webp",
+   "secao": "Manifolds e mangueiras"
+  },
+  {
+   "codigo": "80150.069",
+   "tipo": "Vacuômetro analógico",
+   "linha": "",
+   "img": "catalogo/suryha/f26-302.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.112",
+   "tipo": "Recolhedora recicladora 3/4HP",
+   "linha": "Com separador de óleo",
+   "img": "catalogo/suryha/aut-51.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.133",
+   "tipo": "Adaptador universal para vacuômetro analógico",
+   "linha": "",
+   "img": "catalogo/suryha/f26-306.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.175",
+   "tipo": "Recolhedora recicladora 1/2HP",
+   "linha": "Com separador de óleo",
+   "img": "catalogo/suryha/aut-51.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.202",
+   "tipo": "Recolhedora recicladora 1HP",
+   "linha": "Com separador de óleo",
+   "img": "catalogo/suryha/aut-51.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.205",
+   "tipo": "Vacuômetro digital smart c/ adaptadores 1/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/aut-55.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.212",
+   "tipo": "Bateria para bomba de vácuo",
+   "linha": "",
+   "img": "",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.250",
+   "tipo": "Alça de transporte",
+   "linha": "Para bombas de vácuo",
+   "img": "",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80155.030",
+   "tipo": "Bomba de vácuo 2CFM",
+   "linha": "",
+   "img": "catalogo/suryha/aut-63.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80155.031",
+   "tipo": "Bomba de vácuo 5CFM - duplo estágio",
+   "linha": "",
+   "img": "catalogo/suryha/aut-63.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80155.032",
+   "tipo": "Bomba de vácuo 7CFM - duplo estágio",
+   "linha": "",
+   "img": "catalogo/suryha/aut-63.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80155.033",
+   "tipo": "Bomba de vácuo 8CFM - duplo estágio",
+   "linha": "",
+   "secao": "Vácuo e recolhimento",
+   "img": "catalogo/suryha/aut-63.webp"
+  },
+  {
+   "codigo": "80155.034",
+   "tipo": "Bomba de vácuo 12CFM - duplo estágio",
+   "linha": "",
+   "secao": "Vácuo e recolhimento",
+   "img": "catalogo/suryha/aut-63.webp"
+  },
+  {
+   "codigo": "80155.035",
+   "tipo": "Bomba de vácuo 15CFM - duplo estágio",
+   "linha": "",
+   "secao": "Vácuo e recolhimento",
+   "img": "catalogo/suryha/aut-63.webp"
+  },
+  {
+   "codigo": "80155.036",
+   "tipo": "Bomba de vácuo 5CFM a bateria",
+   "linha": "",
+   "img": "catalogo/suryha/aut-65.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80155.037",
+   "tipo": "Bomba de vácuo 7CFM duplo estágio a bateria",
+   "linha": "",
+   "img": "catalogo/suryha/aut-65.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80155.038",
+   "tipo": "Bomba de vácuo 6CFM - duplo estágio",
+   "linha": "",
+   "secao": "Vácuo e recolhimento",
+   "img": "catalogo/suryha/aut-63.webp"
+  },
+  {
+   "codigo": "80155.039",
+   "tipo": "Bomba de vácuo digital 5CFM - a bateria premium",
+   "linha": "",
+   "img": "",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80156.001",
+   "tipo": "Óleo lubrificante VG 46",
+   "linha": "500 ml",
+   "img": "catalogo/suryha/aut-67.webp",
+   "secao": "Vácuo e recolhimento"
+  },
+  {
+   "codigo": "80150.016",
+   "tipo": "Bico maçarico automático",
+   "linha": "Com propulsor metálico",
+   "img": "catalogo/suryha/f26-96.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.059",
+   "tipo": "Cilindro recarregável",
+   "linha": "13,6 KG",
+   "img": "catalogo/suryha/aut-107.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.067",
+   "tipo": "Bico maçarico automático com extensão",
+   "linha": "",
+   "img": "catalogo/suryha/f26-94.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.081",
+   "tipo": "Bico maçarico automático Turbotoch",
+   "linha": "",
+   "img": "catalogo/suryha/f26-98.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.101",
+   "tipo": "Cilindro recarregável",
+   "linha": "22,7 KG",
+   "img": "catalogo/suryha/aut-107.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.102",
+   "tipo": "Cilindro recarregável",
+   "linha": "",
+   "img": "catalogo/suryha/aut-111.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.152",
+   "tipo": "Regulador de nitrogênio alta pressão",
+   "linha": "",
+   "img": "catalogo/suryha/aut-115.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.174",
+   "tipo": "Base acionadora para fluido refrigerante",
+   "linha": "",
+   "img": "catalogo/suryha/f26-100.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.225",
+   "tipo": "Bico maçarico turbotoch flexível",
+   "linha": "",
+   "img": "catalogo/suryha/f26-409.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.230",
+   "tipo": "Kit garrafa injetora de alumínio",
+   "linha": "Para fluidos 141B, limpeza de ar",
+   "img": "catalogo/suryha/f26-110.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.240",
+   "tipo": "Bico maçarico automático duplo",
+   "linha": "",
+   "img": "catalogo/suryha/f26-126.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.242",
+   "tipo": "Regulador controlador de nitrogênio",
+   "linha": "Purga/fluxo para brasagem",
+   "img": "catalogo/suryha/f26-440.webp",
+   "secao": "Brasagem e nitrogênio"
+  },
+  {
+   "codigo": "80150.017",
+   "tipo": "Detector eletrônico de vazamento de fluido refrigerante",
+   "linha": "",
+   "img": "catalogo/suryha/aut-101.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.019",
+   "tipo": "Espelho de inspeção",
+   "linha": "",
+   "img": "catalogo/suryha/aut-80.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.048",
+   "tipo": "Alicate amperímetro digital",
+   "linha": "",
+   "img": "catalogo/suryha/f26-86.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.049",
+   "tipo": "Termômetro laser digital",
+   "linha": "",
+   "img": "",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.058",
+   "tipo": "Lanterna ultravioleta LED",
+   "linha": "",
+   "img": "catalogo/suryha/aut-103.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.061",
+   "tipo": "Termômetro vareta digital",
+   "linha": "",
+   "img": "catalogo/suryha/aut-109.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.135",
+   "tipo": "Multímetro digital automático com capacímetro",
+   "linha": "",
+   "img": "catalogo/suryha/f26-374.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.151",
+   "tipo": "Alicate amperímetro True-RMS",
+   "linha": "",
+   "img": "catalogo/suryha/aut-113.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.193",
+   "tipo": "Termômetro digital 5 vias",
+   "linha": "",
+   "img": "",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.241",
+   "tipo": "Lanterna 2 em 1 UV e luz branca",
+   "linha": "Recarregável",
+   "img": "catalogo/suryha/f26-355.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.243",
+   "tipo": "Alicate amperímetro True-RMS",
+   "linha": "",
+   "img": "catalogo/suryha/f26-442.webp",
+   "secao": "Medição e detecção"
+  },
+  {
+   "codigo": "80150.091",
+   "tipo": "Válvula de serviço",
+   "linha": "1/4\" | 70 mm",
+   "img": "",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.170",
+   "tipo": "Válvula acionadora schrader",
+   "linha": "1/4\" | azul",
+   "img": "",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.171",
+   "tipo": "Válvula acionadora schrader",
+   "linha": "5/16\" | vermelho",
+   "img": "",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.229",
+   "tipo": "Kit válvulas otimizadoras R134A",
+   "linha": "Com adaptador para mangueira de vácuo automotiva",
+   "img": "catalogo/suryha/f26-341.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.233",
+   "tipo": "Válvula otimizadora com removedor de núcleo",
+   "linha": "1/4\"",
+   "img": "catalogo/suryha/f26-112.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.234",
+   "tipo": "Válvula otimizadora com removedor de núcleo",
+   "linha": "5/16\"",
+   "img": "catalogo/suryha/f26-112.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.235",
+   "tipo": "Adaptador multiportas",
+   "linha": "3X8M x 3/8M x 1/4F",
+   "img": "catalogo/suryha/f26-116.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.236",
+   "tipo": "Adaptador multiportas",
+   "linha": "3X8M x 3/8M x 3/8F",
+   "img": "catalogo/suryha/f26-116.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.237",
+   "tipo": "Válvula otimizadora com removedor de núcleo",
+   "linha": "1/4\" e 5/16\" com adaptador 3/8\" premium",
+   "img": "catalogo/suryha/f26-413.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.006",
+   "tipo": "Porca flangeada de latão 1/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-206.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.007",
+   "tipo": "Porca flangeada de latão 3/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-206.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.008",
+   "tipo": "Porca flangeada de latão 1/2\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-206.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.009",
+   "tipo": "Porca flangeada de latão 5/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-206.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.010",
+   "tipo": "União flangeada de latão 1/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-202.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.011",
+   "tipo": "União flangeada de latão 3/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-202.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.012",
+   "tipo": "União flangeada de latão 1/2\"",
+   "linha": "",
+   "secao": "Válvulas e conexões",
+   "img": "catalogo/suryha/f26-202.webp"
+  },
+  {
+   "codigo": "80170.013",
+   "tipo": "União flangeada de latão 5/8\"",
+   "linha": "",
+   "secao": "Válvulas e conexões",
+   "img": "catalogo/suryha/f26-202.webp"
+  },
+  {
+   "codigo": "80170.014",
+   "tipo": "Filtro secador",
+   "linha": "1/4\" a 3/16\"",
+   "img": "catalogo/suryha/f26-194.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.020",
+   "tipo": "Válvula de serviço para condensadora",
+   "linha": "",
+   "img": "catalogo/suryha/f26-190.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.021",
+   "tipo": "Válvula de serviço para condensadora",
+   "linha": "3/8\"",
+   "img": "catalogo/suryha/f26-190.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.022",
+   "tipo": "Válvula de serviço para condensadora",
+   "linha": "1/2\"",
+   "img": "catalogo/suryha/f26-190.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.023",
+   "tipo": "Válvula de serviço para condensadora",
+   "linha": "5/8\"",
+   "img": "catalogo/suryha/f26-192.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.024",
+   "tipo": "Válvula de serviço para condensadora",
+   "linha": "7/8\"",
+   "img": "catalogo/suryha/f26-192.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.025",
+   "tipo": "Válvula de serviço para condensadora com base",
+   "linha": "7/8\"",
+   "img": "catalogo/suryha/f26-192.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.028",
+   "tipo": "Filtro secador 1/4\" a 3/16\"",
+   "linha": "Com rabicho 10G",
+   "img": "catalogo/suryha/f26-208.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.029",
+   "tipo": "Porca flangeada de latão 3/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-206.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80170.030",
+   "tipo": "União flangeada de latão 3/4\"",
+   "linha": "",
+   "secao": "Válvulas e conexões",
+   "img": "catalogo/suryha/f26-202.webp"
+  },
+  {
+   "codigo": "80170.031",
+   "tipo": "Válvula de serviço para condensadora com base",
+   "linha": "3/8\"",
+   "img": "catalogo/suryha/f26-192.webp",
+   "secao": "Válvulas e conexões"
+  },
+  {
+   "codigo": "80150.005",
+   "tipo": "Mini-cortador 1/8\" a 7/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-222.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.006",
+   "tipo": "Cortador 1/4\" a 1:5/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-186.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.007",
+   "tipo": "Flangeador + alargador + cortador + chave catraca com maleta + mesa 1/8\" a 3/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-135.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.008",
+   "tipo": "Flangeador + alargador 1/8\" a 3/4\" com maleta",
+   "linha": "",
+   "img": "catalogo/suryha/f26-149.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.009",
+   "tipo": "Alicate de lacre",
+   "linha": "",
+   "img": "catalogo/suryha/f26-184.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.010",
+   "tipo": "Chave catraca 4 bitolas",
+   "linha": "1/4\", 3/8\", 3/16\" e 5/16\" | quadrada",
+   "img": "catalogo/suryha/f26-224.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.013",
+   "tipo": "Flangeador",
+   "linha": "3/16\" a 5/8\"",
+   "img": "catalogo/suryha/f26-147.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.021",
+   "tipo": "Mola curvadora 5/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-198.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.022",
+   "tipo": "Mola curvadora 1/2\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-198.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.023",
+   "tipo": "Mola curvadora 3/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-198.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.024",
+   "tipo": "Mola curvadora 1/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-198.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.025",
+   "tipo": "Curvador de tubos 180º",
+   "linha": "1/4\", 5/16\", 3/8\"",
+   "img": "catalogo/suryha/f26-283.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.026",
+   "tipo": "Alargador com cortador e rebarbador",
+   "linha": "3/8\" 1/2\" 5/8\" 3/4\" 7/8\" 1\" 1-1/8\"",
+   "img": "",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.027",
+   "tipo": "Escala flangeadora",
+   "linha": "1/4\", 5/16\", 3/8\", 1/2\" e 5/8\"",
+   "img": "catalogo/suryha/f26-204.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.028",
+   "tipo": "Lâmina para cortador grande",
+   "linha": "",
+   "img": "catalogo/suryha/f26-212.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.029",
+   "tipo": "Lâmina para cortador mini",
+   "linha": "",
+   "img": "catalogo/suryha/f26-210.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.031",
+   "tipo": "Mini-cortador 1/8\" a 5/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-220.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.032",
+   "tipo": "Cortador 1/8\" a 1:1/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-186.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.038",
+   "tipo": "Curvador com cortador e rebarbador",
+   "linha": "1/4\" 5/16\" 3/8\" 1/2\" 5/8\" 3/4\" 7/8\"",
+   "img": "",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.039",
+   "tipo": "Curvador de tubos 1/2\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-279.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.040",
+   "tipo": "Curvador de tubos 5/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-253.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.041",
+   "tipo": "Curvador de tubos 3/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-279.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.043",
+   "tipo": "Pente para aletas",
+   "linha": "Medidas 8\", 9\", 10\", 12\", 14\" e 15\"",
+   "img": "catalogo/suryha/aut-82.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.044",
+   "tipo": "Alicate de lacre esférico",
+   "linha": "",
+   "img": "catalogo/suryha/f26-214.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.045",
+   "tipo": "Cortador de tubo capilar",
+   "linha": "",
+   "img": "catalogo/suryha/f26-234.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.053",
+   "tipo": "Flangeador excêntrico com catraca + cortador + escareador com maleta 1/4\" a 3/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-161.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.079",
+   "tipo": "Flangeador excêntrico com catraca 1/4\" a 3/4\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-167.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.092",
+   "tipo": "Flangeador de mesa ajustável",
+   "linha": "3/16\" a 5/8\"",
+   "img": "catalogo/suryha/f26-141.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.094",
+   "tipo": "Alargador de tubos 1/4\" a 7/8\"",
+   "linha": "",
+   "img": "catalogo/suryha/f26-393.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.108",
+   "tipo": "Escareador tipo copo",
+   "linha": "Para tubos de cobre",
+   "img": "catalogo/suryha/f26-232.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.109",
+   "tipo": "Válvula perfuradora de tubos",
+   "linha": "1/8\" a 5/16\"",
+   "img": "catalogo/suryha/f26-200.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.118",
+   "tipo": "Rebarbador tipo caneta para tubos de cobre",
+   "linha": "",
+   "img": "",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.148",
+   "tipo": "Cortadores de tubos",
+   "linha": "1/8\" a 1-1/8\"",
+   "img": "catalogo/suryha/f26-426.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.149",
+   "tipo": "Cortadores de tubos",
+   "linha": "1/4\" a 1-5/8\"",
+   "img": "catalogo/suryha/f26-426.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.177",
+   "tipo": "Endireitador de tubos",
+   "linha": "1/4\"",
+   "img": "catalogo/suryha/f26-163.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.178",
+   "tipo": "Endireitador de tubos",
+   "linha": "3/8\"",
+   "img": "catalogo/suryha/f26-163.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.179",
+   "tipo": "Endireitador de tubos",
+   "linha": "1/2\"",
+   "img": "catalogo/suryha/f26-163.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.190",
+   "tipo": "Curvador de tubos",
+   "linha": "1/4\" · 3/8\"",
+   "img": "catalogo/suryha/f26-279.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.192",
+   "tipo": "Flangeador excêntrico",
+   "linha": "1/4\" a 3/4\"",
+   "img": "catalogo/suryha/f26-165.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.196",
+   "tipo": "Flangeador excêntrico com limitador de torque",
+   "linha": "1/4\" a 3/4\" | parafusadeira",
+   "img": "catalogo/suryha/f26-405.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.216",
+   "tipo": "Mola interna curvadora de tubos",
+   "linha": "",
+   "img": "catalogo/suryha/f26-236.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.217",
+   "tipo": "Mola interna curvadora de tubos",
+   "linha": "3/8\"",
+   "img": "catalogo/suryha/f26-236.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.218",
+   "tipo": "Mola interna curvadora de tubos",
+   "linha": "",
+   "img": "catalogo/suryha/f26-236.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.219",
+   "tipo": "Mola interna curvadora de tubos",
+   "linha": "5/8\"",
+   "img": "catalogo/suryha/f26-236.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.220",
+   "tipo": "Mola interna curvadora de tubos",
+   "linha": "3/4\"",
+   "img": "catalogo/suryha/f26-236.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.246",
+   "tipo": "Mesa de alumínio para flangeador",
+   "linha": "3/16\" · 1/4\" · 5/16\" · 3/8\" · 1/2\" · 5/8\" · 3/4\"",
+   "img": "catalogo/suryha/f26-177.webp",
+   "secao": "Ferramentas para tubos"
+  },
+  {
+   "codigo": "80150.173",
+   "tipo": "Guincho a bateria",
+   "linha": "",
+   "img": "catalogo/suryha/f26-376.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80150.185",
+   "tipo": "Saco coletor de pó",
+   "linha": "Para broca até 65 mm",
+   "img": "catalogo/suryha/f26-106.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80150.199",
+   "tipo": "Furadeira de impacto a bateria",
+   "linha": "21V | motor sem escovas",
+   "img": "catalogo/suryha/f26-124.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80150.200",
+   "tipo": "Parafusadeira a bateria",
+   "linha": "12V",
+   "img": "catalogo/suryha/f26-122.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80150.224",
+   "tipo": "Caixa de ferramenta 4 em 1",
+   "linha": "Com rodas",
+   "img": "",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.001",
+   "tipo": "Alicate universal",
+   "linha": "",
+   "img": "catalogo/suryha/f26-247.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.002",
+   "tipo": "Alicate de bico",
+   "linha": "",
+   "img": "catalogo/suryha/f26-247.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.003",
+   "tipo": "Alicate de corte",
+   "linha": "",
+   "img": "catalogo/suryha/f26-247.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.004",
+   "tipo": "Chave ajustável",
+   "linha": "8\"",
+   "img": "catalogo/suryha/f26-249.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.005",
+   "tipo": "Chave ajustável",
+   "linha": "10\"",
+   "img": "catalogo/suryha/f26-249.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.006",
+   "tipo": "Chave de fenda",
+   "linha": "5 x 150 mm | ponta imantada",
+   "img": "catalogo/suryha/f26-251.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.007",
+   "tipo": "Chave de fenda cruzada",
+   "linha": "5 x 150 mm | ponta imantada",
+   "img": "catalogo/suryha/f26-251.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.008",
+   "tipo": "Chave de fenda",
+   "linha": "6 x 100 mm | ponta imantada",
+   "img": "catalogo/suryha/f26-251.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.009",
+   "tipo": "Chave de fenda cruzada",
+   "linha": "6 x 100 mm | ponta imantada",
+   "img": "catalogo/suryha/f26-251.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.010",
+   "tipo": "Chave de fenda",
+   "linha": "8 x 150 mm | ponta imantada",
+   "img": "catalogo/suryha/f26-251.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.011",
+   "tipo": "Chave de fenda cruzada",
+   "linha": "8 x 150 mm | ponta imantada",
+   "img": "catalogo/suryha/f26-251.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80152.012",
+   "tipo": "Jogo de chaves allen",
+   "linha": "",
+   "img": "catalogo/suryha/f26-255.webp",
+   "secao": "Ferramentas manuais e elétricas"
+  },
+  {
+   "codigo": "80.151.172",
+   "tipo": "Multiplicador para placa universal split Hi Wall 1/2 e 1/3",
+   "linha": "Altura 5,2 cm · diâmetro 3 cm",
+   "secao": "Eletrônica e controle",
+   "img": "catalogo/suryha/f26-171.webp"
+  },
+  {
+   "codigo": "80150.063",
+   "tipo": "Controle remoto universal split hi wall 4.000 códigos",
+   "linha": "",
+   "img": "catalogo/suryha/f26-151.webp",
+   "secao": "Eletrônica e controle"
+  },
+  {
+   "codigo": "80150.064",
+   "tipo": "Placa universal para split hi wall com display numérico",
+   "linha": "",
+   "img": "catalogo/suryha/f26-430.webp",
+   "secao": "Eletrônica e controle"
+  },
+  {
+   "codigo": "80150.093",
+   "tipo": "Controle remoto universal split hi wall",
+   "linha": "",
+   "img": "catalogo/suryha/f26-399.webp",
+   "secao": "Eletrônica e controle"
+  },
+  {
+   "codigo": "80150.123",
+   "tipo": "Placa universal para piso teto",
+   "linha": "",
+   "img": "catalogo/suryha/f26-143.webp",
+   "secao": "Eletrônica e controle"
+  },
+  {
+   "codigo": "80150.124",
+   "tipo": "Placa universal para cassete",
+   "linha": "",
+   "img": "catalogo/suryha/f26-145.webp",
+   "secao": "Eletrônica e controle"
+  },
+  {
+   "codigo": "80150.189",
+   "tipo": "Placa universal para split hi wall sem display numérico",
+   "linha": "",
+   "img": "catalogo/suryha/f26-169.webp",
+   "secao": "Eletrônica e controle"
+  },
+  {
+   "codigo": "80001.001",
+   "tipo": "Cortina de ar",
+   "linha": "900 mm | 220V",
+   "img": "catalogo/suryha/f26-53.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80001.002",
+   "tipo": "Cortina de ar",
+   "linha": "1.200 mm | 220V",
+   "img": "catalogo/suryha/f26-53.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80001.003",
+   "tipo": "Cortina de ar",
+   "linha": "1.500 mm | 220V",
+   "img": "catalogo/suryha/f26-53.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80160.001",
+   "tipo": "Ventilador exaustor axial 220V",
+   "linha": "300 mm",
+   "img": "catalogo/suryha/f26-47.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80160.002",
+   "tipo": "Ventilador exaustor axial 220V",
+   "linha": "350 mm",
+   "img": "catalogo/suryha/f26-47.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80160.003",
+   "tipo": "Ventilador exaustor axial 220V",
+   "linha": "400 mm",
+   "img": "catalogo/suryha/f26-47.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80160.004",
+   "tipo": "Ventilador exaustor axial 220V",
+   "linha": "450 mm",
+   "img": "catalogo/suryha/f26-47.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80160.005",
+   "tipo": "Ventilador exaustor axial 220V",
+   "linha": "500 mm",
+   "img": "catalogo/suryha/f26-47.webp",
+   "secao": "Ventilação"
+  },
+  {
+   "codigo": "80150.210",
+   "tipo": "Pistola de limpeza para ar condicionado G3",
+   "linha": "",
+   "img": "catalogo/suryha/f26-320.webp",
+   "secao": "Limpeza"
+  },
+  {
+   "codigo": "80150.211",
+   "tipo": "Pistola de limpeza premium G3",
+   "linha": "",
+   "img": "catalogo/suryha/f26-368.webp",
+   "secao": "Limpeza"
+  },
+  {
+   "codigo": "80.151.023",
+   "tipo": "Capacitor permanente 3UF 380V",
+   "linha": "Altura 5,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.024",
+   "tipo": "Capacitor permanente 4UF 380V",
+   "linha": "Altura 5,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.025",
+   "tipo": "Capacitor permanente 5UF 380V",
+   "linha": "Altura 5,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.026",
+   "tipo": "Capacitor permanente 6UF 380V",
+   "linha": "Altura 5,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.028",
+   "tipo": "Capacitor permanente 8UF 380V",
+   "linha": "Altura 5,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.029",
+   "tipo": "Capacitor permanente 10UF 380V",
+   "linha": "Altura 6,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.030",
+   "tipo": "Capacitor permanente 12UF 380V",
+   "linha": "Altura 6,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.031",
+   "tipo": "Capacitor permanente 15UF 380V",
+   "linha": "Altura 7,6 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.033",
+   "tipo": "Capacitor permanente 20UF 380V",
+   "linha": "Altura 7,6 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.034",
+   "tipo": "Capacitor permanente 25UF 380V",
+   "linha": "Altura 7,6 cm · diâmetro 4,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.035",
+   "tipo": "Capacitor permanente 30UF 380V",
+   "linha": "Altura 8,6 cm · diâmetro 4,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.036",
+   "tipo": "Capacitor permanente 35UF 380V",
+   "linha": "Altura 8,6 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.037",
+   "tipo": "Capacitor permanente 40UF 380V",
+   "linha": "Altura 8,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.038",
+   "tipo": "Capacitor permanente 45UF 380V",
+   "linha": "Altura 10 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.039",
+   "tipo": "Capacitor permanente 50UF 380V",
+   "linha": "Altura 10 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.040",
+   "tipo": "Capacitor permanente 55UF 380V",
+   "linha": "Altura 10 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.041",
+   "tipo": "Capacitor permanente 60UF 380V",
+   "linha": "Altura 11 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.050",
+   "tipo": "Capacitor permanente 30+3UF 380V",
+   "linha": "Altura 9,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.064",
+   "tipo": "Capacitor permanente 40+3UF 380V",
+   "linha": "Altura 10,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.065",
+   "tipo": "Capacitor permanente 40+5UF 380V",
+   "linha": "Altura 10,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.078",
+   "tipo": "Capacitor de partida 216 259UF 250V",
+   "linha": "Altura 8,6 cm · diâmetro 4,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.080",
+   "tipo": "Capacitor de partida 270 324UF 250V",
+   "linha": "Altura 8,5 cm · diâmetro 4,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.082",
+   "tipo": "Capacitor de partida 340 408UF 250V",
+   "linha": "Altura 8,6 cm · diâmetro 4,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.090",
+   "tipo": "Capacitor de partida 216 259UF 127V",
+   "linha": "Altura 7 cm · diâmetro 3,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.092",
+   "tipo": "Capacitor de partida 270 324UF 127V",
+   "linha": "Altura 8,6 cm · diâmetro 3,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.094",
+   "tipo": "Capacitor de partida 340 408UF 127V",
+   "linha": "Altura 8,6 cm · diâmetro 3,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.098",
+   "tipo": "Capacitor permanente 15UF 440V",
+   "linha": "Altura 7,6 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.099",
+   "tipo": "Capacitor permanente 20UF 440V",
+   "linha": "Altura 7,6 cm · diâmetro 4,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.100",
+   "tipo": "Capacitor permanente 25UF 440V",
+   "linha": "Altura 8,5 cm · diâmetro 4,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.101",
+   "tipo": "Capacitor permanente 35UF 440V",
+   "linha": "Altura 8,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.102",
+   "tipo": "Capacitor permanente 40UF 440V",
+   "linha": "Altura 10 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.103",
+   "tipo": "Capacitor permanente 45UF 440V",
+   "linha": "Altura 10 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.104",
+   "tipo": "Capacitor permanente 50UF 440V",
+   "linha": "Altura 11 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.105",
+   "tipo": "Capacitor de arranque alta potência SPP6",
+   "linha": "Altura 13,2 cm · diâmetro 4,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/f26-153.webp"
+  },
+  {
+   "codigo": "80.151.108",
+   "tipo": "Capacitor permanente 30UF 440V",
+   "linha": "Altura 8,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.113",
+   "tipo": "Capacitor permanente 30+3UF 440V",
+   "linha": "Altura 9,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.116",
+   "tipo": "Capacitor permanente 35+3UF 440V",
+   "linha": "Altura 11 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.125",
+   "tipo": "Capacitor de partida 540 648UF 127V",
+   "linha": "Altura 7 cm · diâmetro 3,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.126",
+   "tipo": "Capacitor de arranque 1UF 450V quadrado",
+   "linha": "Altura 2,3 cm · diâmetro 3,7 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.127",
+   "tipo": "Capacitor de arranque 1.5UF 450V quadrado",
+   "linha": "Altura 2,3 cm · diâmetro 3,7 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.128",
+   "tipo": "Capacitor de arranque 2UF 450V quadrado",
+   "linha": "Altura 2,4 cm · diâmetro 3,6 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.129",
+   "tipo": "Capacitor de arranque 2.5UF 450V quadrado",
+   "linha": "Altura 2,6 cm · diâmetro 3,7 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.130",
+   "tipo": "Capacitor de arranque 3UF 450V quadrado",
+   "linha": "Altura 3 cm · diâmetro 3,9 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.133",
+   "tipo": "Capacitor permanente 25+1.5UF 440V",
+   "linha": "Altura 9,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.135",
+   "tipo": "Capacitor permanente 25+2.5UF 440V",
+   "linha": "Altura 9,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.137",
+   "tipo": "Capacitor permanente 35+1.5UF 440V",
+   "linha": "Altura 10,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.138",
+   "tipo": "Capacitor permanente 35+2.5UF 440V",
+   "linha": "Altura 10,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.154",
+   "tipo": "Capacitor permanente 50+2.5UF 440V",
+   "linha": "Altura 12,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.156",
+   "tipo": "Capacitor permanente 55UF 440V",
+   "linha": "Altura 10,9 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.157",
+   "tipo": "Capacitor permanente 60UF 440V",
+   "linha": "Altura 12,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.158",
+   "tipo": "Capacitor de partida 88 108UF 250V",
+   "linha": "Altura 8,5 cm · diâmetro 3,6 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-31.webp"
+  },
+  {
+   "codigo": "80.151.167",
+   "tipo": "Capacitor permanente 25+1.5UF 380V",
+   "linha": "Altura 8,5 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.198",
+   "tipo": "Capacitor permanente 30+1,5UF 440V",
+   "linha": "Altura 9,6 cm · diâmetro 5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.199",
+   "tipo": "Capacitor permanente 10UF 440V",
+   "linha": "Altura 6,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.200",
+   "tipo": "Capacitor permanente 6UF 440V",
+   "linha": "Altura 5,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.201",
+   "tipo": "Capacitor permanente 5UF 440V",
+   "linha": "Altura 5,5 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.203",
+   "tipo": "Capacitor permanente 60+2,5UF 440V",
+   "linha": "Altura 13 cm · diâmetro 5,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-29.webp"
+  },
+  {
+   "codigo": "80.151.204",
+   "tipo": "Capacitor de arranque 3,5UF 450V quadrado",
+   "linha": "Altura 3 cm · diâmetro 3,8 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.205",
+   "tipo": "Capacitor de arranque 4UF 450V quadrado",
+   "linha": "Altura 3 cm · diâmetro 4,7 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.206",
+   "tipo": "Capacitor de arranque 5UF 450V quadrado",
+   "linha": "Altura 2,9 cm · diâmetro 3,8 cm",
+   "secao": "Capacitores",
+   "img": ""
+  },
+  {
+   "codigo": "80.151.208",
+   "tipo": "Capacitor de lavadora 15UF 250V simples",
+   "linha": "Altura 6,8 cm · diâmetro 3,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.209",
+   "tipo": "Capacitor de lavadora 25UF 250V simples",
+   "linha": "Altura 7 cm · diâmetro 3,5 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.210",
+   "tipo": "Capacitor de lavadora 30UF 250V simples",
+   "linha": "Altura 7,2 cm · diâmetro 3,8 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.211",
+   "tipo": "Capacitor de lavadora 35UF 250V simples",
+   "linha": "Altura 7,3 cm · diâmetro 3,8 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.212",
+   "tipo": "Capacitor de lavadora 40UF 250V simples",
+   "linha": "Altura 7,3 cm · diâmetro 4 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.213",
+   "tipo": "Capacitor de lavadora 45UF 250V simples",
+   "linha": "Altura 8,2 cm · diâmetro 4,2 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.214",
+   "tipo": "Capacitor de lavadora 50UF 250V simples",
+   "linha": "Altura 8,2 cm · diâmetro 4,2 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.215",
+   "tipo": "Capacitor de lavadora 60UF 250V simples",
+   "linha": "Altura 9,2 cm · diâmetro 4,2 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-46.webp"
+  },
+  {
+   "codigo": "80.151.216",
+   "tipo": "Capacitor de micro-ondas 0,75UF 2100V",
+   "linha": "Altura 6,1 cm · diâmetro 5,3 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-50.webp"
+  },
+  {
+   "codigo": "80.151.217",
+   "tipo": "Capacitor de micro-ondas 0,85UF 2100V",
+   "linha": "Altura 6,6 cm · diâmetro 5,3 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-50.webp"
+  },
+  {
+   "codigo": "80.151.218",
+   "tipo": "Capacitor de micro-ondas 0,90UF 2100V",
+   "linha": "Altura 6,6 cm · diâmetro 5,3 cm",
+   "secao": "Capacitores",
+   "img": "catalogo/suryha/cap-50.webp"
+  }
+ ]
+}

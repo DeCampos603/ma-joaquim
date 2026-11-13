@@ -1,0 +1,4066 @@
+{
+ "marca": "sibb",
+ "fonte": "Catálogo Digital - NOVEMBRO 2026.pdf",
+ "itens": [
+  {
+   "codigo": "SPM-024CM-U",
+   "tipo": "Prato de micro-ondas",
+   "secao": "Lançamentos",
+   "linha": "",
+   "img": "catalogo/sibb/spm-024cm-u.webp",
+   "pagina": 4
+  },
+  {
+   "codigo": "SPM-027CM-U",
+   "tipo": "Prato de micro-ondas",
+   "secao": "Lançamentos",
+   "linha": "",
+   "img": "catalogo/sibb/spm-027cm-u.webp",
+   "pagina": 4
+  },
+  {
+   "codigo": "SPM-315CM-U",
+   "tipo": "Prato de micro-ondas",
+   "secao": "Lançamentos",
+   "linha": "",
+   "img": "catalogo/sibb/spm-315cm-u.webp",
+   "pagina": 4
+  },
+  {
+   "codigo": "STU-G0002-M",
+   "tipo": "Turbina",
+   "secao": "Lançamentos",
+   "linha": "",
+   "img": "catalogo/sibb/stu-g0002-m.webp",
+   "pagina": 4
+  },
+  {
+   "codigo": "SET-4371E-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-4371e-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-5487A-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-5487a-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-4422A-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-4422a-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-5186A-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-5186a-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-0419D-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-0419d-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-6510C-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-6510c-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-0079A-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-0079a-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-0003A-G",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-0003a-g.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-41302-G",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-41302-g.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-1009A-G",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-1009a-g.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-21602-G",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-21602-g.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-412DG-M",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-412dg-m.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-0826A-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-0826a-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-01201-X",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-01201-x.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-01202-G",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-01202-g.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-9LPDS-M",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-9lpds-m.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-16626-S",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-16626-s.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-0004C-G",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-0004c-g.webp",
+   "pagina": 5
+  },
+  {
+   "codigo": "SET-75503-X",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-75503-x.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SET-00202-X",
+   "tipo": "Eixo tripé",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/set-00202-x.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-3236A-S",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-3236a-s.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-3199A-S",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-3199a-s.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-1828A-S",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-1828a-s.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-3724A-S",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-3724a-s.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-42602-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-42602-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-0006F-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-0006f-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-40502-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-40502-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-51607-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-51607-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-54402-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-54402-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-16502-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-16502-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-1004A-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-1004a-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-51604-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-51604-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-51606-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-51606-g.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-00200-M",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-00200-m.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-42104-X",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-42104-x.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-1603A-S",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-1603a-s.webp",
+   "pagina": 6
+  },
+  {
+   "codigo": "SGU-1811A-S",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-1811a-s.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SGU-40505-G",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-40505-g.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SGU-00524-M",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-00524-m.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SGU-00536-M",
+   "tipo": "Guarnição",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sgu-00536-m.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-0216N-S (220V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-0216n-s-220v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-0216Q-S (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-0216q-s-127v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-0234K-S (12V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-0234k-s-12v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-0234B-S (220V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-0234b-s-220v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-0234C-S (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-0234c-s-127v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-12403-G (12V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-12403-g-12v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-00420-M (220V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-00420-m-220v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-00710-M (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-00710-m-127v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-72283-W (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-72283-w-127v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-SD220-P (220V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-sd220-p-220v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-SD127-P (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-sd127-p-127v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-64428-W (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-64428-w-127v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-2076B-U (220V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-2076b-u-220v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-2076C-U (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-2076c-u-127v.webp",
+   "pagina": 7
+  },
+  {
+   "codigo": "SVA-92103-X(127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-92103-x-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "SVA-84602-X(127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-84602-x-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "SVA-84603-X(220V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-84603-x-220v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "SVA-68302-X(127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-68302-x-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "SVA-01540-W(220V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-01540-w-220v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "SVA-0025N-S (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-0025n-s-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "SVA-48604-X (127V)",
+   "tipo": "Válvula",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sva-48604-x-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-0520A-S (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-0520a-s-220v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-0520B-S (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-0520b-s-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-1006B-G (Bivolt)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-1006b-g-bivolt.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-0027A-S (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-0027a-s-220v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-0027B-S (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-0027b-s-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-1006A-G (Bivolt)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-1006a-g-bivolt.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-15802-G (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-15802-g-220v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-15803-G (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-15803-g-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-28C21-B (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-28c21-b-220v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-0029B-S (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-0029b-s-220v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-0029A-S (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-0029a-s-127v.webp",
+   "pagina": 8
+  },
+  {
+   "codigo": "STR-1539A-S (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-1539a-s-220v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-1539B-S (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-1539b-s-127v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-0026D-S (12V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-0026d-s-12v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-00456-M (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-00456-m-220v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-00712-M (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-00712-m-127v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-87509-X(220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-87509-x-220v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-07804-G (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-07804-g-220v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-07802-G (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-07802-g-127v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-55308-X (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-55308-x-127v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-1008A-G (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-1008a-g-220v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-1008B-G (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-1008b-g-127v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-15808-X (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-15808-x-220v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-47231-X (220V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-47231-x-220v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "STR-47211-X (127V)",
+   "tipo": "Trava de porta",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/str-47211-x-127v.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "SRE-58302-G",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-58302-g.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "SRE-2004A-G",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-2004a-g.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "SRE-0224A-S",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-0224a-s.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "SRE-0009A-S",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-0009a-s.webp",
+   "pagina": 9
+  },
+  {
+   "codigo": "SRE-0157A-S",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-0157a-s.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SRE-2005A-G",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-2005a-g.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SRE-00289-M",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-00289-m.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SRE-68502-X",
+   "tipo": "Retentor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sre-68502-x.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SAM-0344J-S",
+   "tipo": "Amortecedor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sam-0344j-s.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SAM-0344F-S",
+   "tipo": "Amortecedor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sam-0344f-s.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SAM-3002J-G",
+   "tipo": "Amortecedor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sam-3002j-g.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SAM-00467-M",
+   "tipo": "Amortecedor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sam-00467-m.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SAM-00111-X",
+   "tipo": "Amortecedor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sam-00111-x.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-00590-M",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-00590-m.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SAM-2004A-G",
+   "tipo": "Amortecedor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sam-2004a-g.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SAM-0422B-S",
+   "tipo": "Amortecedor",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sam-0422b-s.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-0182B-S",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-0182b-s.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-0182C-S",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-0182c-s.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-2002T-G",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-2002t-g.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-82903-G",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-82903-g.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-X2352-M",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-x2352-m.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-32026-X",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-32026-x.webp",
+   "pagina": 10
+  },
+  {
+   "codigo": "SEL-83505-G",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-83505-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SEL-83507-G",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-83507-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SEL-0188A-S",
+   "tipo": "Eletrobomba",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sel-0188a-s.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-0336A-S",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-0336a-s.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-41702-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-41702-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-57992-X",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-57992-x.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-2003A-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-2003a-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-41902-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-41902-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-42004-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-42004-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-1003A-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-1003a-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-2002A-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-2002a-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-0444A-S",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-0444a-s.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-00279-M",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-00279-m.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-3003A-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-3003a-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-3189G-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-3189g-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-140CM-U",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-140cm-u.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-170CM-U",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-170cm-u.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-3043P-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-3043p-g.webp",
+   "pagina": 11
+  },
+  {
+   "codigo": "SMA-2251F-S",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-2251f-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SMA-2003G-G",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-2003g-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SMA-030CM-P",
+   "tipo": "Mangueira",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sma-030cm-p.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SPA-0138A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spa-0138a-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SPB-0921U-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spb-0921u-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SPB-29094-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spb-29094-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SCP-6009A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/scp-6009a-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SCP-8525A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/scp-8525a-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SCP-5967A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/scp-5967a-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SDS-1009A-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sds-1009a-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SDS-1008A-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sds-1008a-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SDS-1004A-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sds-1004a-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SPU-1102K-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spu-1102k-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SPU-1525C-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spu-1525c-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SPU-2853A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spu-2853a-s.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SCF-86205-G",
+   "tipo": "Cabo de força",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/scf-86205-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SCF-1007K-G",
+   "tipo": "Cabo de força",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/scf-1007k-g.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SPU-08200-X",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spu-08200-x.webp",
+   "pagina": 12
+  },
+  {
+   "codigo": "SCF-0140A-S",
+   "tipo": "Cabo de força",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/scf-0140a-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SCF-21481-G",
+   "tipo": "Cabo de força",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/scf-21481-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "STE-AAD01-X",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-aad01-x.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "STE-1002E-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-1002e-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "STE-0005C-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-0005c-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "STE-0129P-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-0129p-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "STE-AAC01-X",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-aac01-x.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "STE-0011C-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-0011c-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SSV-22811-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ssv-22811-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SSE-2003A-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sse-2003a-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SSE-2002B-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sse-2002b-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SSE-2002A-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sse-2002a-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SPB-4003B-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spb-4003b-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SSE-0099A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0099a-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SSE-0077A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0077a-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SIG-0023A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sig-0023a-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "STF-1933D-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/stf-1933d-s.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SFL-1007T-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sfl-1007t-g.webp",
+   "pagina": 13
+  },
+  {
+   "codigo": "SHE-0441A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/she-0441a-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SRO-6783A-S",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-6783a-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SRO-0635A-S",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-0635a-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SAG-3005B-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sag-3005b-g.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SIP-06108-W",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sip-06108-w.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SAF-55534-W",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/saf-55534-w.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "STE-0017C-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-0017c-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "STE-00715-M",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-00715-m.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "STE-0017B-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-0017b-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "STE-00458-M",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-00458-m.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "STE-0003C-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-0003c-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "STE-35702-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ste-35702-g.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SPR-01704-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spr-01704-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SPR-1007S-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spr-1007s-g.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SPR-1704B-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spr-1704b-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SPA-01869-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spa-01869-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SMO-2028A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smo-2028a-s.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SPI-3003A-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spi-3003a-g.webp",
+   "pagina": 14
+  },
+  {
+   "codigo": "SCI-7687B-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sci-7687b-s.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "STC-39302-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/stc-39302-g.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "STC-99102-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/stc-99102-g.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SDO-00186-M",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sdo-00186-m.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SMV-0033D-S",
+   "tipo": "Motor ventilador",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smv-0033d-s.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SMV-1008E-G",
+   "tipo": "Motor ventilador",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smv-1008e-g.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SMV-05728-M",
+   "tipo": "Motor ventilador",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smv-05728-m.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SBA-49003-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sba-49003-g.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SBA-0494A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sba-0494a-s.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SPA-3007B-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/spa-3007b-g.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SFI-2002A-G",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sfi-2002a-g.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SFI-5696A-S",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sfi-5696a-s.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SMT-0815L-M",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smt-0815l-m.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SMT-15530-M",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smt-15530-m.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SMT-13289-M",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smt-13289-m.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SMT-09407-M",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/smt-09407-m.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SAC-85754-W",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sac-85754-w.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SSU-300MO-U",
+   "tipo": "Peça de lava e seca",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/ssu-300mo-u.webp",
+   "pagina": 15
+  },
+  {
+   "codigo": "SRO-6006-2RS",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-6006-2rs.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-6205-ZZ",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-6205-zz.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-6205-2RS",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-6205-2rs.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-6306-2RS",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-6306-2rs.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-6305-ZZ",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-6305-zz.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-6206-2RS",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-6206-2rs.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-NSK6206-2RS",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-nsk6206-2rs.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-NSK6207-2RS",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-nsk6207-2rs.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SRO-NSK6205-2RS",
+   "tipo": "Rolamento",
+   "secao": "Lava e seca",
+   "linha": "",
+   "img": "catalogo/sibb/sro-nsk6205-2rs.webp",
+   "pagina": 16
+  },
+  {
+   "codigo": "SCA-4UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-4uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-5UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-5uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-6UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-6uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-8UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-8uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-10UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-10uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-12UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-12uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-15UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-15uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-20UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-20uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-25UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-25uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-30UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-30uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-35UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-35uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-50UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-50uf440v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-55UF250V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-55uf250v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-55UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-55uf440v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-3UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-3uf440v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-4UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-4uf440v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-5uf440v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-8UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-8uf440v-t.webp",
+   "pagina": 17
+  },
+  {
+   "codigo": "SCA-10UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-10uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-12UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-12uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-15UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-15uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-20UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-20uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-25UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-25uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-30UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-30uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-60UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-60uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-40UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-40uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-45UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/sca-45uf440v-t.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "WEG-45uF 250V",
+   "tipo": "Peça de capacitores",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/weg-45uf-250v.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "WEG-50uF 250V",
+   "tipo": "Peça de capacitores",
+   "secao": "Capacitores",
+   "linha": "Lavadora E Lava E Seca",
+   "img": "catalogo/sibb/weg-50uf-250v.webp",
+   "pagina": 18
+  },
+  {
+   "codigo": "SCA-15+1,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-15-1-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-20+1,5UF440V-T SCA-25+1,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-20-1-5uf440v-t-sca-25-1-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-30+1,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-30-1-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-35+1,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-35-1-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-40+1,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-40-1-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-15+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-15-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-20+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-20-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-25+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-25-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-30+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-30-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-35+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-35-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-40+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-40-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-45+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-45-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-50+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-50-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-55+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-55-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-60+2,5UF440V-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "",
+   "img": "catalogo/sibb/sca-60-2-5uf440v-t.webp",
+   "pagina": 19
+  },
+  {
+   "codigo": "SCA-4UF250V-F",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-4uf250v-f.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-5UF250V-F",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-5uf250v-f.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-6UF250V-F",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-6uf250v-f.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-8UF250V-F",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-8uf250v-f.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-10UF250V-F",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-10uf250v-f.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-1,5UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-1-5uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-2UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-2uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-2,5UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-2-5uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-3UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-3uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-3,5UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-3-5uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-4UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-4uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-4,5UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-4-5uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "SCA-5UF450V(S)-T",
+   "tipo": "Capacitor",
+   "secao": "Capacitores",
+   "linha": "Ventiladores",
+   "img": "catalogo/sibb/sca-5uf450v-s-t.webp",
+   "pagina": 20
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom Eco Flowatch",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "1 ano de garantia",
+    "Vazão 13 l/h",
+    "Ciclo de trabalho: 100%",
+    "36000 BTU"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-eco-flowatch.webp",
+   "pagina": 21
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom Mini Flowatch 2",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "2 anos de garantia",
+    "Vazão: 2 – 15 l/h",
+    "Ciclo de trabalho: 100%",
+    "36000 BTU"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-mini-flowatch-2.webp",
+   "pagina": 21
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom Maxi Eco Flowatch",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "1 ano de garantia",
+    "Vazão: 40 l/h",
+    "Ciclo de trabalho: 100%",
+    "102000 BTU"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-maxi-eco-flowatch.webp",
+   "pagina": 21
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom para cassete",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "2 anos de garantia",
+    "Vazão: 60 l/h",
+    "Ciclo de trabalho: 100%"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-para-cassete.webp",
+   "pagina": 22
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom Flowita Silence",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "1 ano de garantia",
+    "Vazão: 20 l/h",
+    "Ciclo de trabalho: 100%",
+    "68.000 BTU"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-flowita-silence.webp",
+   "pagina": 22
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom Flowatch Silence",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "2 anos de garantia",
+    "Vazão: 20 l/h",
+    "Ciclo de trabalho: 100%"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-flowatch-silence.webp",
+   "pagina": 22
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom Flowatch Vision 4",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "2 anos de garantia",
+    "Vazão: 15 l/h",
+    "Ciclo de trabalho: 100%",
+    "36.000 BTU"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-flowatch-vision-4.webp",
+   "pagina": 23
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de dreno Siccom Flowita",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "1 ano de garantia",
+    "Vazão: 13 l/h",
+    "Ciclo de trabalho: 100%",
+    "36.000 BTU"
+   ],
+   "img": "catalogo/sibb/bomba-de-dreno-siccom-flowita.webp",
+   "pagina": 23
+  },
+  {
+   "codigo": "",
+   "tipo": "Bomba de condensado Ecotank 2.5",
+   "secao": "Ar-condicionado",
+   "linha": "Bombas de dreno Siccom",
+   "spec": [
+    "ECOTANK 2.5",
+    "1 ano de garantia",
+    "Vazão: 400 l/h",
+    "Ciclo de trabalho: 100%"
+   ],
+   "img": "catalogo/sibb/bomba-de-condensado-ecotank-2-5.webp",
+   "pagina": 23
+  },
+  {
+   "codigo": "SME-04011-G",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-04011-g.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-04012-G",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-04012-g.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-0590A-S",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-0590a-s.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-0681A-S",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-0681a-s.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-0637C-S",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-0637c-s.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-RPG21-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-rpg21-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-G2846-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-g2846-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-03054-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-03054-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-YS154-I",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-ys154-i.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-70204-G",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-70204-g.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SME-01212-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sme-01212-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-6213L-H",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-6213l-h.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-06089-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-06089-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-01224-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-01224-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-77625-G",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-77625-g.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-45709-G",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-45709-g.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-06110-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-06110-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-06112-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-06112-m.webp",
+   "pagina": 24
+  },
+  {
+   "codigo": "SMC-60921-H",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-60921-h.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SMC-0643C-S",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-0643c-s.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SMC-06086-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-06086-m.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SMC-01798-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-01798-m.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SMC-0635C-S",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-0635c-s.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SMC-YDK11-I",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smc-ydk11-i.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SCO-14516-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sco-14516-u.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SRE-0456B-S",
+   "tipo": "Retentor",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sre-0456b-s.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SRE-KIT03-U",
+   "tipo": "Retentor",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sre-kit03-u.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SSE-10KTE-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sse-10kte-u.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "STE-85805-G",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/ste-85805-g.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SSE-05KDE-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sse-05kde-u.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SSE-1991D-S",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sse-1991d-s.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SSE-10KDE-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sse-10kde-u.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SFS-065SR-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sfs-065sr-u.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SFR-105CR-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sfr-105cr-u.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SHE-1267A-G",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/she-1267a-g.webp",
+   "pagina": 25
+  },
+  {
+   "codigo": "SMA-C0090-U",
+   "tipo": "Mangueira",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sma-c0090-u.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SAP-KIT15-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sap-kit15-u.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SAP-KIT13-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sap-kit13-u.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SDE-1502M-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sde-1502m-u.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SDE-1402M-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sde-1402m-u.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SDE-1302M-U",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/sde-1302m-u.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ066-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj066-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ062-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj062-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ069-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj069-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ075-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj075-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ079-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj079-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ081-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj081-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ082-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj082-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ083-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj083-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ085-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj085-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "SPO-PJ089-M",
+   "tipo": "Peça de ar-condicionado",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/spo-pj089-m.webp",
+   "pagina": 26
+  },
+  {
+   "codigo": "QD-UO2B",
+   "tipo": "Kit placa universal",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/qd-uo2b.webp",
+   "pagina": 27
+  },
+  {
+   "codigo": "SMF-2300A-U",
+   "tipo": "Kit manifold com 3 mangueiras de 90 cm",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/smf-2300a-u.webp",
+   "pagina": 27
+  },
+  {
+   "codigo": "SVC-00035-U",
+   "tipo": "Tubo de cobre 1/4\" · 10 cm",
+   "secao": "Ar-condicionado",
+   "linha": "",
+   "img": "catalogo/sibb/svc-00035-u.webp",
+   "pagina": 27
+  },
+  {
+   "codigo": "STU-38802-X",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-38802-x.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-00045-M",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-00045-m.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-1875A-S",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-1875a-s.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-78502-U",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-78502-u.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-01155-W",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-01155-w.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-52020-R",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-52020-r.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-00132-M",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-00132-m.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-00302-X",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-00302-x.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-2077A-S",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-2077a-s.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-2430K-I",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-2430k-i.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-36016-F",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-36016-f.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-01156-W",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-01156-w.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-78502-G",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-78502-g.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "STU-13404-G",
+   "tipo": "Turbina",
+   "secao": "Turbinas",
+   "linha": "",
+   "img": "catalogo/sibb/stu-13404-g.webp",
+   "pagina": 28
+  },
+  {
+   "codigo": "SCT-33452-L",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-33452-l.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-02195-X",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-02195-x.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-76542-X",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-76542-x.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-00523-X",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-00523-x.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-00126-Q",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-00126-q.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-40005-Q",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-40005-q.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-00130-Q",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-00130-q.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-00129-Q",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-00129-q.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-20002-Q",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-20002-q.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-00127-Q",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-00127-q.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-20003-Q",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-20003-q.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-03006-R",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-03006-r.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-03008-R",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-03008-r.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-10035-K",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-10035-k.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-10036-K",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-10036-k.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-19792-O",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-19792-o.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-28261-L",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-28261-l.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-43868-W",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-43868-w.webp",
+   "pagina": 29
+  },
+  {
+   "codigo": "SCT-00952-W",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-00952-w.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-3J901-R",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-3j901-r.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-3J913-R",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-3j913-r.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-3J023-L",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-3j023-l.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-4J596-L",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-4j596-l.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-4J892-L",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-4j892-l.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-4J900-R",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-4j900-r.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-4J906-H",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-4j906-h.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-5J821-I",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-5j821-i.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-5J822-I",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-5j822-i.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-5J904-R",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-5j904-r.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-5J010-F",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-5j010-f.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-6J275-M",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-6j275-m.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-6J461-X",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-6j461-x.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-3L211-P",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-3l211-p.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-3L221-W",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-3l221-w.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SCT-A1023-L",
+   "tipo": "Correia",
+   "secao": "Correias",
+   "linha": "",
+   "img": "catalogo/sibb/sct-a1023-l.webp",
+   "pagina": 30
+  },
+  {
+   "codigo": "SSE-03931-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-03931-x.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-96361-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-96361-x.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-88466-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-88466-x.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-06901-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-06901-x.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-88737-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-88737-x.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-96880-W",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-96880-w.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-96876-W",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-96876-w.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-60020-W",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-60020-w.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-31316-W",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-31316-w.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-06347-B",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-06347-b.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-88461-B",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-88461-b.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-72297-B",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-72297-b.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-68581-P",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-68581-p.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-SD101-P",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-sd101-p.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-94644-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-94644-x.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-0096E-S",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0096e-s.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-0071B-S",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0071b-s.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-0106R-S",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0106r-s.webp",
+   "pagina": 31
+  },
+  {
+   "codigo": "SSE-0071C-S",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0071c-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SSE-2003T-G",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-2003t-g.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SSE-95126-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-95126-x.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SSE-0106H-S",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0106h-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SSE-0105N-S",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0105n-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SSE-0302F-S",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sse-0302f-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SPP-12706-U",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/spp-12706-u.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SPP-12708-U",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/spp-12708-u.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SPP-12715-U",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/spp-12715-u.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "STB-10069-E",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stb-10069-e.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SMV-01/25-U",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-01-25-u.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SMV-01/40-U",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-01-40-u.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SMV-6014A-S",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-6014a-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SMV-0335C-S",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-0335c-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "15915900",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/15915900.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SMV-0147B-S",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-0147b-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "WR60X10074WR",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wr60x10074wr.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SMV-0147E-S",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-0147e-s.webp",
+   "pagina": 32
+  },
+  {
+   "codigo": "SMV-42655-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-42655-w.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-92361-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-92361-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-99716-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-99716-w.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-94024-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-94024-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-25998-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-25998-w.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-76967-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-76967-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-10613-B",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-10613-b.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-92362-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-92362-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-11000-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-11000-w.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-10563-B-(127V)",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-10563-b-127v.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-10612-B",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-10612-b.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-68511-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-68511-w.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-10576-B-(220V)",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-10576-b-220v.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-94025-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-94025-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-76968-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-76968-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-17139-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-17139-w.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-75102-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-75102-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-02475-X",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-02475-x.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-26019-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-26019-w.webp",
+   "pagina": 33
+  },
+  {
+   "codigo": "SMV-53784-W",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-53784-w.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "SMS-400MM-U",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sms-400mm-u.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "SMS-550MM-U",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sms-550mm-u.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-20291C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-20291c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-20295C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-20295c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-31410C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-31410c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-31363C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-31363c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-40400C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-40400c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-30808C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-30808c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-10399C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-10399c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-17377C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-17377c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-11362C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-11362c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-51569C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-51569c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-31583C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-31583c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-20294C",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-20294c.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WF-LT1000P",
+   "tipo": "Filtro de água",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wf-lt1000p.webp",
+   "pagina": 34
+  },
+  {
+   "codigo": "WR51X10055",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wr51x10055.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "WR51X10053",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wr51x10053.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "WR51X443",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wr51x443.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "SIN-84558-X",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sin-84558-x.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "WR51X442",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wr51x442.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "SIP-25770-B",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sip-25770-b.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "D-22052-W",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/d-22052-w.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "SIN-2006C-G",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/sin-2006c-g.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "TMDJ812ZB9",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/tmdj812zb9.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "D-12752-W (127V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/d-12752-w-127v.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "SMV-12018-U",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-12018-u.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "SMV-4WB37-P",
+   "tipo": "Motor ventilador",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/smv-4wb37-p.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "WIWR57X10032",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/wiwr57x10032.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "STE-0P009-E",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/ste-0p009-e.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "SRP-0127V",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/srp-0127v.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "SPT-0127V",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/spt-0127v.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "STG-RC53600",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-rc53600.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "STG-RFR3648",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-rfr3648.webp",
+   "pagina": 35
+  },
+  {
+   "codigo": "STG-RC13600",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-rc13600.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "STG-RC15000",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-rc15000.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "STG-RC42600",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-rc42600.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "STG-RC43048",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-rc43048.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "STG-TSV2004",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-tsv2004.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "STG-RFR4009",
+   "tipo": "Termostato",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/stg-rfr4009.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-15127-E (127V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-15127-e-127v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-15220-E (220V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-15220-e-220v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-13127-U (127V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-13127-u-127v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-13220-U (220V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-13220-u-220v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-14127-U (127V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-14127-u-127v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-14220-U (220V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-14220-u-220v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-15127-U (127V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-15127-u-127v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-15220-U (220V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-15220-u-220v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-13127-E (127V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-13127-e-127v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-13220-E (220V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-13220-e-220v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-14127-E (127V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-14127-e-127v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SCP-14220-E (220V)",
+   "tipo": "Peça de refrigeração",
+   "secao": "Refrigeração",
+   "linha": "",
+   "img": "catalogo/sibb/scp-14220-e-220v.webp",
+   "pagina": 36
+  },
+  {
+   "codigo": "SMM-0610A-U",
+   "tipo": "Magnetron",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/smm-0610a-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SMM-0410A-U",
+   "tipo": "Magnetron",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/smm-0410a-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SMM-0410A-W",
+   "tipo": "Magnetron",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/smm-0410a-w.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SMM-0610A-W",
+   "tipo": "Magnetron",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/smm-0610a-w.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SCA-070uF-U",
+   "tipo": "Capacitor",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/sca-070uf-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SCA-075uF-U",
+   "tipo": "Capacitor",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/sca-075uf-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SCA-080uF-U",
+   "tipo": "Capacitor",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/sca-080uf-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SCA-085uF-U",
+   "tipo": "Capacitor",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/sca-085uf-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SCA-090uF-U",
+   "tipo": "Capacitor",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/sca-090uf-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SCA-095uF-U",
+   "tipo": "Capacitor",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/sca-095uf-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SIN-W1172-U",
+   "tipo": "Peça de micro-ondas",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/sin-w1172-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SSM-49TYZ-U",
+   "tipo": "Peça de micro-ondas",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/ssm-49tyz-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SMI-99108-U",
+   "tipo": "Peça de micro-ondas",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/smi-99108-u.webp",
+   "pagina": 37
+  },
+  {
+   "codigo": "SMI-01515-U",
+   "tipo": "Peça de micro-ondas",
+   "secao": "Micro-ondas",
+   "linha": "",
+   "img": "catalogo/sibb/smi-01515-u.webp",
+   "pagina": 37
+  }
+ ]
+}
