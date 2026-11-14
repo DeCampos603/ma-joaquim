@@ -140,7 +140,7 @@
   }
   function marcarCartoes() {
     const ids = new Set(lista.map((i) => i.id));
-    $$('.cartao').forEach((c) => {
+    $$('[data-id]').forEach((c) => {
       const b = $('[data-add]', c); if (!b) return;
       const tem = ids.has(c.dataset.id);
       b.classList.toggle('na-lista', tem);
@@ -272,7 +272,7 @@
   }
   document.addEventListener('click', (e) => {
     const add = e.target.closest('[data-add]');
-    if (add) { const c = add.closest('.cartao'); adicionar({ id: c.dataset.id, marca: c.dataset.marca, cod: c.dataset.cod, nome: c.dataset.nome, img: c.dataset.img }); return; }
+    if (add) { const c = add.closest('[data-id]'); adicionar({ id: c.dataset.id, marca: c.dataset.marca, cod: c.dataset.cod, nome: c.dataset.nome, img: c.dataset.img }); return; }
     const ab = e.target.closest('[data-abrir-produto]');
     if (ab) abrirProduto(ab.closest('.cartao'));
   });
@@ -287,7 +287,7 @@
       const termos = semAcento(entrada.value).split(/\s+/).filter(Boolean);
       let n = 0, mostrados = 0;
       cartoes.forEach((c) => {
-        const ok = (!secao || c.dataset.secao === secao) && termos.every((t) => c._t.includes(t));
+        const ok = !c._fora && (!secao || c.dataset.secao === secao) && termos.every((t) => c._t.includes(t));
         if (ok) n++;
         const ver = ok && n <= limite;
         c.hidden = !ver; if (ver) mostrados++;
@@ -301,11 +301,26 @@
     entrada.addEventListener('input', () => { clearTimeout(tm); tm = setTimeout(() => { limite = POR; aplicar(); }, 120); });
     chips.forEach((ch) => ch.addEventListener('click', () => {
       chips.forEach((x) => x.setAttribute('aria-pressed', String(x === ch)));
+      cartoes.forEach((c) => { c._fora = false; });
       secao = ch.dataset.secaoFiltro; limite = POR; aplicar();
     }));
     mais.addEventListener('click', () => { limite += POR; aplicar(); });
-    const q = new URLSearchParams(location.search).get('q');
+    const params = new URLSearchParams(location.search);
+    const q = params.get('q');
     if (q) { entrada.value = q; }
+    // ?secao=A|B vem da navegação por categoria da página inicial
+    const sp = params.get('secao');
+    if (sp) {
+      const lista = sp.split('|');
+      if (lista.length === 1) {
+        const ch = chips.find((x) => x.dataset.secaoFiltro === lista[0]);
+        if (ch) { chips.forEach((x) => x.setAttribute('aria-pressed', String(x === ch))); secao = lista[0]; }
+      } else {
+        const conj = new Set(lista);
+        chips.forEach((x) => x.setAttribute('aria-pressed', String(conj.has(x.dataset.secaoFiltro))));
+        cartoes.forEach((c) => { if (!conj.has(c.dataset.secao)) c._fora = true; });
+      }
+    }
     aplicar();
   });
 
@@ -314,28 +329,84 @@
   if (bg) {
     const idx = JSON.parse($('#indice-catalogo').textContent).map((i) => ({ ...i, t: semAcento(`${i.m} ${i.c} ${i.n} ${i.x}`) }));
     const inp = $('[data-busca-global-input]', bg), res = $('[data-busca-global-res]', bg), info = $('[data-busca-global-info]', bg);
+    const caixaMarcas = $('[data-busca-global-marcas]', bg);
+    const secoesCat = JSON.parse(($('#categorias-secoes') || { textContent: '{}' }).textContent);
+    const desenhar = (achados) => {
+      res.innerHTML = '';
+      achados.slice(0, 24).forEach((i) => {
+        const li = document.createElement('li');
+        li.className = 'resultado';
+        const a = document.createElement('a');
+        a.href = `marcas/${i.s}/?q=${encodeURIComponent(i.c || i.n)}#catalogo`;
+        a.innerHTML = '<img alt="" loading="lazy"><small></small><b></b>';
+        $('img', a).src = i.i;
+        $('small', a).textContent = `${i.m}${i.c ? ' · ' + i.c : ''}`;
+        $('b', a).textContent = i.n;
+        li.appendChild(a); res.appendChild(li);
+      });
+    };
     let tm;
     inp.addEventListener('input', () => {
       clearTimeout(tm);
       tm = setTimeout(() => {
+        caixaMarcas.hidden = true;
         const termos = semAcento(inp.value).split(/\s+/).filter(Boolean);
         res.innerHTML = '';
-        if (inp.value.trim().length < 2) { info.textContent = 'Digite pelo menos 2 letras.'; return; }
+        if (inp.value.trim().length < 2) { info.textContent = 'Digite pelo menos 2 letras, ou escolha uma categoria acima.'; return; }
         const achados = idx.filter((i) => termos.every((t) => i.t.includes(t)));
         info.textContent = achados.length ? `${achados.length} ${achados.length === 1 ? 'item encontrado' : 'itens encontrados'}${achados.length > 24 ? '. Mostrando os 24 primeiros' : ''}.` : 'Nada encontrado. Mande a foto ou o código pelo WhatsApp que eu procuro na fábrica.';
-        achados.slice(0, 24).forEach((i) => {
-          const li = document.createElement('li');
-          li.className = 'resultado';
-          const a = document.createElement('a');
-          a.href = `marcas/${i.s}/?q=${encodeURIComponent(i.c || i.n)}#catalogo`;
-          a.innerHTML = '<img alt="" loading="lazy"><small></small><b></b>';
-          $('img', a).src = i.i;
-          $('small', a).textContent = `${i.m}${i.c ? ' · ' + i.c : ''}`;
-          $('b', a).textContent = i.n;
-          li.appendChild(a); res.appendChild(li);
-        });
+        desenhar(achados);
       }, 140);
     });
+    // navegação por categoria: mostra os itens das quatro marcas e um atalho por marca
+    $$('[data-categoria]').forEach((b) => b.addEventListener('click', () => {
+      const k = b.dataset.categoria, nome = b.dataset.categoriaNome;
+      const achados = idx.filter((i) => i.k === k);
+      inp.value = '';
+      info.textContent = `${nome}: ${achados.length} itens${achados.length > 24 ? '. Abaixo, uma amostra; veja tudo na página de cada marca' : ''}.`;
+      caixaMarcas.innerHTML = '';
+      const porMarca = {};
+      achados.forEach((i) => { (porMarca[i.s] = porMarca[i.s] || { nome: i.m, n: 0 }).n++; });
+      Object.entries(porMarca).forEach(([s, v]) => {
+        const secs = (secoesCat[k] || {})[s] || [];
+        const a = document.createElement('a');
+        a.className = 'chip';
+        a.href = `marcas/${s}/${secs.length && secs[0] !== '*' ? '?secao=' + encodeURIComponent(secs.join('|')) : ''}#catalogo`;
+        a.textContent = `Ver os ${v.n} da ${v.nome} →`;
+        caixaMarcas.appendChild(a);
+      });
+      caixaMarcas.hidden = false;
+      desenhar(achados);
+      $('#catalogo').scrollIntoView({ behavior: calmo ? 'auto' : 'smooth' });
+    }));
+  }
+
+  /* ---------- tabela técnica com filtros (capacitores) ---------- */
+  $$('[data-tabela-filtros]').forEach((f) => {
+    const sec = f.closest('section'), linhas = $$('tbody tr', sec), cont = $('[data-tf-contagem]', sec);
+    const busca = $('[data-tf-busca]', f), tipo = $('[data-tf-tipo]', f), tensao = $('[data-tf-tensao]', f);
+    linhas.forEach((l) => { l._t = semAcento(l.dataset.busca).replace(/\s+/g, ''); });
+    const aplicar = () => {
+      const termos = semAcento(busca.value).split(/\s+/).filter(Boolean).map((t) => t.replace(/\s+/g, ''));
+      let n = 0;
+      linhas.forEach((l) => {
+        const ok = (!tipo.value || l.dataset.tipo === tipo.value) && (!tensao.value || l.dataset.tensao === tensao.value) && termos.every((t) => l._t.includes(t));
+        l.hidden = !ok; if (ok) n++;
+      });
+      cont.textContent = `${n} de ${linhas.length} capacitores`;
+    };
+    [busca, tipo, tensao].forEach((el) => { el.addEventListener('input', aplicar); el.addEventListener('change', aplicar); });
+  });
+
+  /* ---------- menu fixo da marca: marca a seção visível ---------- */
+  const subnav = $('[data-subnav]');
+  if (subnav) {
+    const links = $$('a', subnav);
+    const alvos = links.map((a) => $(a.getAttribute('href'))).filter(Boolean);
+    const io2 = new IntersectionObserver((ents) => ents.forEach((en) => {
+      if (en.isIntersecting) links.forEach((a) => a.classList.toggle('ativo', a.getAttribute('href') === '#' + en.target.id));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    alvos.forEach((s) => io2.observe(s));
   }
 
   /* ---------- modelo 3D da fábrica (Sketchfab): só carrega ao clicar ---------- */
@@ -354,12 +425,26 @@
     });
   });
 
+  /* ---------- âncora (#folhear, #tabela...) refeita depois que a página assenta ---------- */
+  if (location.hash.length > 1) {
+    let mexeu = false;
+    const parar = () => { mexeu = true; };
+    ['wheel', 'touchstart', 'keydown'].forEach((ev) => addEventListener(ev, parar, { once: true, passive: true }));
+    const ancorar = () => { if (mexeu) return; const alvo = document.getElementById(decodeURIComponent(location.hash.slice(1))); alvo && alvo.scrollIntoView({ block: 'start', behavior: 'instant' }); };
+    addEventListener('load', () => { ancorar(); setTimeout(ancorar, 500); });
+  }
+
   /* ---------- folheador 3D ---------- */
   $$('[data-livro]').forEach((livro) => {
     const docs = JSON.parse(livro.dataset.docs);
     const palco = $('[data-livro-palco]', livro), pagEl = $('[data-livro-pag]', livro);
     const abas = $$('[data-doc]', livro.parentElement);
     let doc = 0, i = 0, dois = false, ocupado = false;
+    const docPedido = parseInt(new URLSearchParams(location.search).get('doc'), 10);  // vindo de "Recursos técnicos"
+    if (docPedido > 0 && docPedido < docs.length) {
+      doc = docPedido;
+      abas.forEach((b) => b.setAttribute('aria-selected', String(+b.dataset.doc === doc)));
+    }
     const pags = () => docs[doc].paginas;
     const novaImg = (p, cls) => { const im = new Image(); im.decoding = 'async'; im.alt = ''; if (p) { im.src = p.src; im.width = p.w; im.height = p.h; } im.className = cls; return im; };
     const preCarregar = (k) => { const p = pags()[k]; if (p) { const im = new Image(); im.src = p.src; } };

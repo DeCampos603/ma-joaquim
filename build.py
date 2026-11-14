@@ -244,6 +244,177 @@ MODELOS3D: dict = json.loads(_m3d.read_text(encoding="utf-8")) if _m3d.exists() 
 MODELOS3D = {k: v for k, v in MODELOS3D.items() if not k.startswith("_") and (SRC / v["glb"]).exists()}
 
 
+# ---------------------------------------------------------------- categorias (navegação por tipo de peça, nas 4 marcas)
+CATEGORIAS = [  # (chave, nome, frase, {marca: [seções]} ("*" = todas), códigos preferidos para a foto)
+    ("refrigeracao", "Refrigeração", "Motores, sensores, termostatos, filtros e controladores",
+     {"sibb": ["Refrigeração"], "coel": ["Controladores para refrigeração"]}, ["coel:TLY25", "sibb:SMV-0147E-S"]),
+    ("ar-condicionado", "Ar-condicionado", "Motores, turbinas, placas universais, bombas de dreno",
+     {"sibb": ["Ar-condicionado", "Turbinas"], "suryha": ["Eletrônica e controle", "Ventilação"]}, ["sibb:STU-00132-M", "suryha:80150.064"]),
+    ("lava-e-seca", "Lava e seca", "Eixos, guarnições, válvulas, travas, bombas e correias",
+     {"sibb": ["Lava e seca", "Correias"]}, ["sibb:SET-4371E-S"]),
+    ("micro-ondas", "Micro-ondas", "Magnetrons, capacitores, pratos e interruptores",
+     {"sibb": ["Micro-ondas"]}, ["sibb:SMM-0610A-U"]),
+    ("capacitores", "Capacitores", "Permanentes, de partida, de lavadora e de micro-ondas",
+     {"sibb": ["Capacitores"], "suryha": ["Capacitores"]}, ["suryha:80.151.050", "sibb:SCA-35+1,5UF440V-T"]),
+    ("ferramentas", "Ferramentas e instrumentos", "Manifolds, bombas de vácuo, flangeadores, brasagem e medição",
+     {"suryha": ["Manifolds e mangueiras", "Vácuo e recolhimento", "Brasagem e nitrogênio", "Medição e detecção",
+                 "Ferramentas para tubos", "Ferramentas manuais e elétricas", "Válvulas e conexões", "Limpeza", "Automotivo"]},
+     ["suryha:80150.226", "suryha:80155.031"]),
+    ("canaletas", "Canaletas e acabamento", "Linhas 30, 60 e 80 mm e SPLITEC FIT, em branco e preto",
+     {"perfiltec": ["*"]}, ["perfiltec:CDR60"]),
+    ("automacao", "Automação e controle", "Inversores de frequência, relés e controladores de processo",
+     {"coel": ["Inversores de frequência", "Relés", "Controladores de temperatura e processo"]}, ["coel:KM3"]),
+]
+
+
+def categoria_de(slug: str, secao: str) -> str:
+    for chave, _n, _f, mapa, _p in CATEGORIAS:
+        secs = mapa.get(slug, [])
+        if "*" in secs or secao in secs:
+            return chave
+    return ""
+
+
+def bloco_categorias(base: str) -> str:
+    cards = []
+    for chave, nome, frase, mapa, pref in CATEGORIAS:
+        itens = [(s, it) for s in mapa for it in CAT.get(s, []) if categoria_de(s, it.get("secao", "")) == chave]
+        if not itens:
+            continue
+        foto = next((it["img"] for p in pref for s, it in itens if f"{s}:{it.get('codigo', '')}" == p and it.get("img")), None)
+        foto = foto or next(it["img"] for s, it in itens if it.get("img"))
+        marcas = sorted({next(m["nome"] for m in MARCAS if m["slug"] == s) for s, _ in itens})
+        w, h = dims(foto)
+        cards.append(f"""<li class="cat-card" data-tilt>
+  <button type="button" data-categoria="{chave}" data-categoria-nome="{e(nome)}">
+   <span class="cat-card__foto"><img src="{base}{foto}" alt="" width="{w}" height="{h}" loading="lazy" decoding="async"></span>
+   <span class="cat-card__txt"><strong>{e(nome)}</strong><span>{e(frase)}</span>
+   <small>{len(itens)} itens · {e(', '.join(marcas))}</small></span>
+  </button></li>""")
+    return f"""<section class="secao" id="categorias" aria-labelledby="cat-titulo-home">
+ <div class="contem">
+  <div class="secao__cab"><p class="olho">Navegue por categoria</p>
+   <h2 id="cat-titulo-home">Procure pela peça, não pela marca</h2>
+   <p class="secao__sub">Toque numa categoria para ver os itens das quatro fábricas juntos.</p></div>
+  <ul class="grade-cat revela-grupo">{''.join(cards)}</ul>
+ </div>
+</section>"""
+
+
+def bloco_selos(base: str) -> str:
+    logos = "".join(f'<li><a href="{base}marcas/{m["slug"]}/" aria-label="{e(m["nome"])}">{marca_logo(m, base)}</a></li>' for m in MARCAS)
+    return f"""<section class="selos" aria-label="Fábricas representadas">
+ <div class="contem selos__in">
+  <p class="selos__rotulo">Representação comercial no {e(EMP['area'])}<br><strong>desde {EMP['desde']}</strong></p>
+  <ul class="selos__logos">{logos}</ul>
+ </div>
+</section>"""
+
+
+def bloco_recursos(base: str) -> str:
+    itens = []
+    for m in MARCAS:
+        for i, d in enumerate(FOLHAS.get(m["slug"], [])):
+            p0 = d["paginas"][0]
+            itens.append(f"""<li class="recurso" data-tilt><a href="{base}marcas/{m['slug']}/?doc={i}#folhear">
+   <span class="recurso__capa"><img src="{base}{p0['src']}" alt="" width="{p0['w']}" height="{p0['h']}" loading="lazy" decoding="async"></span>
+   <span class="recurso__txt"><small>{e(m['nome'])}</small><strong>{e(d['titulo'])}</strong><span>{len(d['paginas'])} páginas · folhear online</span></span>
+  </a></li>""")
+    return f"""<section class="secao secao--gelo" id="recursos" aria-labelledby="rec-titulo">
+ <div class="contem">
+  <div class="secao__cab"><p class="olho">Recursos técnicos</p>
+   <h2 id="rec-titulo">Catálogos e folders das fábricas</h2>
+   <p class="secao__sub">O material original de cada marca, com todos os códigos, para folhear aqui mesmo.</p></div>
+  <ul class="grade-recursos revela-grupo">{''.join(itens)}</ul>
+ </div>
+</section>"""
+
+
+def bloco_subnav(m: dict) -> str:
+    """Menu fixo da página da marca: só lista o que a página tem."""
+    links = []
+    if m["slug"] == "suryha":
+        links.append(("lancamentos", "Lançamentos"))
+    links.append(("catalogo", "Catálogo"))
+    if m["slug"] in TABELAS:
+        links.append(("tabela", "Tabela"))
+    if m.get("sketchfab"):
+        links.append(("em-3d", "3D"))
+    if FOLHAS.get(m["slug"]):
+        links.append(("folhear", "Folders"))
+    links.append(("outras", "Outras marcas"))
+    return ('<nav class="subnav" aria-label="Nesta página" data-subnav><div class="contem subnav__in">'
+            + "".join(f'<a href="#{a}">{e(t)}</a>' for a, t in links) + "</div></nav>")
+
+
+# ---------------------------------------------------------------- tabelas comparativas
+def _tabela_capacitores(m: dict, base: str) -> str:
+    linhas, tensoes, tipos = [], set(), []
+    for it in CAT["suryha"]:
+        if it.get("secao") != "Capacitores":
+            continue
+        nome = it["tipo"]
+        tipo = next((t for t in ("permanente", "de partida", "de arranque", "de lavadora", "de micro-ondas") if t in nome.lower()), "outro")
+        tipo_rot = tipo.replace("de ", "").capitalize()
+        if tipo_rot not in tipos:
+            tipos.append(tipo_rot)
+        capac = (re.search(r"([\d.,+\s]+UF)", nome) or re.search(r"(SPP6)", nome))
+        volt = re.search(r"(\d{3,4}V)", nome)
+        dim = re.findall(r"[\d,]+", it.get("linha", ""))
+        if volt:
+            tensoes.add(volt.group(1))
+        formato = "Quadrado" if "quadrado" in nome.lower() else ("Simples" if "simples" in nome.lower() else "")
+        cod = it["codigo"]
+        linhas.append(f"""<tr data-id="suryha:{e(cod)}" data-marca="Suryha" data-cod="{e(cod)}" data-nome="{e(nome)}" data-img="{base}{it['img'] or SEM_FOTO}" data-tipo="{e(tipo_rot)}" data-tensao="{e(volt.group(1) if volt else '')}" data-busca="{e((cod + ' ' + nome).lower())}">
+   <td class="t-cod">{e(cod)}</td><td>{e(tipo_rot)}</td><td><strong>{e(capac.group(1).replace(' ', '') if capac else '–')}</strong></td>
+   <td>{e(volt.group(1) if volt else '–')}</td><td>{e(formato or '–')}</td><td>{e(dim[0] if dim else '–')}</td><td>{e(dim[1] if len(dim) > 1 else '–')}</td>
+   <td><button type="button" class="cartao__add t-add" data-add aria-label="Adicionar {e(nome)} à lista">{ICONES['mais']}<span>Lista</span></button></td></tr>""")
+    op_t = "".join(f'<option>{e(t)}</option>' for t in tipos)
+    op_v = "".join(f'<option>{e(v)}</option>' for v in sorted(tensoes, key=lambda x: int(x[:-1])))
+    return f"""<div class="tabela-filtros" data-tabela-filtros>
+   <label class="busca">{ICONES['busca']}<span class="sr">Buscar capacitor</span><input type="search" placeholder="Ex.: 35+1.5UF, 440V, 80.151.137" data-tf-busca autocomplete="off"></label>
+   <label class="seletor">Tipo<select data-tf-tipo><option value="">Todos</option>{op_t}</select></label>
+   <label class="seletor">Tensão<select data-tf-tensao><option value="">Todas</option>{op_v}</select></label>
+  </div>
+  <p class="catalogo__contagem" data-tf-contagem aria-live="polite">{len(linhas)} capacitores</p>
+  <div class="tabela-rola" tabindex="0" role="region" aria-label="Tabela de capacitores Suryha">
+  <table class="tabela" data-tabela>
+   <thead><tr><th>Código</th><th>Tipo</th><th>Capacitância</th><th>Tensão</th><th>Formato</th><th>Altura (cm)</th><th>Diâmetro (cm)</th><th><span class="sr">Lista</span></th></tr></thead>
+   <tbody>{''.join(linhas)}</tbody>
+  </table></div>
+  <p class="tabela-fonte">Fonte: Folder Linha de Capacitores Suryha 2025/26.</p>"""
+
+
+def _tabela_coel(m: dict, base: str) -> str:
+    dados = json.loads((DADOS / "coel-comparativo.json").read_text(encoding="utf-8"))
+    cab = "".join(f"<th scope='col'>{e(x)}</th>" for x in dados["modelos"])
+    corpo = "".join(
+        f"<tr><th scope='row'>{e(rot)}</th>" + "".join(
+            f"<td{f' colspan={n}' if n > 1 else ''} class='{'t-sim' if txt == 'Sim' else ('t-nao' if txt == '–' else '')}'>{e(txt)}</td>" for txt, n in cel) + "</tr>"
+        for rot, cel in dados["linhas"])
+    return f"""<div class="tabela-rola" tabindex="0" role="region" aria-label="{e(dados['titulo'])}">
+  <table class="tabela tabela--comparativa"><thead><tr><th scope="col">Característica</th>{cab}</tr></thead><tbody>{corpo}</tbody></table></div>
+  <p class="tabela-fonte">Fonte: portfólio de automação Coel (comparativo da linha KUBE). Células que abrangem vários modelos valem para todos eles.</p>"""
+
+
+TABELAS = {
+    "suryha": ("Tabela de capacitores", "Filtre por tipo e tensão e compare medidas antes de cotar.", _tabela_capacitores),
+    "coel": ("Comparativo da linha KM", "Entradas, saídas e funções lado a lado, para escolher o controlador certo.", _tabela_coel),
+}
+
+
+def bloco_tabela(m: dict, base: str) -> str:
+    if m["slug"] not in TABELAS:
+        return ""
+    titulo, sub, fn = TABELAS[m["slug"]]
+    return f"""<section class="secao secao--gelo" id="tabela" aria-labelledby="tab-titulo">
+ <div class="contem">
+  <div class="secao__cab"><p class="olho">Tabela técnica</p><h2 id="tab-titulo">{e(titulo)}</h2><p class="secao__sub">{e(sub)}</p></div>
+  {fn(m, base)}
+ </div>
+</section>"""
+
+
 def bloco_sketchfab(m: dict, base: str) -> str:
     """Modelo 3D oficial da fábrica no Sketchfab. Só carrega o visualizador (e os cookies dele) ao clicar."""
     sk = m.get("sketchfab")
@@ -395,7 +566,8 @@ def home() -> str:
    <span class="marca-card__n">{len(CAT[m['slug']])} itens no catálogo</span>
    <span class="marca-card__ir">Ver catálogo {ICONES['seta']}</span>
   </a></li>""" for m in MARCAS)
-    indice = [{"m": m["nome"], "s": m["slug"], "c": it.get("codigo", ""), "n": it["tipo"], "x": it.get("secao", ""), "i": it["img"] or SEM_FOTO}
+    indice = [{"m": m["nome"], "s": m["slug"], "c": it.get("codigo", ""), "n": it["tipo"], "x": it.get("secao", ""), "i": it["img"] or SEM_FOTO,
+               "k": categoria_de(m["slug"], it.get("secao", ""))}
               for m in MARCAS for it in CAT[m["slug"]]]
     alex, deivid = EMP["contatos"][0], EMP["contatos"][1]
     w, h = dims(alex["foto"])
@@ -423,7 +595,11 @@ def home() -> str:
     <a class="btn btn--contorno-claro btn--grande" href="#marcas">Ver as marcas {ICONES['seta']}</a>
    </div>
   </div>
-  <div class="heroi__3d entra" style="--d:2">{orbita(destaque, base, 'orbita--heroi', 'Produtos das fábricas representadas')}</div>
+  <div class="heroi__3d entra" style="--d:2">{orbita(destaque, base, 'orbita--heroi', 'Produtos das fábricas representadas')}
+   <div class="flutua flutua--1" aria-hidden="true"><strong>{TOTAL}</strong><span>itens no catálogo</span></div>
+   <div class="flutua flutua--2" aria-hidden="true"><strong>Desde {EMP['desde']}</strong><span>no mercado</span></div>
+   <div class="flutua flutua--3" aria-hidden="true"><strong>4 fábricas</strong><span>num contato só</span></div>
+  </div>
  </div>
  <ul class="numeros contem" aria-label="Em números">
   <li><strong>{anos} anos</strong><span>no mercado, desde {EMP['desde']}</span></li>
@@ -432,8 +608,9 @@ def home() -> str:
   <li><strong>{e(EMP['horario_curto'])}</strong><span>atendimento comercial</span></li>
  </ul>
 </section>
-
+{bloco_selos(base)}
 <div class="faixa" aria-hidden="true"><div class="faixa__trilho">{''.join(f'<span>{t}</span>' for t in ['Refrigeração', 'Climatização', 'Lava e seca', 'Micro-ondas', 'Ventilação', 'Automação e controle', 'Canaletas', 'Capacitores', 'Correias e turbinas', 'Ferramentas'] * 2)}</div></div>
+{bloco_categorias(base)}
 
 <section class="secao" id="marcas" aria-labelledby="marcas-titulo">
  <div class="contem">
@@ -452,12 +629,15 @@ def home() -> str:
   <div class="busca-global" data-busca-global>
    <label class="busca busca--grande">{ICONES['busca']}<span class="sr">Buscar em todas as marcas</span>
     <input type="search" placeholder="Ex.: SET-4371E-S, capacitor, manifold, curva 60" data-busca-global-input autocomplete="off" enterkeyhint="search"></label>
-   <p class="busca-global__dica" data-busca-global-info>Digite pelo menos 2 letras.</p>
+   <p class="busca-global__dica" data-busca-global-info>Digite pelo menos 2 letras, ou escolha uma categoria acima.</p>
+   <div class="busca-global__marcas" data-busca-global-marcas hidden></div>
    <ul class="grade-produtos grade-produtos--compacta" data-busca-global-res></ul>
   </div>
   <script type="application/json" id="indice-catalogo">{json.dumps(indice, ensure_ascii=False, separators=(',', ':'))}</script>
+  <script type="application/json" id="categorias-secoes">{json.dumps({c[0]: c[3] for c in CATEGORIAS}, ensure_ascii=False, separators=(',', ':'))}</script>
  </div>
 </section>
+{bloco_recursos(base)}
 
 <section class="secao" aria-labelledby="para-quem-titulo">
  <div class="contem">
@@ -548,7 +728,7 @@ def pagina_marca(m: dict) -> str:
     extra = ""
     if m["slug"] == "suryha":
         w, h = dims("img/suryha-lancamentos.webp")
-        extra = f"""<section class="secao lancamentos" aria-labelledby="lanc-titulo">
+        extra = f"""<section class="secao lancamentos" id="lancamentos" aria-labelledby="lanc-titulo">
  <div class="contem lancamentos__in">
   <div><p class="olho">Novidade Suryha</p><h2 id="lanc-titulo">Temporada de lançamentos</h2>
    <p>Regulador de nitrogênio, alicate amperímetro True-RMS, engates rápidos R1234YF, manifolds ON/OFF e Inverter e mais. Os códigos estão na arte: mande o que interessar.</p>
@@ -575,11 +755,13 @@ def pagina_marca(m: dict) -> str:
   <div class="heroi__3d entra" style="--d:2">{vitrine}</div>
  </div>
 </section>
+{bloco_subnav(m)}
 {extra}
 {bloco_catalogo(m, base)}
+{bloco_tabela(m, base)}
 {bloco_sketchfab(m, base)}
 {bloco_folhas(m, base)}
-<section class="secao" aria-labelledby="outras-titulo">
+<section class="secao" id="outras" aria-labelledby="outras-titulo">
  <div class="contem">
   <div class="secao__cab"><p class="olho">Também represento</p><h2 id="outras-titulo">Outras fábricas</h2></div>
   <ul class="outras revela-grupo">{outras}</ul>

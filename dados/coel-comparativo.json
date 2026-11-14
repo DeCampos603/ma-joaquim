@@ -1,0 +1,21 @@
+{
+ "fonte": "Portifólio Automação.pptx, slide 13 (Comparativo | Linha KUBE). Células mescladas mantidas como no original: [texto, colunas].",
+ "titulo": "Comparativo da linha KM (KUBE)",
+ "modelos": ["KM1B", "KM1", "KM3", "KM5", "KM7"],
+ "linhas": [
+  ["Entradas analógicas", [["J, K, PT100", 1], ["Universal: JKRST, PT100, NTC, PTC, 4-20 mA, 0-10 V", 4]]],
+  ["Entradas digitais", [["–", 1], ["2", 4]]],
+  ["Saídas analógicas", [["–", 1], ["–", 1], ["4-20 mA · 0-10 V", 2], ["4-20 mA · 0-10 V · 0-24 V", 1]]],
+  ["Saídas relé/SSR", [["Sim", 5]]],
+  ["Saídas de alarme", [["1", 1], ["2", 4]]],
+  ["Comunicação serial", [["–", 1], ["–", 1], ["Sim", 3]]],
+  ["Rampa e patamar (segmentos)", [["–", 1], ["–", 1], ["8", 1], ["96", 1], ["8", 1]]],
+  ["Auto tuning / PID", [["Sim", 5]]],
+  ["Temporização", [["–", 1], ["Sim", 4]]],
+  ["Horímetro", [["Sim", 5]]],
+  ["Display", [["2 cores", 1], ["3 cores (dinâmico)", 4]]],
+  ["Porta TTL", [["–", 1], ["Sim", 4]]],
+  ["Controle de servomotor", [["–", 1], ["–", 1], ["Sim", 2], ["–", 1]]],
+  ["Controle de velocidade", [["–", 1], ["–", 1], ["–", 1], ["–", 1], ["Sim", 1]]]
+ ]
+}
