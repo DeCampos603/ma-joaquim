@@ -167,6 +167,27 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .marca-heroi__longo { color: var(--claro-2); font-weight: 600; margin-top: -6px; }
 .migalhas { font-size: .88rem; color: var(--claro-2); margin-bottom: 18px; }
 .migalhas a { color: #fff; }
+.migalhas--clara { color: var(--tinta-2); }
+.migalhas--clara a { color: var(--ciano-700); }
+
+/* ---------- páginas institucionais (sobre, contato, termos, privacidade) ---------- */
+.pagina-texto { padding-top: calc(var(--topo-h) + 40px); }
+.pagina-texto h1 { font: 800 clamp(2rem, 4.4vw, 3rem)/1.08 var(--f-titulo); color: var(--navy-900); margin: 6px 0 14px; text-wrap: balance; }
+.texto-longo { margin-top: 28px; }
+.texto-longo h2 { font: 750 1.3rem/1.25 var(--f-titulo); color: var(--navy-900); margin: 34px 0 10px; }
+.texto-longo p, .texto-longo li { color: var(--tinta-2); line-height: 1.7; max-width: 68ch; }
+.texto-longo p + p { margin-top: 10px; }
+.texto-longo ul { display: grid; gap: 10px; padding-left: 1.1em; list-style: disc; }
+.texto-longo a { color: var(--ciano-700); text-decoration: underline; text-underline-offset: 3px; }
+.texto-longo__foto { margin: 28px 0 0; max-width: 320px; }
+.texto-longo__foto img { border-radius: var(--raio-g); box-shadow: var(--sombra-2); }
+.texto-longo__foto figcaption { margin-top: 8px; font-size: .88rem; color: var(--tinta-2); }
+
+/* ---------- aviso de cookies (só aparece com medição ligada em dados/medicao.json) ---------- */
+.cookies { position: fixed; left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 90; max-width: 560px; margin: 0 auto; background: #fff; color: var(--tinta); border: 1px solid var(--borda); border-radius: var(--raio-g); box-shadow: var(--sombra-2); padding: 16px 18px; font-size: .92rem; line-height: 1.5; }
+.cookies a { color: var(--ciano-700); text-decoration: underline; }
+.cookies__acoes { display: flex; gap: 10px; margin-top: 12px; }
+.cookies__acoes .btn { flex: 1; min-height: 44px; }
 
 @media (max-width: 900px) {
   .heroi__in, .marca-heroi__in { grid-template-columns: 1fr; }
@@ -204,11 +225,16 @@ html:not(.js) .orbita__ctrl { display: none; }
 
 /* ---------- faixa ---------- */
 .faixa { overflow: hidden; background: var(--navy-950); color: var(--claro-2); border-block: 1px solid rgb(255 255 255 / .06); }
-.faixa__trilho { display: flex; width: max-content; animation: faixa 42s linear infinite; }
+/* Dois grupos iguais, cada um anda 100% da própria largura. No Safari, um trilho único
+   de ~5.000 px com translateX(-50%) pulava a cada volta (a % ficava presa à largura de
+   antes da fonte carregar) e piscava no iPhone (camada larga demais). */
+.faixa__trilho { display: flex; width: max-content; }
+.faixa__grupo { display: flex; flex: none; animation: faixa 42s linear infinite; will-change: transform; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.faixa.parada .faixa__grupo { animation-play-state: paused; }
 .faixa__trilho span { padding: 16px 28px; font: 700 .9rem/1 var(--f-titulo); letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; display: flex; align-items: center; gap: 28px; }
 .faixa__trilho span::after { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--ciano-400); }
-.faixa:hover .faixa__trilho { animation-play-state: paused; }
-@keyframes faixa { to { transform: translateX(-50%); } }
+@media (hover: hover) { .faixa:hover .faixa__grupo { animation-play-state: paused; } }  /* no toque o :hover "gruda" e parava a faixa */
+@keyframes faixa { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-100%, 0, 0); } }
 
 /* ---------- seções ---------- */
 .secao { padding-block: clamp(64px, 9vw, 120px); position: relative; }
@@ -297,12 +323,13 @@ html:not(.js) .revela { opacity: 1; transform: none; }
 
 /* rodapé */
 .rodape { background: var(--navy-950); color: var(--claro-2); font-size: .94rem; padding-top: 56px; padding-bottom: 90px; }
-.rodape__in { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr; gap: 36px; max-width: calc(var(--contem) + var(--gutter) * 2); margin: auto; padding-inline: var(--gutter); }
+.rodape__in { display: grid; grid-template-columns: 1.4fr 1fr 1.2fr 1fr; gap: 36px; max-width: calc(var(--contem) + var(--gutter) * 2); margin: auto; padding-inline: var(--gutter); }
 .rodape h2 { font: 700 .8rem/1 var(--f-texto); letter-spacing: .16em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
 .rodape ul { display: grid; gap: 8px; }
 .rodape a { color: #fff; }
 .rodape__logo { width: 190px; margin-bottom: 14px; background: #fff; padding: 10px 14px; border-radius: 12px; box-sizing: content-box; }
 .rodape__base { max-width: calc(var(--contem) + var(--gutter) * 2); margin: 40px auto 0; padding: 22px var(--gutter) 0; border-top: 1px solid rgb(255 255 255 / .1); font-size: .84rem; }
+@media (max-width: 1000px) { .rodape__in { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 800px) { .rodape__in { grid-template-columns: 1fr; } }
 @media (min-width: 1041px) { .rodape { padding-bottom: 40px; } }
 
@@ -571,7 +598,8 @@ html { scroll-padding-top: calc(var(--topo-h) + 60px); }
 /* ---------- menos movimento ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
-  .faixa__trilho { animation: none; flex-wrap: wrap; width: auto; }
+  .faixa__trilho, .faixa__grupo { animation: none; flex-wrap: wrap; width: auto; flex: 1 1 auto; }
+  .faixa__grupo + .faixa__grupo { display: none; }
   .entra, .revela { opacity: 1; transform: none; }
   [data-tilt] { transform: none !important; }
 }

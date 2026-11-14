@@ -16,8 +16,11 @@ DIST = AQUI / "dist"
 erros: list[str] = []
 
 paginas = list(DIST.rglob("*.html"))
-if len(paginas) < 6:
-    erros.append(f"esperava 6 páginas, achei {len(paginas)}")
+if len(paginas) < 10:
+    erros.append(f"esperava 10 páginas (home, 4 marcas, sobre, contato, termos, privacidade, 404), achei {len(paginas)}")
+EMP = json.loads((AQUI / "dados" / "empresa.json").read_text(encoding="utf-8"))
+MED = json.loads((AQUI / "dados" / "medicao.json").read_text(encoding="utf-8"))
+MEDE = any(MED.get(k) for k in ("ga4Id", "adsId", "gtmId"))
 
 refs = 0
 for h in paginas:
@@ -43,6 +46,52 @@ for h in paginas:
             erros.append(f"{h.relative_to(DIST)}: link de WhatsApp malformado {m.group(1)[:60]}")
     if re.search(r"R\$\s?\d|\bestoque:\s*\d|\bsaldo:\s*\d", t, re.I):
         erros.append(f"{h.relative_to(DIST)}: parece mostrar preço ou estoque")
+    if ("googletagmanager" in t or "analytics.js" in t) and not MEDE:
+        erros.append(f"{h.relative_to(DIST)}: carrega Google sem ID em dados/medicao.json")
+    if 'href="/favicon.ico"' not in t:
+        erros.append(f"{h.relative_to(DIST)}: sem favicon real")
+    if h.name == "404.html":
+        if "noindex" not in t:
+            erros.append("404.html sem noindex")
+        continue
+    # páginas indexáveis: JSON-LD válido, versão Markdown e contatos atuais
+    blocos = re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S)
+    if len(blocos) != 1:
+        erros.append(f"{h.relative_to(DIST)}: esperava 1 bloco JSON-LD, achei {len(blocos)}")
+    else:
+        try:
+            tipos = {n["@type"] for n in json.loads(blocos[0])["@graph"]}
+            for tp in ("WebSite", "Organization"):
+                if tp not in tipos:
+                    erros.append(f"{h.relative_to(DIST)}: JSON-LD sem {tp}")
+        except (ValueError, KeyError) as ex:
+            erros.append(f"{h.relative_to(DIST)}: JSON-LD inválido ({ex})")
+    if not (h.parent / "index.md").exists() or 'type="text/markdown"' not in t:
+        erros.append(f"{h.relative_to(DIST)}: sem versão Markdown")
+    for c in EMP["contatos"]:
+        if h.parent == DIST and c["telefone"] not in t:
+            erros.append(f"home sem o telefone de {c['nome']}")
+
+# arquivos para buscadores e agentes de IA
+for arq in ("robots.txt", "sitemap.xml", "llms.txt", "catalogo.json", "favicon.ico", "favicon.svg", "favicon-48.png",
+            "favicon-192.png", "apple-touch-icon.png", "site.webmanifest", "CNAME", "js/webmcp.js"):
+    if not (DIST / arq).exists():
+        erros.append(f"falta {arq}")
+robots = (DIST / "robots.txt").read_text(encoding="utf-8")
+if "Content-Signal:" not in robots or "Sitemap: https://" not in robots:
+    erros.append("robots.txt sem Content-Signal ou Sitemap")
+locs = re.findall(r"<loc>([^<]+)</loc>", (DIST / "sitemap.xml").read_text(encoding="utf-8"))
+if len(locs) != len(paginas) - 1:
+    erros.append(f"sitemap com {len(locs)} URLs, esperava {len(paginas) - 1}")
+llms = (DIST / "llms.txt").read_text(encoding="utf-8")
+if not llms.startswith("# ") or "index.md" not in llms or "catalogo.json" not in llms:
+    erros.append("llms.txt incompleto")
+cat = json.loads((DIST / "catalogo.json").read_text(encoding="utf-8"))
+if cat["total"] != len(cat["itens"]) or cat["total"] < 800:
+    erros.append(f"catalogo.json com {cat['total']} itens")
+for p in [*DIST.rglob("*.md"), DIST / "llms.txt", DIST / "catalogo.json"]:
+    if re.search(r"R\$\s?\d", p.read_text(encoding="utf-8")):
+        erros.append(f"{p.relative_to(DIST)}: parece mostrar preço")
 
 # catálogo: códigos únicos por marca e contagem mínima por fonte
 for marca, minimo in {"sibb": 490, "suryha": 250, "perfiltec": 34, "coel": 27}.items():

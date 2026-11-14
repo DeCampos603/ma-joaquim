@@ -381,6 +381,20 @@
     }));
   }
 
+  /* ---------- faixa de categorias: reinicia depois da fonte e para fora da tela ---------- */
+  $$('[data-faixa]').forEach((fx) => {
+    const grupos = $$('.faixa__grupo', fx);
+    const reiniciar = () => {
+      grupos.forEach((g) => { g.style.animation = 'none'; });
+      void fx.offsetWidth;  // força o Safari a medir de novo com a fonte final
+      grupos.forEach((g) => { g.style.animation = ''; });
+    };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(reiniciar);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((ents) => ents.forEach((en) => fx.classList.toggle('parada', !en.isIntersecting))).observe(fx);
+    }
+  });
+
   /* ---------- tabela técnica com filtros (capacitores) ---------- */
   $$('[data-tabela-filtros]').forEach((f) => {
     const sec = f.closest('section'), linhas = $$('tbody tr', sec), cont = $('[data-tf-contagem]', sec);

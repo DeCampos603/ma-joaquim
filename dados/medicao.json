@@ -1,0 +1,10 @@
+{
+ "_como_usar": "Enquanto ga4Id, adsId e gtmId estiverem vazios, o site não carrega nada do Google, não grava cookie de medição e não mostra aviso de cookies. Preenchido qualquer um, o build passa a incluir o aviso (consentimento prévio, LGPD), as tags e as conversões, e troca o texto de privacidade. Passo a passo em Agente-Landing-Pages/clientes/ma-joaquim-representacoes-google-ads-seo.md.",
+ "_campos": "ga4Id = G-XXXXXXXXXX | adsId = AW-123456789 | adsWhatsappLabel = rótulo da conversão 'Clique no WhatsApp' | adsListaLabel = rótulo da conversão 'Enviou a lista de cotação' (opcional) | gtmId = GTM-XXXXXXX (alternativa ao gtag) | googleSiteVerification = conteúdo da meta tag do Search Console (só se não verificar pelo DNS)",
+ "ga4Id": "",
+ "adsId": "",
+ "adsWhatsappLabel": "",
+ "adsListaLabel": "",
+ "gtmId": "",
+ "googleSiteVerification": ""
+}
