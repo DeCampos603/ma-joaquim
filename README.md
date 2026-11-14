@@ -22,4 +22,4 @@ O push na `main` roda o GitHub Actions (`.github/workflows/pages.yml`), que gera
 - `build.py` · gera as páginas estáticas em `dist/`
 - `tests/` · verificação do site gerado
 
-Desenvolvido por [Flow Landing](https://flowlanding.netlify.app/?utm_source=repo&utm_medium=readme&utm_campaign=ma-joaquim-representacoes).
+Desenvolvido por [Flow Landing](https://ladingflow.netlify.app/?utm_source=repo&utm_medium=readme&utm_campaign=ma-joaquim-representacoes).

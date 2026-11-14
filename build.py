@@ -167,7 +167,7 @@ def rodape(base: str) -> str:
   <p>Marcas, logotipos e fotos de produto usados com autorização das fábricas representadas. Este site não usa cookies nem coleta dados: a lista de cotação fica só no seu navegador.</p>
  </div>
  <div class="fl-credito-wrap">
-  <a class="fl-credito" href="https://flowlanding.netlify.app/?utm_source=rodape&amp;utm_medium=assinatura&amp;utm_campaign=ma-joaquim-representacoes"
+  <a class="fl-credito" href="https://ladingflow.netlify.app/?utm_source=rodape&amp;utm_medium=assinatura&amp;utm_campaign=ma-joaquim-representacoes"
      target="_blank" rel="noopener noreferrer nofollow"
      aria-label="Site desenvolvido e criado pela Flow Landing, agência de landing pages (abre em nova aba)">
    <img src="{base}img/flow-landing-logo.webp" width="160" height="36" alt="Flow Landing, agência digital" loading="lazy" decoding="async">
