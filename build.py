@@ -665,7 +665,7 @@ def home() -> str:
 <section class="secao" id="quem-atende" aria-labelledby="quem-titulo">
  <div class="contem quem">
   <figure class="quem__foto revela" data-tilt>
-   <img src="{alex['foto']}" alt="Alexandre Bunn, representante da M.A Joaquim, segurando um manifold digital Suryha" width="{w}" height="{h}" loading="lazy" decoding="async">
+   <img src="{alex['foto']}" alt="Alexandre Bunn, representante da M.A Joaquim, sorrindo, de óculos e camiseta da Suryha" width="{w}" height="{h}" loading="lazy" decoding="async">
   </figure>
   <div class="quem__texto">
    <p class="olho">Quem atende</p>
