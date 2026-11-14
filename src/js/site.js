@@ -201,7 +201,55 @@
     $('[data-produto-add]', dlg).lastChild.textContent = naLista ? ' Tirar da lista' : ' Adicionar à lista';
     const msg = `Olá, Alexandre! Vim pelo site e quero cotação do item ${c.dataset.marca}${c.dataset.cod ? ' ' + c.dataset.cod : ''} – ${c.dataset.nome}.`;
     $('[data-produto-zap]', dlg).href = `https://wa.me/${gaveta ? gaveta.dataset.zap : ''}?text=${encodeURIComponent(msg)}`;
+    // 3D: o botão só aparece se o item tem modelo; o visualizador carrega ao pedir
+    atual.modelo = c.dataset.modelo || ''; atual.modeloNota = c.dataset.modeloNota || '';
+    const b3d = $('[data-produto-ver3d]', dlg);
+    b3d.hidden = !atual.modelo;
+    mostrar3d(false);
+    if (atual.modelo && matchMedia('(min-width: 721px)').matches) mostrar3d(true);
     dlg.showModal();
+  }
+
+  /* ---------- visualizador 3D (model-viewer, carregado sob demanda) ---------- */
+  const MV_URL = 'https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js';
+  let mvPronto = null;
+  const carregarMV = () => mvPronto || (mvPronto = new Promise((ok, falha) => {
+    if (customElements.get('model-viewer')) return ok();
+    const s = document.createElement('script');
+    s.type = 'module'; s.src = MV_URL; s.crossOrigin = 'anonymous';
+    s.onload = () => customElements.whenDefined('model-viewer').then(ok);
+    s.onerror = () => { mvPronto = null; falha(new Error('model-viewer')); };
+    document.head.appendChild(s);
+  }));
+  function mostrar3d(ligar) {
+    if (!dlg) return;
+    const caixa = $('[data-produto-3d]', dlg), img = $('[data-produto-img]', dlg), b = $('[data-produto-ver3d]', dlg);
+    b.setAttribute('aria-pressed', String(ligar));
+    b.querySelector('span').textContent = ligar ? 'Ver foto' : 'Ver em 3D';
+    if (!ligar || !atual || !atual.modelo) { caixa.hidden = true; caixa.innerHTML = ''; img.hidden = false; return; }
+    caixa.hidden = false; img.hidden = true;
+    caixa.innerHTML = '<p class="produto__3d-carregando">Carregando modelo 3D…</p>';
+    const modelo = atual.modelo, nota = atual.modeloNota, nome = atual.nome;
+    carregarMV().then(() => {
+      if (!atual || atual.modelo !== modelo) return;
+      const mv = document.createElement('model-viewer');
+      mv.setAttribute('src', modelo);
+      mv.setAttribute('poster', atual.img);
+      mv.setAttribute('alt', `Modelo 3D de ${nome}`);
+      mv.setAttribute('camera-controls', '');
+      mv.setAttribute('touch-action', 'pan-y');
+      mv.setAttribute('shadow-intensity', '1');
+      mv.setAttribute('exposure', '1.05');
+      mv.setAttribute('environment-image', 'neutral');
+      mv.setAttribute('ar', ''); mv.setAttribute('ar-modes', 'webxr scene-viewer quick-look');
+      if (!calmo) { mv.setAttribute('auto-rotate', ''); mv.setAttribute('auto-rotate-delay', '600'); }
+      const ar = document.createElement('button');
+      ar.slot = 'ar-button'; ar.type = 'button'; ar.className = 'btn btn--zap produto__ar'; ar.textContent = 'Ver no seu espaço (AR)';
+      mv.appendChild(ar);
+      caixa.innerHTML = '';
+      caixa.appendChild(mv);
+      if (nota) { const p = document.createElement('p'); p.className = 'produto__3d-nota'; p.textContent = nota; caixa.appendChild(p); }
+    }).catch(() => { caixa.innerHTML = '<p class="produto__3d-carregando">Não foi possível carregar o 3D agora. Veja a foto.</p>'; });
   }
   if (dlg) {
     $('[data-produto-add]', dlg).addEventListener('click', () => {
@@ -210,6 +258,8 @@
       $('[data-produto-add]', dlg).lastChild.textContent = entrou ? ' Tirar da lista' : ' Adicionar à lista';
     });
     dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+    $('[data-produto-ver3d]', dlg).addEventListener('click', (e) => mostrar3d(e.currentTarget.getAttribute('aria-pressed') !== 'true'));
+    dlg.addEventListener('close', () => mostrar3d(false));
     const palco = $('.produto__palco', dlg), img = $('img', palco);
     if (!calmo) {
       palco.addEventListener('pointermove', (e) => {
@@ -287,6 +337,22 @@
       }, 140);
     });
   }
+
+  /* ---------- modelo 3D da fábrica (Sketchfab): só carrega ao clicar ---------- */
+  $$('[data-sketchfab]').forEach((palco) => {
+    const botao = $('.modelo3d__play', palco);
+    botao.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = palco.dataset.src;
+      f.title = palco.dataset.titulo;
+      f.allow = 'autoplay; fullscreen; xr-spatial-tracking';
+      f.setAttribute('allowfullscreen', '');
+      f.loading = 'eager';
+      palco.classList.add('ativo');
+      palco.appendChild(f);
+      botao.remove();
+    });
+  });
 
   /* ---------- folheador 3D ---------- */
   $$('[data-livro]').forEach((livro) => {

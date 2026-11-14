@@ -65,7 +65,8 @@ ICONES = {
     "fechar": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>',
     "esq": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
     "dir": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    "relogio": '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
+    "cubo": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 20 7.4v9.2l-8 4.6-8-4.6V7.4Z M4 7.4l8 4.6 8-4.6 M12 12v9.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
+    "relogio":'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
     "mail": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
     "pin": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
     "loja": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v10h16V10M3 10l2-6h14l2 6M3 10h18M9 20v-6h6v6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
@@ -164,7 +165,7 @@ def rodape(base: str) -> str:
  </div>
  <div class="rodape__base">
   <p>{e(EMP['razao_social'])} · CNPJ {EMP['cnpj']}</p>
-  <p>Marcas, logotipos e fotos de produto usados com autorização das fábricas representadas. Este site não usa cookies nem coleta dados: a lista de cotação fica só no seu navegador.</p>
+  <p>Marcas, logotipos e fotos de produto usados com autorização das fábricas representadas. Este site não usa cookies nem coleta dados: a lista de cotação fica só no seu navegador. Os visualizadores 3D de terceiros (Sketchfab) só carregam se você clicar para abrir.</p>
  </div>
  <div class="fl-credito-wrap">
   <a class="fl-credito" href="https://ladingflow.netlify.app/?utm_source=rodape&amp;utm_medium=assinatura&amp;utm_campaign=ma-joaquim-representacoes"
@@ -202,7 +203,7 @@ def camadas_globais(base: str) -> str:
 </aside>
 <dialog class="produto" data-produto aria-labelledby="produto-nome">
  <form method="dialog" class="produto__fechar"><button class="icone-btn" aria-label="Fechar">{ICONES['fechar']}</button></form>
- <div class="produto__palco" data-tilt-forte><img alt="" data-produto-img></div>
+ <div class="produto__palco" data-tilt-forte><img alt="" data-produto-img><div class="produto__3d" data-produto-3d hidden></div></div>
  <div class="produto__info">
   <p class="produto__marca" data-produto-marca></p>
   <h2 id="produto-nome" data-produto-nome></h2>
@@ -210,6 +211,7 @@ def camadas_globais(base: str) -> str:
   <p class="produto__secao" data-produto-secao></p>
   <ul class="produto__spec" data-produto-spec></ul>
   <div class="produto__acoes">
+   <button type="button" class="btn btn--contorno" data-produto-ver3d hidden aria-pressed="false">{ICONES['cubo']} <span>Ver em 3D</span></button>
    <button type="button" class="btn btn--primario" data-produto-add>{ICONES['mais']} Adicionar à lista</button>
    <a class="btn btn--zap" data-produto-zap target="_blank" rel="noopener">{ICONES['zap']} Cotar só este</a>
   </div>
@@ -236,6 +238,35 @@ def orbita(itens: list[tuple[str, str, str]], base: str, cls: str, rotulo: str) 
 
 
 SEM_FOTO = "img/sem-foto.svg"
+# Modelos 3D (GLB) por item: {"marca:CODIGO": {"glb": "modelos/arquivo.glb", "nota": "origem do modelo"}}
+_m3d = DADOS / "modelos3d.json"
+MODELOS3D: dict = json.loads(_m3d.read_text(encoding="utf-8")) if _m3d.exists() else {}
+MODELOS3D = {k: v for k, v in MODELOS3D.items() if not k.startswith("_") and (SRC / v["glb"]).exists()}
+
+
+def bloco_sketchfab(m: dict, base: str) -> str:
+    """Modelo 3D oficial da fábrica no Sketchfab. Só carrega o visualizador (e os cookies dele) ao clicar."""
+    sk = m.get("sketchfab")
+    if not sk:
+        return ""
+    w, h = dims(sk["poster"])
+    src = (f"https://sketchfab.com/models/{sk['id']}/embed?autostart=1&ui_theme=dark&ui_infos=0"
+           "&ui_watermark_link=0&ui_hint=2&dnt=1")
+    return f"""<section class="secao secao--escura modelo3d" id="em-3d" aria-labelledby="m3d-titulo">
+ <div class="contem modelo3d__in">
+  <div class="modelo3d__texto">
+   <p class="olho">Interativo</p>
+   <h2 id="m3d-titulo">{e(sk['titulo_secao'])}</h2>
+   <p class="secao__sub">{e(sk['texto'])}</p>
+   <ul class="modelo3d__dicas"><li>Arraste para girar</li><li>Role ou faça pinça para aproximar</li><li>Toque nas peças para ver os detalhes</li></ul>
+  </div>
+  <div class="modelo3d__palco" data-sketchfab data-src="{e(src)}" data-titulo="{e(sk['titulo'])}">
+   <img src="{base}{sk['poster']}" alt="" width="{w}" height="{h}" loading="lazy" decoding="async">
+   <button type="button" class="modelo3d__play">{ICONES['cubo']}<span>Abrir modelo 3D</span><small>carrega o visualizador do Sketchfab</small></button>
+  </div>
+ </div>
+ <p class="contem modelo3d__credito">Modelo 3D <a href="https://sketchfab.com/3d-models/{e(sk['slug'])}" target="_blank" rel="noopener">{e(sk['titulo'])}</a>, publicado por {e(sk['autor'])} no Sketchfab.</p>
+</section>"""
 
 
 def card_produto(m: dict, it: dict, base: str) -> str:
@@ -255,9 +286,12 @@ def card_produto(m: dict, it: dict, base: str) -> str:
         spec_l.append("Foto não disponível no catálogo da fábrica")
     spec = json.dumps(spec_l, ensure_ascii=False) if spec_l else ""
     det = it.get("linha", "") if it.get("linha") not in ("Coel", "") else ""
-    return f"""<li class="cartao" data-busca="{e(busca)}" data-secao="{e(it.get('secao', ''))}" data-id="{e(pid)}" data-marca="{e(m['nome'])}" data-cod="{e(cod)}" data-nome="{e(nome)}" data-sec="{e(it.get('secao', ''))}" data-det="{e(det)}" data-img="{base}{it['img']}"{f' data-spec="{e(spec)}"' if spec else ''}>
+    mod = MODELOS3D.get(f"{m['slug']}:{cod}") if cod else None
+    attr3d = f' data-modelo="{base}{e(mod["glb"])}" data-modelo-nota="{e(mod.get("nota", ""))}"' if mod else ""
+    selo3d = '<span class="cartao__3d" aria-label="Disponível em 3D">3D</span>' if mod else ""
+    return f"""<li class="cartao" data-busca="{e(busca + (' 3d' if mod else ''))}" data-secao="{e(it.get('secao', ''))}" data-id="{e(pid)}" data-marca="{e(m['nome'])}" data-cod="{e(cod)}" data-nome="{e(nome)}" data-sec="{e(it.get('secao', ''))}" data-det="{e(det)}" data-img="{base}{it['img']}"{f' data-spec="{e(spec)}"' if spec else ''}{attr3d}>
  <button type="button" class="cartao__abrir" data-abrir-produto>
-  <span class="cartao__foto"><img src="{base}{it['img']}" alt="{e(nome + (' ' + cod if cod else ''))}" width="{w}" height="{h}" loading="lazy" decoding="async"></span>
+  <span class="cartao__foto">{selo3d}<img src="{base}{it['img']}" alt="{e(nome + (' ' + cod if cod else ''))}" width="{w}" height="{h}" loading="lazy" decoding="async"></span>
   <span class="cartao__cod">{e(cod) if cod else '&nbsp;'}</span>
   <span class="cartao__nome">{e(nome)}</span>
   <span class="cartao__sec">{e(it.get('secao', ''))}</span>
@@ -535,6 +569,7 @@ def pagina_marca(m: dict) -> str:
    <div class="heroi__acoes entra" style="--d:3">
     <a class="btn btn--zap btn--grande" href="{wa(f'Olá, Alexandre! Vim pelo site e quero cotação de itens {m["nome"]}.')}" target="_blank" rel="noopener">{ICONES['zap']} Cotar {e(m['nome'])}</a>
     <a class="btn btn--contorno-claro btn--grande" href="#catalogo">Ver catálogo {ICONES['seta']}</a>
+    {f'<a class="btn btn--contorno-claro btn--grande" href="#em-3d">{ICONES["cubo"]} Ver em 3D</a>' if m.get('sketchfab') else ''}
    </div>
   </div>
   <div class="heroi__3d entra" style="--d:2">{vitrine}</div>
@@ -542,6 +577,7 @@ def pagina_marca(m: dict) -> str:
 </section>
 {extra}
 {bloco_catalogo(m, base)}
+{bloco_sketchfab(m, base)}
 {bloco_folhas(m, base)}
 <section class="secao" aria-labelledby="outras-titulo">
  <div class="contem">

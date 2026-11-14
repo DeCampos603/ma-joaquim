@@ -1,0 +1,4 @@
+{
+ "_como_usar": "Chave 'marca:CODIGO' do catálogo. O GLB fica em src/modelos/. Item só ganha o selo 3D se o arquivo existir. 'nota' aparece na janela do produto (ex.: origem do modelo).",
+ "_exemplo": {"glb": "modelos/cdr60.glb", "nota": "Modelo gerado a partir da foto do catálogo; medidas ilustrativas."}
+}

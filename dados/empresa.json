@@ -66,7 +66,16 @@
    "cor": "#1d2733",
    "resumo": "Canaletas e acessórios para instalação de ar-condicionado.",
    "texto": "Canaletas e acessórios para split, em branco e preto, com a nova linha SPLITEC FIT de clique FastFit. Três bitolas: 30 mm para dreno, 60 mm para splits até 12.000 BTUs e 80 mm para splits acima de 12.000 BTUs.",
-   "catalogo_nota": "Códigos e SKUs do Catálogo Climatização 2026 da Perfiltec (edição de agosto de 2026)."
+   "catalogo_nota": "Códigos e SKUs do Catálogo Climatização 2026 da Perfiltec (edição de agosto de 2026).",
+   "sketchfab": {
+    "id": "881ee693922f4e43990aedcc2c970935",
+    "slug": "aplicacoes-perfiltec-881ee693922f4e43990aedcc2c970935",
+    "titulo": "Aplicações Perfiltec",
+    "autor": "Perfiltec Indústria de Perfis",
+    "titulo_secao": "Veja a instalação completa em 3D",
+    "texto": "O modelo oficial da Perfiltec mostra canaletas, curvas, terminais e passagens montados numa instalação de split, do jeito que ficam na parede.",
+    "poster": "catalogo/perfiltec/splitec-fit.webp"
+   }
   }
  ]
 }
