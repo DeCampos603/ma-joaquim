@@ -109,7 +109,7 @@
   /* ---------- lista de cotação (fica só no navegador) ---------- */
   const CHAVE = 'majoaquim:lista';
   const ler = () => { try { return JSON.parse(localStorage.getItem(CHAVE)) || []; } catch { return []; } };
-  const gravar = (l) => { try { localStorage.setItem(CHAVE, JSON.stringify(l)); } catch { /* modo privado */ } };
+  const gravar = (l) => { try { localStorage.setItem(CHAVE, JSON.stringify(l)); dispatchEvent(new CustomEvent('majoaquim:lista-site-alterada')); } catch { /* modo privado */ } };
   let lista = ler();
   const gaveta = $('[data-lista]');
   const botoesLista = $$('[data-abrir-lista]');
@@ -181,6 +181,7 @@
     });
   }
   addEventListener('storage', (e) => { if (e.key === CHAVE) { lista = ler(); desenharLista(); marcarCartoes(); } });
+  addEventListener('majoaquim:lista-cli-alterada', () => { lista = ler(); desenharLista(); marcarCartoes(); });
   desenharLista(); marcarCartoes();
 
   /* ---------- janela do produto ---------- */
@@ -278,10 +279,31 @@
   });
 
   /* ---------- catálogo da marca: busca, seção e paginação ---------- */
+  let timerBuscaZero = null;
+  function registrarBuscaZero(termo, marcaSlug) {
+    const limpo = String(termo || '').trim().slice(0, 120);
+    if (limpo.length < 3) return;
+    clearTimeout(timerBuscaZero);
+    timerBuscaZero = setTimeout(() => {
+      if (window.MAJ_SUPA && typeof window.MAJ_SUPA.registrarEventoBusca === 'function') {
+        window.MAJ_SUPA.registrarEventoBusca(limpo, marcaSlug || 'global', 0);
+        return;
+      }
+      try {
+        const ck = 'majoaquim:area_cliente:v1';
+        const cur = JSON.parse(localStorage.getItem(ck) || '{}');
+        const buscas = Array.isArray(cur.buscas) ? cur.buscas.slice(0, 49) : [];
+        buscas.unshift({ termo: limpo, marca_slug: marcaSlug || 'global', resultados: 0, criado_em: new Date().toISOString() });
+        localStorage.setItem(ck, JSON.stringify({ ...cur, buscas }));
+      } catch { /* modo privado */ }
+    }, 700);
+  }
+
   $$('[data-catalogo]').forEach((sec) => {
     const cartoes = $$('.cartao', sec), entrada = $('[data-busca]', sec), chips = $$('[data-secao-filtro]', sec);
     const cont = $('[data-contagem]', sec), vazio = $('[data-vazio]', sec), mais = $('[data-mais]', sec);
     const POR = 36; let limite = POR, secao = '';
+    const marcaSlug = (cartoes[0] && (cartoes[0].dataset.id || '').split(':')[0]) || 'catalogo';
     cartoes.forEach((c) => { c._t = semAcento(c.dataset.busca); });
     const aplicar = () => {
       const termos = semAcento(entrada.value).split(/\s+/).filter(Boolean);
@@ -294,6 +316,7 @@
       });
       cont.textContent = n === cartoes.length ? `${n} itens` : `${n} de ${cartoes.length} itens`;
       vazio.hidden = n > 0;
+      if (n === 0 && entrada.value.trim().length >= 3) registrarBuscaZero(entrada.value, marcaSlug);
       mais.hidden = n <= limite;
       mais.textContent = `Mostrar mais (${n - mostrados} restantes)`;
     };
@@ -327,7 +350,20 @@
   /* ---------- busca em todas as marcas (início) ---------- */
   const bg = $('[data-busca-global]');
   if (bg) {
-    const idx = JSON.parse($('#indice-catalogo').textContent).map((i) => ({ ...i, t: semAcento(`${i.m} ${i.c} ${i.n} ${i.x}`) }));
+    const inlineIdx = $('#indice-catalogo');
+    const prepIdx = (arr) => arr.map((i) => ({ ...i, t: semAcento(`${i.m} ${i.c} ${i.n} ${i.x} ${i.o || ''}`) }));
+    let idxCache = inlineIdx ? prepIdx(JSON.parse(inlineIdx.textContent)) : null;
+    let idxProm = null;
+    const carregarIdx = () => {
+      if (idxCache) return Promise.resolve(idxCache);
+      if (!idxProm) {
+        idxProm = fetch('dados/indice-busca.json')
+          .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+          .then((arr) => (idxCache = prepIdx(arr)))
+          .catch((err) => { idxProm = null; throw err; });
+      }
+      return idxProm;
+    };
     const inp = $('[data-busca-global-input]', bg), res = $('[data-busca-global-res]', bg), info = $('[data-busca-global-info]', bg);
     const caixaMarcas = $('[data-busca-global-marcas]', bg);
     const secoesCat = JSON.parse(($('#categorias-secoes') || { textContent: '{}' }).textContent);
@@ -345,39 +381,59 @@
         li.appendChild(a); res.appendChild(li);
       });
     };
+    inp.addEventListener('focus', () => { carregarIdx().catch(() => {}); }, { once: true });
     let tm;
     inp.addEventListener('input', () => {
       clearTimeout(tm);
       tm = setTimeout(() => {
         caixaMarcas.hidden = true;
-        const termos = semAcento(inp.value).split(/\s+/).filter(Boolean);
+        const val = inp.value.trim();
         res.innerHTML = '';
-        if (inp.value.trim().length < 2) { info.textContent = 'Digite pelo menos 2 letras, ou escolha uma categoria acima.'; return; }
-        const achados = idx.filter((i) => termos.every((t) => i.t.includes(t)));
-        info.textContent = achados.length ? `${achados.length} ${achados.length === 1 ? 'item encontrado' : 'itens encontrados'}${achados.length > 24 ? '. Mostrando os 24 primeiros' : ''}.` : 'Nada encontrado. Mande a foto ou o código pelo WhatsApp que eu procuro na fábrica.';
-        desenhar(achados);
+        if (val.length < 2) { info.textContent = 'Digite pelo menos 2 letras, ou escolha uma categoria acima.'; return; }
+        if (!idxCache) info.textContent = 'Buscando…';
+        carregarIdx().then((idx) => {
+          const atualVal = inp.value.trim();
+          if (atualVal.length < 2) { info.textContent = 'Digite pelo menos 2 letras, ou escolha uma categoria acima.'; return; }
+          const termos = semAcento(atualVal).split(/\s+/).filter(Boolean);
+          const achados = idx.filter((i) => termos.every((t) => i.t.includes(t)));
+          info.textContent = achados.length ? `${achados.length} ${achados.length === 1 ? 'item encontrado' : 'itens encontrados'}${achados.length > 24 ? '. Mostrando os 24 primeiros' : ''}.` : 'Nada encontrado. Mande a foto ou o código pelo WhatsApp que eu procuro na fábrica.';
+          if (!achados.length && atualVal.length >= 3) {
+            registrarBuscaZero(atualVal, 'home');
+          }
+          desenhar(achados);
+        }).catch(() => {
+          info.textContent = 'Não foi possível carregar o índice agora. Tente abrir a página da marca.';
+        });
       }, 140);
     });
     // navegação por categoria: mostra os itens das quatro marcas e um atalho por marca
     $$('[data-categoria]').forEach((b) => b.addEventListener('click', () => {
       const k = b.dataset.categoria, nome = b.dataset.categoriaNome;
-      const achados = idx.filter((i) => i.k === k);
       inp.value = '';
-      info.textContent = `${nome}: ${achados.length} itens${achados.length > 24 ? '. Abaixo, uma amostra; veja tudo na página de cada marca' : ''}.`;
       caixaMarcas.innerHTML = '';
-      const porMarca = {};
-      achados.forEach((i) => { (porMarca[i.s] = porMarca[i.s] || { nome: i.m, n: 0 }).n++; });
-      Object.entries(porMarca).forEach(([s, v]) => {
-        const secs = (secoesCat[k] || {})[s] || [];
-        const a = document.createElement('a');
-        a.className = 'chip';
-        a.href = `marcas/${s}/${secs.length && secs[0] !== '*' ? '?secao=' + encodeURIComponent(secs.join('|')) : ''}#catalogo`;
-        a.textContent = `Ver os ${v.n} da ${v.nome} →`;
-        caixaMarcas.appendChild(a);
-      });
-      caixaMarcas.hidden = false;
-      desenhar(achados);
+      caixaMarcas.hidden = true;
+      res.innerHTML = '';
+      if (!idxCache) info.textContent = `Carregando ${nome}…`;
       $('#catalogo').scrollIntoView({ behavior: calmo ? 'auto' : 'smooth' });
+      carregarIdx().then((idx) => {
+        const achados = idx.filter((i) => i.k === k);
+        info.textContent = `${nome}: ${achados.length} itens${achados.length > 24 ? '. Abaixo, uma amostra; veja tudo na página de cada marca' : ''}.`;
+        caixaMarcas.innerHTML = '';
+        const porMarca = {};
+        achados.forEach((i) => { (porMarca[i.s] = porMarca[i.s] || { nome: i.m, n: 0 }).n++; });
+        Object.entries(porMarca).forEach(([s, v]) => {
+          const secs = (secoesCat[k] || {})[s] || [];
+          const a = document.createElement('a');
+          a.className = 'chip';
+          a.href = `marcas/${s}/${secs.length && secs[0] !== '*' ? '?secao=' + encodeURIComponent(secs.join('|')) : ''}#catalogo`;
+          a.textContent = `Ver os ${v.n} da ${v.nome} →`;
+          caixaMarcas.appendChild(a);
+        });
+        caixaMarcas.hidden = false;
+        desenhar(achados);
+      }).catch(() => {
+        info.textContent = 'Não foi possível carregar o catálogo agora. Tente abrir a página da marca.';
+      });
     }));
   }
 
@@ -395,21 +451,24 @@
     }
   });
 
-  /* ---------- tabela técnica com filtros (capacitores) ---------- */
+  /* ---------- tabela técnica com filtros (capacitores e equivalências OEM) ---------- */
   $$('[data-tabela-filtros]').forEach((f) => {
     const sec = f.closest('section'), linhas = $$('tbody tr', sec), cont = $('[data-tf-contagem]', sec);
     const busca = $('[data-tf-busca]', f), tipo = $('[data-tf-tipo]', f), tensao = $('[data-tf-tensao]', f);
+    const unid = (cont && cont.dataset.tfUnidade) || 'capacitores';
     linhas.forEach((l) => { l._t = semAcento(l.dataset.busca).replace(/\s+/g, ''); });
     const aplicar = () => {
-      const termos = semAcento(busca.value).split(/\s+/).filter(Boolean).map((t) => t.replace(/\s+/g, ''));
+      const termos = semAcento(busca ? busca.value : '').split(/\s+/).filter(Boolean).map((t) => t.replace(/\s+/g, ''));
+      const valTipo = tipo ? tipo.value : '';
+      const valTensao = tensao ? tensao.value : '';
       let n = 0;
       linhas.forEach((l) => {
-        const ok = (!tipo.value || l.dataset.tipo === tipo.value) && (!tensao.value || l.dataset.tensao === tensao.value) && termos.every((t) => l._t.includes(t));
+        const ok = (!valTipo || l.dataset.tipo === valTipo) && (!valTensao || l.dataset.tensao === valTensao) && termos.every((t) => l._t.includes(t));
         l.hidden = !ok; if (ok) n++;
       });
-      cont.textContent = `${n} de ${linhas.length} capacitores`;
+      if (cont) cont.textContent = n === linhas.length && !termos.length && !valTipo && !valTensao ? `${n} ${unid}` : `${n} de ${linhas.length} ${unid}`;
     };
-    [busca, tipo, tensao].forEach((el) => { el.addEventListener('input', aplicar); el.addEventListener('change', aplicar); });
+    [busca, tipo, tensao].filter(Boolean).forEach((el) => { el.addEventListener('input', aplicar); el.addEventListener('change', aplicar); });
   });
 
   /* ---------- menu fixo da marca: marca a seção visível ---------- */

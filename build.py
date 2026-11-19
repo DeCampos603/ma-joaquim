@@ -66,6 +66,26 @@ def catalogo(slug: str) -> list[dict]:
 CAT = {m["slug"]: catalogo(m["slug"]) for m in MARCAS}
 TOTAL = sum(len(v) for v in CAT.values())
 ALEX, DEIVID = EMP["contatos"][0], EMP["contatos"][1]
+_oem_arq = DADOS / "conversor-oem.json"
+OEM_LISTA: list[dict] = json.loads(_oem_arq.read_text(encoding="utf-8")).get("itens", []) if _oem_arq.exists() else []
+OEM_POR_ITEM: dict[tuple[str, str], list[str]] = {}
+for _it in OEM_LISTA:
+    _chave = (_it.get("marca", ""), _it.get("codigo", ""))
+    _oem = re.sub(r"\s+", " ", (_it.get("oem") or "")).strip()
+    if _chave[0] and _chave[1] and _oem:
+        _lista_o = OEM_POR_ITEM.setdefault(_chave, [])
+        if _oem not in _lista_o:
+            _lista_o.append(_oem)
+
+REGIOES_RJ = [
+    "Rio de Janeiro (Capital)",
+    "Niterói e São Gonçalo",
+    "Baixada Fluminense (Duque de Caxias e Nova Iguaçu)",
+    "Região Serrana (Petrópolis, Teresópolis e Nova Friburgo)",
+    "Região dos Lagos (Cabo Frio e Araruama)",
+    "Norte Fluminense (Macaé e Campos dos Goytacazes)",
+    "Sul Fluminense (Volta Redonda, Barra Mansa e Resende)",
+]
 
 # ---------------------------------------------------------------- fatos únicos (site, JSON-LD, llms.txt, Markdown e WebMCP)
 AVISO_DADOS = ("A lista de cotação fica só no seu navegador. Cookies de medição do Google só entram com a sua permissão."
@@ -81,7 +101,7 @@ def resumo_empresa() -> list[str]:
         f"{EMP['nome']} (razão social {EMP['razao_social']}, CNPJ {EMP['cnpj']}): representação comercial de fábricas no {EMP['area']} desde {EMP['desde']}.",
         f"Fábricas representadas: {marcas}.",
         "Atende lojas de peças, distribuidores, assistências técnicas e instaladores de refrigeração, climatização e linha branca.",
-        f"O site tem um catálogo com {TOTAL} itens (códigos das fábricas). Preço, estoque, prazo, pedido mínimo e pagamento não são divulgados: dependem da fábrica e do cadastro do cliente e vêm na cotação.",
+        f"O site tem um catálogo com {TOTAL} itens (códigos das fábricas) e {len(OEM_LISTA)} equivalências OEM/técnicas. Preço, estoque, prazo, pedido mínimo e pagamento não são divulgados: dependem da fábrica e do cadastro do cliente e vêm na cotação.",
         f"Cotação: {contatos}; e-mail {EMP['email']}. Horário: {EMP['horario'].lower()}.",
     ]
 
@@ -90,16 +110,20 @@ DADOS_AGENTE = {"whatsapp": ZAP["whatsapp"], "contato": f"{ZAP['nome']}, {ZAP['t
 
 ORG_ID, SITE_ID = BASE_URL + "#organizacao", BASE_URL + "#site"
 PESSOA_ID = {c["nome"]: BASE_URL + "#" + re.sub(r"\W+", "-", c["nome"].lower()).strip("-") for c in EMP["contatos"]}
-NOME_CURTO = {"sobre/": "Sobre", "contato/": "Contato", "termos/": "Termos de uso", "privacidade/": "Privacidade"} | {
-    f"marcas/{m['slug']}/": m["nome"] for m in MARCAS}
+NOME_CURTO = {"cliente/": "Área do cliente", "equivalencias/": "Tabela OEM", "sobre/": "Sobre", "contato/": "Contato",
+              "termos/": "Termos de uso", "privacidade/": "Privacidade"} | {f"marcas/{m['slug']}/": m["nome"] for m in MARCAS}
 HORARIO_LD = {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
               "opens": "08:00", "closes": "19:00"}
 
 
 def ld_org() -> dict:
-    return {
-        "@type": "Organization", "@id": ORG_ID, "name": EMP["nome"], "legalName": EMP["razao_social"], "taxID": EMP["cnpj"],
-        "foundingDate": str(EMP["desde"]), "url": BASE_URL, "logo": BASE_URL + "img/logo-ma-joaquim.svg", "image": BASE_URL + "img/og.jpg",
+    org = {
+        "@type": "Organization", "@id": ORG_ID, "name": EMP["nome"], "legalName": EMP["razao_social"],
+        "alternateName": ["M A Joaquim", "MA Joaquim", "M A Joaquim Representações", "M.A Joaquim Representações", "MA Joaquim Representação"],
+        "taxID": EMP["cnpj"],
+        "foundingDate": str(EMP["desde"]), "url": BASE_URL,
+        "logo": {"@type": "ImageObject", "url": BASE_URL + "img/logo-ma-joaquim.png", "width": 512, "height": 512},
+        "image": BASE_URL + "img/og.jpg",
         "description": resumo_empresa()[0], "email": EMP["email"], "telephone": fone_intl(ZAP["whatsapp"]),
         "address": {"@type": "PostalAddress", "addressRegion": "RJ", "addressCountry": "BR"},
         "areaServed": {"@type": "State", "name": "Rio de Janeiro"},
@@ -108,9 +132,14 @@ def ld_org() -> dict:
                          for c in EMP["contatos"] if c["whatsapp"]],
         "employee": [{"@id": PESSOA_ID[c["nome"]]} for c in EMP["contatos"]],
         "brand": [{"@type": "Brand", "name": m["nome"], "url": f"{BASE_URL}marcas/{m['slug']}/"} for m in MARCAS],
-        "knowsAbout": ["Refrigeração", "Climatização", "Ar-condicionado", "Linha branca", "Peças de reposição", "Ferramentas para refrigeração",
-                       "Controladores de temperatura", "Canaletas para ar-condicionado", "Capacitores"],
+        "knowsAbout": ["Refrigeração", "Climatização", "Ar-condicionado", "Linha branca", "Peças de reposição",
+                       "Peças para lava e seca", "Ferramentas para refrigeração", "Controladores de temperatura",
+                       "Canaletas para ar-condicionado", "Capacitores", "Ferramentas Suryha", "Peças SIBB Sigma",
+                       "Controladores Coel", "Canaletas Perfiltec Splitec", "Atacado B2B de refrigeração"],
     }
+    if EMP.get("same_as"):
+        org["sameAs"] = EMP["same_as"]
+    return org
 
 
 def ld_pessoas() -> list[dict]:
@@ -135,10 +164,13 @@ def ld_servico() -> dict:
 
 def ld_base(titulo: str, desc: str, caminho: str) -> list[dict]:
     url = BASE_URL + caminho
-    tipo = {"sobre/": "AboutPage", "contato/": "ContactPage"}.get(caminho, "CollectionPage" if caminho.startswith("marcas/") else "WebPage")
+    tipo = {"sobre/": "AboutPage", "contato/": "ContactPage"}.get(
+        caminho, "CollectionPage" if caminho.startswith("marcas/") or caminho == "equivalencias/" else "WebPage")
     pag = {"@type": tipo, "@id": url + "#pagina", "url": url, "name": titulo, "description": desc, "inLanguage": "pt-BR",
            "isPartOf": {"@id": SITE_ID}, "about": {"@id": ORG_ID}, "dateModified": HOJE}
-    nos = [{"@type": "WebSite", "@id": SITE_ID, "url": BASE_URL, "name": EMP["nome"], "inLanguage": "pt-BR", "publisher": {"@id": ORG_ID}},
+    nos = [{"@type": "WebSite", "@id": SITE_ID, "url": BASE_URL, "name": EMP["nome"],
+            "alternateName": ["M A Joaquim", "MA Joaquim", "M A Joaquim Representações"],
+            "inLanguage": "pt-BR", "publisher": {"@id": ORG_ID}},
            ld_org(), pag]
     if caminho:
         trilha = [("Início", BASE_URL)] + ([("Marcas", BASE_URL + "#marcas")] if caminho.startswith("marcas/") else []) + [(NOME_CURTO.get(caminho, titulo), url)]
@@ -240,7 +272,8 @@ def head(titulo: str, desc: str, caminho: str, base: str, extra: str = "", index
 {verif}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..900&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="{base}css/site.css">
 <link rel="stylesheet" href="{base}css/flow-landing-credito.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -268,6 +301,7 @@ def cabecalho(base: str, atual: str = "") -> str:
     {item(base + '#como-funciona', 'Como funciona', 'como')}
     {item(base + '#quem-atende', 'Quem atende', 'quem')}
     {item(base + '#duvidas', 'Dúvidas', 'duvidas')}
+    {item(base + 'cliente/', 'Área do cliente', 'cliente')}
    </ul>
   </nav>
   <button class="botao-lista" type="button" data-abrir-lista aria-controls="lista" aria-expanded="false">
@@ -280,12 +314,28 @@ def cabecalho(base: str, atual: str = "") -> str:
 """
 
 
-def rodape(base: str) -> str:
+def rodape(base: str, discreto: bool = False) -> str:
     marcas = "".join(f'<li><a href="{base}marcas/{m["slug"]}/">{e(m["nome"])}</a></li>' for m in MARCAS)
     contatos = "".join(
         f'<li><strong>{e(c["nome"])}</strong> · '
         + (f'<a href="https://wa.me/{c["whatsapp"]}" target="_blank" rel="noopener">{e(c["telefone"])}</a>' if c["whatsapp"] else e(c["telefone"]))
         + "</li>" for c in EMP["contatos"])
+    url_fl = "https://ladingflow.netlify.app/?utm_source=rodape&amp;utm_medium=assinatura&amp;utm_campaign=ma-joaquim-representacoes"
+    if discreto:
+        credito_html = (
+            '<div class="fl-credito-wrap">'
+            f'<p class="fl-credito-linha">Site desenvolvido e criado pela <a href="{url_fl}" target="_blank" rel="noopener noreferrer nofollow">Flow Landing</a></p>'
+            '</div>'
+        )
+    else:
+        credito_html = (
+            '<div class="fl-credito-wrap">'
+            f'<a class="fl-credito" href="{url_fl}" target="_blank" rel="noopener noreferrer nofollow" '
+            'aria-label="Site desenvolvido e criado pela Flow Landing, agência de landing pages (abre em nova aba)">'
+            f'<img src="{base}img/flow-landing-logo.webp" width="160" height="36" alt="" loading="lazy" decoding="async">'
+            '<span class="fl-credito-txt"><small>Site desenvolvido e criado pela</small><strong>Flow Landing</strong><span>Quer uma página assim? Conheça →</span></span>'
+            '</a></div>'
+        )
     return f"""<footer class="rodape">
  <div class="rodape__in">
   <div class="rodape__marca">
@@ -297,6 +347,8 @@ def rodape(base: str) -> str:
    <li><a href="mailto:{EMP['email']}">{EMP['email']}</a></li>
    <li>{e(EMP['horario'])}</li></ul></div>
   <div><h2>Institucional</h2><ul>
+   <li><a href="{base}cliente/">Área do cliente</a></li>
+   <li><a href="{base}equivalencias/">Tabela OEM ({len(OEM_LISTA)} refs.)</a></li>
    <li><a href="{base}sobre/">Sobre a empresa</a></li>
    <li><a href="{base}contato/">Contato</a></li>
    <li><a href="{base}termos/">Termos de uso</a></li>
@@ -306,14 +358,7 @@ def rodape(base: str) -> str:
   <p>{e(EMP['razao_social'])} · CNPJ {EMP['cnpj']}</p>
   <p>Marcas, logotipos e fotos de produto usados com autorização das fábricas representadas. {AVISO_DADOS} Os visualizadores 3D de terceiros (Sketchfab) só carregam se você clicar para abrir.</p>
  </div>
- <div class="fl-credito-wrap">
-  <a class="fl-credito" href="https://ladingflow.netlify.app/?utm_source=rodape&amp;utm_medium=assinatura&amp;utm_campaign=ma-joaquim-representacoes"
-     target="_blank" rel="noopener noreferrer nofollow"
-     aria-label="Site desenvolvido e criado pela Flow Landing, agência de landing pages (abre em nova aba)">
-   <img src="{base}img/flow-landing-logo.webp" width="160" height="36" alt="Flow Landing, agência digital" loading="lazy" decoding="async">
-   <span class="fl-credito-txt"><small>Site desenvolvido e criado pela</small><strong>Flow Landing</strong><span>Quer uma página assim? Conheça →</span></span>
-  </a>
- </div>
+ {credito_html}
 </footer>
 """
 
@@ -337,7 +382,7 @@ def camadas_globais(base: str) -> str:
    <button type="button" class="btn btn--zap btn--largo" data-lista-enviar disabled>{ICONES['zap']} Enviar lista pelo WhatsApp</button>
    <button type="button" class="btn-texto" data-lista-limpar>Limpar lista</button>
   </div>
-  <p class="lista__nota">A mensagem abre no seu WhatsApp, pronta para revisar e enviar ao Alexandre. Preço, prazo e disponibilidade vêm na resposta.</p>
+  <p class="lista__nota">A mensagem abre no seu WhatsApp, pronta para revisar e enviar ao Alexandre. Preço, prazo e disponibilidade vêm na resposta. Quer salvar histórico e preencher sua ficha cadastral? <a href="{base}cliente/">Entre na Área do cliente</a>.</p>
  </div>
 </aside>
 <dialog class="produto" data-produto aria-labelledby="produto-nome">
@@ -352,7 +397,7 @@ def camadas_globais(base: str) -> str:
   <div class="produto__acoes">
    <button type="button" class="btn btn--contorno" data-produto-ver3d hidden aria-pressed="false">{ICONES['cubo']} <span>Ver em 3D</span></button>
    <button type="button" class="btn btn--primario" data-produto-add>{ICONES['mais']} Adicionar à lista</button>
-   <a class="btn btn--zap" data-produto-zap target="_blank" rel="noopener">{ICONES['zap']} Cotar só este</a>
+   <a class="btn btn--zap" href="{wa('Olá, Alexandre! Vim pelo site e quero uma cotação.')}" data-produto-zap target="_blank" rel="noopener">{ICONES['zap']} Cotar só este</a>
   </div>
  </div>
 </dialog>
@@ -363,13 +408,15 @@ def camadas_globais(base: str) -> str:
 
 
 def pagina(titulo: str, desc: str, caminho: str, base: str, corpo: str, atual: str = "", extra_head: str = "",
-           ld: list[dict] | None = None, indexar: bool = True) -> str:
+           ld: list[dict] | None = None, indexar: bool = True, extra_scripts: str = "",
+           rodape_discreto: bool = False) -> str:
     """ld: nós schema.org da página; WebSite, Organization e WebPage entram sempre."""
     grafo = ld_base(titulo, desc, caminho) + (ld or []) if indexar else []
     extra = extra_head + (f'<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@graph": grafo}, ensure_ascii=False)}</script>\n'
                           if grafo else "")
     return (head(titulo, desc, caminho, base, extra, indexar) + "<body>\n" + cabecalho(base, atual)
-            + f'<main id="conteudo">\n{corpo}\n</main>\n' + rodape(base) + camadas_globais(base) + "</body>\n</html>\n")
+            + f'<main id="conteudo">\n{corpo}\n</main>\n' + rodape(base, discreto=rodape_discreto)
+            + camadas_globais(base) + extra_scripts + "</body>\n</html>\n")
 
 
 # ---------------------------------------------------------------- blocos
@@ -421,6 +468,24 @@ def categoria_de(slug: str, secao: str) -> str:
         if "*" in secs or secao in secs:
             return chave
     return ""
+
+
+def indice_catalogo_publico() -> list[dict]:
+    out = []
+    for m in MARCAS:
+        for it in CAT[m["slug"]]:
+            cod = it.get("codigo", "")
+            oems = OEM_POR_ITEM.get((m["slug"], cod), [])
+            reg = {"m": m["nome"], "s": m["slug"], "c": cod, "n": it["tipo"], "x": it.get("secao", ""),
+                   "i": it["img"] or SEM_FOTO, "k": categoria_de(m["slug"], it.get("secao", ""))}
+            if oems:
+                reg["o"] = " ".join(oems)
+            out.append(reg)
+    return out
+
+
+def indice_oem_publico() -> list[dict]:
+    return OEM_LISTA
 
 
 def bloco_categorias(base: str) -> str:
@@ -595,8 +660,11 @@ def card_produto(m: dict, it: dict, base: str) -> str:
     cod = it.get("codigo", "")
     nome = it["tipo"]
     pid = f"{m['slug']}:{cod or re.sub(r'[^a-z0-9]+', '-', nome.lower())}"
-    busca = " ".join([m["nome"], cod, nome, it.get("secao", ""), it.get("linha", ""), it.get("sku", "")]).lower()
+    oems = OEM_POR_ITEM.get((m["slug"], cod), [])
+    busca = " ".join([m["nome"], cod, nome, it.get("secao", ""), it.get("linha", ""), it.get("sku", ""), *oems]).lower()
     spec_l = list(it.get("spec", []))
+    if oems:
+        spec_l.append(f"OEM / Ref.: {', '.join(oems[:6])}")
     if it.get("sku"):
         spec_l.append(f"SKU: {it['sku']}")
     if it.get("multiplo"):
@@ -608,12 +676,13 @@ def card_produto(m: dict, it: dict, base: str) -> str:
     mod = MODELOS3D.get(f"{m['slug']}:{cod}") if cod else None
     attr3d = f' data-modelo="{base}{e(mod["glb"])}" data-modelo-nota="{e(mod.get("nota", ""))}"' if mod else ""
     selo3d = '<span class="cartao__3d" aria-label="Disponível em 3D">3D</span>' if mod else ""
+    oem_html = f'\n  <span class="cartao__oem">OEM: {e(", ".join(oems))}</span>' if oems else ""
     return f"""<li class="cartao" data-busca="{e(busca + (' 3d' if mod else ''))}" data-secao="{e(it.get('secao', ''))}" data-id="{e(pid)}" data-marca="{e(m['nome'])}" data-cod="{e(cod)}" data-nome="{e(nome)}" data-sec="{e(it.get('secao', ''))}" data-det="{e(det)}" data-img="{base}{it['img']}"{f' data-spec="{e(spec)}"' if spec else ''}{attr3d}>
  <button type="button" class="cartao__abrir" data-abrir-produto>
   <span class="cartao__foto">{selo3d}<img src="{base}{it['img']}" alt="{e(nome + (' ' + cod if cod else ''))}" width="{w}" height="{h}" loading="lazy" decoding="async"></span>
   <span class="cartao__cod">{e(cod) if cod else '&nbsp;'}</span>
   <span class="cartao__nome">{e(nome)}</span>
-  <span class="cartao__sec">{e(it.get('secao', ''))}</span>
+  <span class="cartao__sec">{e(it.get('secao', ''))}</span>{oem_html}
  </button>
  <button type="button" class="cartao__add" data-add aria-label="Adicionar {e(nome)} {e(cod)} à lista">{ICONES['mais']}<span>Lista</span></button>
 </li>"""
@@ -628,12 +697,14 @@ def bloco_catalogo(m: dict, base: str) -> str:
     chips = '<button type="button" class="chip" aria-pressed="true" data-secao-filtro="">Todos</button>' + "".join(
         f'<button type="button" class="chip" aria-pressed="false" data-secao-filtro="{e(s)}">{e(s)}</button>' for s in secoes)
     cards = "\n".join(card_produto(m, it, base) for it in itens)
+    oem_link = (f' <a href="{base}equivalencias/">Ver tabela completa de códigos OEM e equivalências ({len(OEM_LISTA)} refs.)</a>.'
+                if m["slug"] in ("sibb", "coel") and OEM_LISTA else "")
     return f"""<section class="secao catalogo" id="catalogo" aria-labelledby="cat-titulo" data-catalogo>
  <div class="contem">
   <div class="secao__cab">
    <p class="olho">Catálogo {e(m['nome'])}</p>
    <h2 id="cat-titulo">{len(itens)} itens para montar sua cotação</h2>
-   <p class="secao__sub">{e(m['catalogo_nota'])} Toque no item para ver de perto. Use <strong>+ Lista</strong> para juntar vários e mandar tudo de uma vez.</p>
+   <p class="secao__sub">{e(m['catalogo_nota'])} Toque no item para ver de perto. Use <strong>+ Lista</strong> para juntar vários e mandar tudo de uma vez.{oem_link}</p>
   </div>
   <div class="filtros">
    <label class="busca">{ICONES['busca']}<span class="sr">Buscar no catálogo {e(m['nome'])}</span>
@@ -714,9 +785,6 @@ def home() -> str:
    <span class="marca-card__n">{len(CAT[m['slug']])} itens no catálogo</span>
    <span class="marca-card__ir">Ver catálogo {ICONES['seta']}</span>
   </a></li>""" for m in MARCAS)
-    indice = [{"m": m["nome"], "s": m["slug"], "c": it.get("codigo", ""), "n": it["tipo"], "x": it.get("secao", ""), "i": it["img"] or SEM_FOTO,
-               "k": categoria_de(m["slug"], it.get("secao", ""))}
-              for m in MARCAS for it in CAT[m["slug"]]]
     alex, deivid = EMP["contatos"][0], EMP["contatos"][1]
     w, h = dims(alex["foto"])
     deivid_zap = (f'<a class="btn btn--zap" href="https://wa.me/{deivid["whatsapp"]}" target="_blank" rel="noopener">{ICONES["zap"]} {e(deivid["telefone"])}</a>'
@@ -727,7 +795,7 @@ def home() -> str:
   <div class="heroi__texto">
    <p class="olho olho--claro entra" style="--d:0">Representação comercial · {e(EMP['area'])} · desde {EMP['desde']}</p>
    <h1 id="heroi-titulo" class="entra" style="--d:1">Peças e ferramentas para <em>refrigeração, climatização e linha branca</em>, direto das fábricas.</h1>
-   <p class="heroi__sub entra" style="--d:2">A M.A Joaquim representa a Suryha, a SIBB, a Coel e a Perfiltec. Você monta a lista aqui ou manda pelo WhatsApp, e eu cuido da cotação, do pedido e do acompanhamento com a fábrica.</p>
+   <p class="heroi__sub entra" style="--d:2">A M.A Joaquim representa a Suryha, a SIBB (Sigma), a Coel e a Perfiltec (Splitec) no atacado para lojas, distribuidores e assistências técnicas no RJ. Você monta a lista aqui ou manda pelo WhatsApp, e eu cuido da cotação, do pedido e do acompanhamento com a fábrica.</p>
    <div class="heroi__acoes entra" style="--d:3">
     <a class="btn btn--zap btn--grande" href="{wa('Olá, Alexandre! Vim pelo site e quero uma cotação.')}" target="_blank" rel="noopener">{ICONES['zap']} Pedir cotação no WhatsApp</a>
     <a class="btn btn--contorno-claro btn--grande" href="#marcas">Ver as marcas {ICONES['seta']}</a>
@@ -763,15 +831,14 @@ def home() -> str:
  <div class="contem">
   <div class="secao__cab"><p class="olho">Catálogo</p>
    <h2 id="busca-titulo">Procure pelo código ou pelo nome da peça</h2>
-   <p class="secao__sub">A busca percorre os {TOTAL} itens das quatro marcas. Sem preço e sem estoque: esses dois vêm na cotação, atualizados com a fábrica no dia.</p></div>
+   <p class="secao__sub">A busca percorre os {TOTAL} itens das quatro marcas e códigos originais OEM. Sem preço e sem estoque: esses dois vêm na cotação, atualizados com a fábrica no dia. <a href="equivalencias/">Consultar tabela completa de {len(OEM_LISTA)} códigos OEM</a>.</p></div>
   <div class="busca-global" data-busca-global>
    <label class="busca busca--grande">{ICONES['busca']}<span class="sr">Buscar em todas as marcas</span>
-    <input type="search" placeholder="Ex.: SET-4371E-S, capacitor, manifold, curva 60" data-busca-global-input autocomplete="off" enterkeyhint="search"></label>
+    <input type="search" placeholder="Ex.: SET-4371E-S, DC64-01827A, capacitor, manifold, curva 60" data-busca-global-input autocomplete="off" enterkeyhint="search"></label>
    <p class="busca-global__dica" data-busca-global-info>Digite pelo menos 2 letras, ou escolha uma categoria acima.</p>
    <div class="busca-global__marcas" data-busca-global-marcas hidden></div>
    <ul class="grade-produtos grade-produtos--compacta" data-busca-global-res></ul>
   </div>
-  <script type="application/json" id="indice-catalogo">{json.dumps(indice, ensure_ascii=False, separators=(',', ':'))}</script>
   <script type="application/json" id="categorias-secoes">{json.dumps({c[0]: c[3] for c in CATEGORIAS}, ensure_ascii=False, separators=(',', ':'))}</script>
  </div>
 </section>
@@ -815,6 +882,10 @@ def home() -> str:
     <li>{ICONES['pin']} Atendimento no {e(EMP['area'])}</li>
     <li>{ICONES['mail']} <a href="mailto:{EMP['email']}">{EMP['email']}</a></li>
    </ul>
+   <div class="regioes-rj">
+    <h3>Regiões atendidas no Rio de Janeiro (DDDs 21, 22 e 24)</h3>
+    <p>Atendimento comercial B2B e atacado de fábrica para lojas de peças, distribuidores e assistências técnicas em {e(', '.join(REGIOES_RJ))}.</p>
+   </div>
    <div class="quem__acoes">
     <a class="btn btn--zap" href="{wa('Olá, Alexandre! Vim pelo site.')}" target="_blank" rel="noopener">{ICONES['zap']} {e(alex['telefone'])}</a>
    </div>
@@ -835,8 +906,8 @@ def home() -> str:
  </div>
 </section>
 {cta_final(base, 'Olá, Alexandre! Vim pelo site e quero uma cotação.', 'Tem uma lista para cotar?')}"""
-    return pagina(f"{EMP['nome']} · Refrigeração, climatização e linha branca no RJ",
-                  f"Representante comercial no Rio de Janeiro desde {EMP['desde']}: Suryha, SIBB, Coel e Perfiltec. Catálogo online com {TOTAL} itens e cotação pelo WhatsApp.",
+    return pagina("M.A Joaquim Representação · Refrigeração e Linha Branca RJ",
+                  f"Representante comercial no RJ desde {EMP['desde']}: Suryha, SIBB (Sigma), Coel e Perfiltec (Splitec). Catálogo B2B com {TOTAL} itens e cotação no WhatsApp.",
                   "", base, corpo, ld=[ld_servico(), *ld_pessoas(), ld_faq(faq_home())])
 
 
@@ -904,11 +975,118 @@ def pagina_marca(m: dict) -> str:
     ld = [{"@type": "Brand", "@id": url + "#marca", "name": m["nome"], "alternateName": m.get("nome_longo") or None,
            "logo": BASE_URL + m["logo"], "description": m["texto"], "url": url},
           {"@type": "ItemList", "@id": url + "#catalogo", "name": f"Catálogo {m['nome']} (códigos de fábrica, sem preço)",
-           "numberOfItems": len(itens), "url": url + "#catalogo"}]
+           "numberOfItems": len(itens), "url": url + "#catalogo",
+           "itemListElement": [
+               {"@type": "ListItem", "position": idx + 1,
+                "name": f"{m['nome']} {it.get('codigo', '')} {it['tipo']}".strip(),
+                "url": f"{url}?q={quote(it['codigo'])}#catalogo" if it.get("codigo") else f"{url}#catalogo"}
+               for idx, it in enumerate(itens[:20])
+           ]}]
     ld[0] = {k: v for k, v in ld[0].items() if v is not None}
-    return pagina(f"{m['nome']} no Rio de Janeiro · {EMP['nome']}",
-                  f"Representante {m['nome']} no RJ. {m['resumo']} Catálogo com {len(itens)} itens e cotação pelo WhatsApp.",
-                  f"marcas/{m['slug']}/", base, corpo, atual=m["slug"], ld=ld)
+    seo_marcas = {
+        "suryha": (
+            "Representante Suryha no RJ · Ferramentas | M.A Joaquim",
+            f"Representante comercial Suryha no RJ. Manifolds, bombas de vácuo, capacitores e ferramentas para refrigeração. Catálogo com {len(itens)} itens B2B no WhatsApp.",
+        ),
+        "sibb": (
+            "Representante SIBB (Sigma) RJ · Linha Branca | M.A Joaquim",
+            f"Representante comercial SIBB (Sigma) no RJ. Peças de reposição para lava e seca, ar-condicionado, refrigeração e micro-ondas. {len(itens)} itens e tabela OEM.",
+        ),
+        "coel": (
+            "Representante Coel no RJ · Controladores | M.A Joaquim",
+            f"Representante comercial Coel no RJ. Controladores de temperatura, termostatos, temporizadores e inversores para refrigeração e automação. {len(itens)} itens B2B.",
+        ),
+        "perfiltec": (
+            "Representante Perfiltec Splitec RJ · Canaletas | M.A Joaquim",
+            f"Representante comercial Perfiltec no RJ. Canaletas para ar-condicionado split (30, 60, 80 mm) e linha SPLITEC FIT para lojas e instaladores. {len(itens)} itens.",
+        ),
+    }
+    titulo_m, desc_m = seo_marcas.get(
+        m["slug"],
+        (f"Representante {m['nome']} no RJ · {EMP['nome']}",
+         f"Representante {m['nome']} no RJ. {m['resumo']} Catálogo com {len(itens)} itens e cotação pelo WhatsApp."),
+    )
+    return pagina(titulo_m, desc_m, f"marcas/{m['slug']}/", base, corpo, atual=m["slug"], ld=ld)
+
+
+def pagina_equivalencias() -> str:
+    base = "../"
+    marcas_eq: list[str] = []
+    secoes_eq: list[str] = []
+    linhas = []
+    for it in OEM_LISTA:
+        mn = it.get("marca_nome", "")
+        sec = it.get("secao", "")
+        if mn and mn not in marcas_eq:
+            marcas_eq.append(mn)
+        if sec and sec not in secoes_eq:
+            secoes_eq.append(sec)
+        cod = it.get("codigo", "")
+        oem = re.sub(r"\s+", " ", it.get("oem", "")).strip()
+        oem_limpo = re.sub(r"[-.\s/]+", "", oem)
+        cod_limpo = re.sub(r"[-.\s/]+", "", cod)
+        busca = " ".join([oem, oem_limpo, mn, cod, cod_limpo, it.get("tipo", ""), sec, it.get("origem", "")]).lower()
+        img = it.get("img") or SEM_FOTO
+        linhas.append(
+            f'<tr data-id="{e(it["marca"])}:{e(cod)}" data-marca="{e(mn)}" data-cod="{e(cod)}" '
+            f'data-nome="{e(it["tipo"])}" data-img="{base}{e(img)}" data-tipo="{e(mn)}" '
+            f'data-tensao="{e(sec)}" data-busca="{e(busca)}">'
+            f'<td class="t-cod">{e(oem)}</td>'
+            f'<td>{e(mn)}</td>'
+            f'<td class="t-cod"><a href="{base}marcas/{e(it["marca"])}/?q={quote(cod)}#catalogo">{e(cod)}</a></td>'
+            f'<td>{e(it["tipo"])}</td>'
+            f'<td>{e(sec)}</td>'
+            f'<td><button type="button" class="cartao__add t-add" data-add aria-label="Adicionar {e(it["tipo"])} {e(cod)} à lista">'
+            f'{ICONES["mais"]}<span>Lista</span></button></td></tr>'
+        )
+    op_m = "".join(f"<option>{e(x)}</option>" for x in marcas_eq)
+    op_s = "".join(f"<option>{e(x)}</option>" for x in sorted(secoes_eq))
+    corpo = f"""<section class="marca-heroi" style="--cor:var(--ciano-400)" aria-labelledby="eq-titulo">
+ <div class="heroi__aneis" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+ <div class="contem">
+  <nav class="migalhas" aria-label="Você está em"><a href="{base}">Início</a> / <span aria-current="page">Tabela OEM</span></nav>
+  <p class="olho olho--claro">Conversor técnico · {len(OEM_LISTA)} referências</p>
+  <h1 id="eq-titulo">Tabela de códigos OEM e equivalências técnicas</h1>
+  <p class="heroi__sub">Consulte códigos originais de linha branca (SIBB / Sigma) e equivalências de controladores (Coel). Sem preço nem estoque: adicione na lista para cotar no WhatsApp.</p>
+  <div class="heroi__acoes">
+   <a class="btn btn--zap btn--grande" href="{wa('Olá, Alexandre! Vim pela tabela OEM do site e quero uma cotação.')}" target="_blank" rel="noopener">{ICONES['zap']} Cotar pelo WhatsApp</a>
+   <a class="btn btn--contorno-claro btn--grande" href="#tabela">Ver tabela completa {ICONES['seta']}</a>
+   <a class="btn btn--contorno-claro btn--grande" href="{base}cliente/">Abrir na Área do Cliente</a>
+  </div>
+ </div>
+</section>
+<section class="secao" id="tabela" aria-labelledby="eq-lista-titulo">
+ <div class="contem">
+  <div class="secao__cab">
+   <p class="olho">Consulta rápida</p>
+   <h2 id="eq-lista-titulo">{len(OEM_LISTA)} códigos cruzados de SIBB e Coel</h2>
+   <p class="secao__sub">Digite o código original OEM (ex.: DC64-01827A, 4986EN1003A, MT-512E), o código SIBB/Coel ou o nome da peça.</p>
+  </div>
+  <div class="tabela-filtros" data-tabela-filtros>
+   <label class="busca">{ICONES['busca']}<span class="sr">Buscar código OEM ou peça</span>
+    <input type="search" placeholder="Ex.: DC64-01827A, 4986EN1003A, MT-512E, guarnição" data-tf-busca autocomplete="off" enterkeyhint="search"></label>
+   <label class="seletor">Fábrica<select data-tf-tipo><option value="">Todas</option>{op_m}</select></label>
+   <label class="seletor">Seção<select data-tf-tensao><option value="">Todas</option>{op_s}</select></label>
+  </div>
+  <p class="catalogo__contagem" data-tf-contagem data-tf-unidade="equivalências" aria-live="polite">{len(OEM_LISTA)} equivalências</p>
+  <div class="tabela-rola" tabindex="0" role="region" aria-label="Tabela de códigos OEM e equivalências técnicas">
+   <table class="tabela" data-tabela>
+    <thead><tr><th>Código OEM / Ref.</th><th>Fábrica</th><th>Código</th><th>Peça / Controlador</th><th>Seção</th><th><span class="sr">Lista</span></th></tr></thead>
+    <tbody>{''.join(linhas)}</tbody>
+   </table>
+  </div>
+  <p class="tabela-fonte">Referências técnicas para apoio à cotação (sem preço nem estoque). Confirme sempre aplicação, tensão e medidas antes de faturar.</p>
+ </div>
+</section>
+{cta_final(base, 'Olá, Alexandre! Vim pela tabela OEM do site e quero uma cotação.', 'Não achou o código OEM? Mande a foto da etiqueta.')}"""
+    url = BASE_URL + "equivalencias/"
+    ld = [{"@type": "ItemList", "@id": url + "#tabela", "name": "Tabela de códigos OEM e equivalências SIBB e Coel",
+           "numberOfItems": len(OEM_LISTA), "url": url + "#tabela"}]
+    return pagina(
+        "Tabela OEM e Equivalências SIBB e Coel | M.A Joaquim",
+        f"Consulte {len(OEM_LISTA)} códigos originais OEM de lava e seca e linha branca (SIBB/Sigma) e equivalências de controladores Coel. Cotação B2B no RJ.",
+        "equivalencias/", base, corpo, ld=ld,
+    )
 
 
 def pagina_404() -> str:
@@ -921,6 +1099,106 @@ def pagina_404() -> str:
     return pagina(f"Página não encontrada · {EMP['nome']}", "Página não encontrada.", "404.html", "/", corpo, indexar=False)
 
 
+def pagina_cliente() -> str:
+    base = "../"
+    len_oem = len(indice_oem_publico())
+    corpo = f"""<section class="cli-heroi" aria-labelledby="cli-titulo">
+ <div class="contem cli-heroi__in">
+  <div>
+   <nav class="migalhas" aria-label="Você está em"><a href="{base}">Início</a> / <span aria-current="page">Área do cliente</span></nav>
+   <p class="olho olho--claro">Portal B2B · {e(EMP['nome'])}</p>
+   <h1 id="cli-titulo">Área do Cliente e Ficha Cadastral</h1>
+   <p class="cli-heroi__sub">Cadastre sua loja 1 vez, gerencie o status nas 4 fábricas (Suryha, SIBB, Coel e Perfiltec), converta códigos OEM, solicite visitas no RJ e monte cotações com histórico.</p>
+  </div>
+  <div id="cli-sessao-pill" class="cli-sessao-pill">
+   <span class="cli-badge-modo cli-badge-modo--local">Carregando</span>
+   <span>Preparando acesso...</span>
+  </div>
+ </div>
+</section>
+<section class="cli-area" aria-label="Plataforma do Cliente">
+ <div class="contem">
+  <noscript><div class="cli-alerta cli-alerta--aviso">Ative o JavaScript no navegador para acessar a Área do Cliente, o conversor técnico OEM e o gerador de ficha cadastral .xlsx oficial.</div></noscript>
+  <div id="app-cliente">
+   <div class="cli-card" style="min-height:490px"><p>Carregando Área do Cliente...</p></div>
+  </div>
+  <article class="cli-card" style="margin-top:28px" aria-labelledby="cli-recursos-titulo">
+   <h2 id="cli-recursos-titulo" style="margin:0 0 8px;color:var(--navy-900)">Recursos disponíveis para lojas, distribuidores e assistências técnicas</h2>
+   <p class="cli-subtxt">Todas as ferramentas operam sem divulgar preços ou estoque na página pública; a cotação e a condição comercial da fábrica são confirmadas diretamente pela M.A Joaquim.</p>
+   <div class="cli-kpis" style="margin-top:14px;margin-bottom:0">
+    <div class="cli-kpi"><small>Catálogo indexado</small><strong>{TOTAL} itens</strong></div>
+    <div class="cli-kpi"><small>Conversor OEM &amp; Coel</small><strong>{len_oem} refs.</strong></div>
+    <div class="cli-kpi"><small>Ficha oficial .xlsx</small><strong>4 fábricas</strong></div>
+    <div class="cli-kpi"><small>Multi-CNPJ / Filiais</small><strong>Integrado</strong></div>
+   </div>
+  </article>
+ </div>
+ <div id="cli-toast" class="cli-toast" role="status" aria-live="polite" hidden></div>
+</section>"""
+    extra_head = f'<link rel="stylesheet" href="{base}css/cliente.css">\n'
+    extra_scripts = (
+        f'<script src="{base}vendor/supabase.js" defer></script>\n'
+        f'<script src="{base}js/fichaXlsx.js" defer></script>\n'
+        f'<script src="{base}js/supabaseSite.js" defer></script>\n'
+        f'<script src="{base}js/cliente.js" defer></script>\n'
+    )
+    return pagina(
+        f"Área do Cliente · {EMP['nome']}",
+        "Cadastre seu CNPJ, gere a ficha oficial das 4 fábricas em .xlsx, consulte o conversor técnico OEM, agende visitas no RJ e acompanhe seu histórico de cotações.",
+        "cliente/",
+        base,
+        corpo,
+        atual="cliente",
+        extra_head=extra_head,
+        ld=[ld_servico()],
+        indexar=True,
+        extra_scripts=extra_scripts,
+    )
+
+
+def pagina_painel() -> str:
+    base = "../"
+    corpo = f"""<section class="cli-heroi" aria-labelledby="pnl-titulo">
+ <div class="contem cli-heroi__in">
+  <div>
+   <nav class="migalhas" aria-label="Você está em"><a href="{base}">Início</a> / <span aria-current="page">Painel do Representante</span></nav>
+   <p class="olho olho--claro">Uso Interno · {e(EMP['nome'])}</p>
+   <h1 id="pnl-titulo">Painel de Atendimento e Cadastros</h1>
+   <p class="cli-heroi__sub">Inbox de cotações recebidas do site, cruzamento automático por CNPJ com a carteira do Portal Comercial, semáforo das 4 fábricas, visitas e ponte Google Workspace.</p>
+  </div>
+  <div id="pnl-sessao-pill" class="cli-sessao-pill">
+   <span class="cli-badge-modo cli-badge-modo--local">Acesso Restrito</span>
+   <span>Autentique-se como representante</span>
+  </div>
+ </div>
+</section>
+<section class="cli-area" aria-label="Gestão do Representante">
+ <div class="contem">
+  <div id="app-painel"><div class="cli-card"><p>Verificando acesso do representante...</p></div></div>
+ </div>
+ <div id="pnl-toast" class="cli-toast" role="status" aria-live="polite" hidden></div>
+</section>"""
+    extra_head = f'<link rel="stylesheet" href="{base}css/cliente.css">\n'
+    extra_scripts = (
+        f'<script src="{base}vendor/supabase.js" defer></script>\n'
+        f'<script src="{base}js/fichaXlsx.js" defer></script>\n'
+        f'<script src="{base}js/supabaseSite.js" defer></script>\n'
+        f'<script src="{base}js/painel.js" defer></script>\n'
+    )
+    return pagina(
+        f"Painel do Representante · {EMP['nome']}",
+        "Painel operacional da M.A Joaquim Representação.",
+        "painel/",
+        base,
+        corpo,
+        atual="painel",
+        extra_head=extra_head,
+        indexar=False,
+        extra_scripts=extra_scripts,
+        rodape_discreto=True,
+    )
+
+
 # ---------------------------------------------------------------- páginas institucionais
 def institucionais(base: str = "../") -> dict[str, dict]:
     """Conteúdo único das páginas Sobre, Contato, Termos e Privacidade (vira HTML e Markdown)."""
@@ -930,68 +1208,74 @@ def institucionais(base: str = "../") -> dict[str, dict]:
     marcas = [f'<a href="{base}marcas/{m["slug"]}/"><strong>{e(m["nome"])}</strong></a>{" (" + e(m["nome_longo"]) + ")" if m.get("nome_longo") else ""}: {e(m["texto"])}'
               for m in MARCAS]
     if MEDE:
-        coleta = ["O site não tem formulário nem cadastro.",
-                  "Se você clicar em <strong>Aceitar</strong> no aviso de cookies, o Google Analytics e o Google Ads registram visitas e cliques (por exemplo, o clique no botão do WhatsApp), sem identificar você pelo nome. Se recusar ou ignorar o aviso, nada é medido e o site funciona igual. A escolha fica salva no seu navegador; para mudar, limpe os dados do site no navegador."]
+        coleta = ["A navegação pública no catálogo não exige cadastro: a lista rápida fica salva no próprio navegador.",
+                  "Na <strong>Área do Cliente</strong>, quando você opta por criar perfil, coletamos os dados empresariais do CNPJ, contatos comerciais/financeiros, endereço de entrega, referências bancárias (opcionais, apenas para abertura de crédito nas fábricas), solicitações de visita, chamados pós-venda e histórico de cotações.",
+                  "Se você clicar em <strong>Aceitar</strong> no aviso de cookies, o Google Analytics e o Google Ads registram visitas e cliques (por exemplo, o clique no botão do WhatsApp), sem identificar você pelo nome. Se recusar ou ignorar o aviso, nada é medido e o site funciona igual."]
     else:
-        coleta = ["Nada. O site não tem formulário, não pede cadastro e não usa cookies de medição nem de publicidade."]
+        coleta = ["A navegação pública no catálogo não pede cadastro e não usa cookies de publicidade: a lista rápida fica salva só no seu navegador.",
+                  "Na <strong>Área do Cliente</strong> (opcional), quando você cria conta com Google ou e-mail para salvar histórico e gerar a ficha cadastral das fábricas, armazenamos os dados informados do CNPJ, contatos, endereço, referências bancárias opcionais, histórico de cotações, visitas e chamados pós-venda."]
     return {
         "sobre/": {
-            "titulo": f"Sobre a {EMP['nome']} · representante comercial no RJ desde {EMP['desde']}",
+            "titulo": f"Sobre a M.A Joaquim · Representante no RJ desde {EMP['desde']}",
             "desc": f"Quem é a {EMP['nome']}: representação da Suryha, SIBB, Coel e Perfiltec no Rio de Janeiro desde {EMP['desde']}, para lojas, distribuidores e assistências.",
             "olho": "Sobre", "h1": f"Representação comercial no {EMP['area']} desde {EMP['desde']}",
             "intro": f"A {EMP['nome']} é o contato entre as fábricas e a sua loja: você pede a cotação, recebe preço, prazo e condição da fábrica e o pedido é acompanhado até a entrega.",
             "secoes": [
                 ("Fábricas representadas", marcas),
                 ("Para quem", ["Lojas de peças, distribuidores, assistências técnicas e instaladores de refrigeração, climatização e linha branca, no Rio de Janeiro."]),
-                ("Como trabalhamos", ["<strong>1. Lista:</strong> use o + Lista no catálogo do site ou mande pelo WhatsApp o código, a foto da peça e a quantidade.",
+                ("Como trabalhamos", ["<strong>1. Lista:</strong> use o + Lista no catálogo do site, monte pedidos mistos na Área do Cliente ou mande pelo WhatsApp o código, a foto da peça e a quantidade.",
                                       "<strong>2. Cotação:</strong> preço, prazo e condição da fábrica para a sua loja. Cada fábrica tem a sua regra, e ela é explicada antes de você fechar.",
                                       "<strong>3. Pedido acompanhado:</strong> o pedido vai para a fábrica e é acompanhado no faturamento, na entrega e no boleto."]),
                 ("Quem atende", [f"<strong>{e(ALEX['nome'])}</strong>, {e(ALEX['papel']).lower()}: WhatsApp {zap_a}.",
                                  f"<strong>{e(DEIVID['nome'])}</strong>, {e(DEIVID['papel']).lower()}: WhatsApp {zap_d}.",
                                  f"E-mail {mail}. {e(EMP['horario'])}."]),
                 ("Dados da empresa", [f"Razão social: {e(EMP['razao_social'])}", f"CNPJ: {EMP['cnpj']}", f"No mercado desde {EMP['desde']}",
-                                      f"Área de atendimento: {e(EMP['area'])}", f"Site: {BASE_URL}"]),
+                                      f"Área de atendimento: {e(EMP['area'])} — {', '.join(REGIOES_RJ)}", f"Site: {BASE_URL}"]),
             ]},
         "contato/": {
             "titulo": f"Contato · {EMP['nome']}",
-            "desc": f"Fale com a {EMP['nome']}: WhatsApp {ALEX['telefone']} (Alexandre) e {DEIVID['telefone']} (Deivid), e-mail {EMP['email']}. {EMP['horario']}.",
+            "desc": f"Fale com a {EMP['nome']}: WhatsApp {ALEX['telefone']} (Alexandre) e {DEIVID['telefone']} (Deivid), e-mail {EMP['email']}. {EMP['horario_curto']}.",
             "olho": "Contato", "h1": "Fale com a gente",
-            "intro": "O atendimento é pelo WhatsApp ou por e-mail. Este site não tem formulário.",
+            "intro": "O atendimento é pelo WhatsApp, por e-mail ou pela Área do Cliente para pedidos estruturados, visitas e pós-venda.",
             "secoes": [
                 ("WhatsApp", [f"<strong>{e(ALEX['nome'])}</strong>: {zap_a}", f"<strong>{e(DEIVID['nome'])}</strong>: {zap_d}"]),
                 ("E-mail", [mail]),
+                ("Área do Cliente", [f'Acesse <a href="{base}cliente/"><strong>Área do Cliente</strong></a> para cadastrar seu CNPJ, baixar a ficha oficial .xlsx das fábricas, solicitar visitas presenciais e acompanhar cotações.']),
                 ("Horário", [f"{e(EMP['horario'])}. Mensagem fora desse horário é respondida no dia útil seguinte, logo cedo."]),
-                ("Área de atendimento", [f"{e(EMP['area'])}."]),
-                ("Como pedir uma cotação", ["Mande o código ou a foto da peça e a quantidade. Se preferir, monte a lista no catálogo do site e envie tudo de uma vez pelo botão <strong>Enviar lista pelo WhatsApp</strong>.",
+                ("Área de atendimento", [f"{e(EMP['area'])} (DDDs 21, 22 e 24): {', '.join(REGIOES_RJ)}."]),
+                ("Como pedir uma cotação", ["Mande o código ou a foto da peça e a quantidade. Se preferir, monte a lista no catálogo do site e envie pelo botão <strong>Enviar lista pelo WhatsApp</strong> ou registre direto na Área do Cliente.",
                                             "Preço, estoque, prazo, pedido mínimo e forma de pagamento dependem da fábrica e do cadastro da sua loja, e vêm na cotação."]),
             ]},
         "termos/": {
             "titulo": f"Termos de uso · {EMP['nome']}",
-            "desc": f"Regras de uso do site da {EMP['nome']}: catálogo informativo, preço só na cotação, marcas das fábricas usadas com autorização.",
+            "desc": f"Regras de uso do site e da Área do Cliente da {EMP['nome']}: catálogo informativo, preço só na cotação, marcas das fábricas usadas com autorização.",
             "olho": "Termos de uso", "h1": "Termos de uso do site",
             "intro": f"Estas regras valem para quem usa {EMP['dominio']}. Atualizado em {date.today().strftime('%d/%m/%Y')}.",
             "secoes": [
-                ("O que é este site", [f"Um site informativo da {EMP['nome']}, que apresenta a empresa e o catálogo das fábricas representadas. Não é loja virtual: não há venda, pagamento nem cadastro pelo site."]),
-                ("Catálogo, preço e disponibilidade", ["Códigos, nomes, fotos e especificações vêm dos catálogos e folders oficiais das fábricas e podem mudar sem aviso. Confirme o item na cotação.",
+                ("O que é este site", [f"Um site informativo e portal de pré-atendimento B2B da {EMP['nome']}, que apresenta o catálogo das fábricas representadas e oferece a Área do Cliente para cadastro empresarial, histórico de cotações, solicitação de visitas e pós-venda. Não há cobrança online nem fechamento automático de compra pelo site."]),
+                ("Catálogo, preço e disponibilidade", ["Códigos, nomes, fotos, equivalências técnicas e especificações vêm dos catálogos e referências das fábricas e podem mudar sem aviso. Confirme sempre a aplicação e a tensão/especificação antes de faturar.",
                                                        "Preço, estoque, prazo, pedido mínimo e pagamento são informados só na cotação e dependem da fábrica e do cadastro do cliente. O pedido só é fechado depois que você aprova a cotação."]),
+                ("Área do Cliente e Ficha Cadastral", ["Ao cadastrar um CNPJ na Área do Cliente, o usuário declara estar autorizado pela empresa a fornecer os dados cadastrais para cotação e abertura/atualização de cadastro junto às fábricas representadas (Suryha, SIBB, Coel e Perfiltec)."]),
                 ("Marcas e imagens", ["Marcas, logotipos e fotos de produto pertencem às fábricas (Suryha, SIBB, Coel e Perfiltec) e aparecem aqui com autorização delas. Não podem ser copiados deste site para outros usos."]),
-                ("Lista de cotação", ["A lista que você monta fica guardada só no seu navegador. O botão de envio abre o WhatsApp com a mensagem pronta para você revisar antes de mandar."]),
-                ("Serviços de terceiros", ["WhatsApp, Sketchfab (visualizador 3D, só carrega se você clicar) e Google Fonts têm termos próprios."]),
-                ("Buscadores e assistentes de IA", ["O conteúdo pode ser indexado por buscadores e lido e citado por assistentes de IA. O uso para treinar modelos não é autorizado, como indicado no robots.txt (Content-Signal)."]),
+                ("Lista de cotação", ["A lista rápida que você monta sem login fica guardada só no seu navegador. Na Área do Cliente, você pode salvar o histórico vinculado ao seu perfil."]),
+                ("Serviços de terceiros", ["WhatsApp, Google Sign-In/Workspace, Supabase, BrasilAPI, ViaCEP, Sketchfab (visualizador 3D, só carrega se você clicar) e Google Fonts têm termos próprios."]),
+                ("Buscadores e assistentes de IA", ["O conteúdo público pode ser indexado por buscadores e lido e citado por assistentes de IA. O uso para treinar modelos não é autorizado, como indicado no robots.txt (Content-Signal)."]),
                 ("Dúvidas", [f"Escreva para {mail}."]),
             ]},
         "privacidade/": {
             "titulo": f"Política de privacidade (LGPD) · {EMP['nome']}",
-            "desc": f"Como o site da {EMP['nome']} trata dados pessoais: o que é coletado, a lista de cotação no navegador, WhatsApp e seus direitos pela LGPD.",
+            "desc": f"Como o site da {EMP['nome']} trata dados pessoais e cadastrais B2B: Área do Cliente, lista de cotação, WhatsApp, Google e seus direitos pela LGPD.",
             "olho": "Privacidade", "h1": "Política de privacidade",
             "intro": f"Como os seus dados são tratados neste site, conforme a Lei Geral de Proteção de Dados (Lei 13.709/2018). Atualizado em {date.today().strftime('%d/%m/%Y')}.",
             "secoes": [
                 ("Quem é o responsável", [f"{e(EMP['razao_social'])}, CNPJ {EMP['cnpj']}. Contato para assuntos de privacidade: {mail}."]),
                 ("O que o site coleta", coleta),
-                ("Lista de cotação", ["Os itens que você adiciona ficam no armazenamento local do seu navegador (localStorage) e não são enviados para nós. O botão <strong>Limpar lista</strong> apaga tudo."]),
-                ("WhatsApp e e-mail", ["Quando você manda mensagem, usamos o que você enviar (nome, loja, telefone, itens) para responder a cotação e acompanhar o pedido. A conversa passa pelo WhatsApp, que segue a política de privacidade dele."]),
-                ("Serviços de terceiros", ["As fontes do site vêm do Google Fonts, que recebe o endereço IP de quem visita. O visualizador 3D (Sketchfab) e o visualizador de modelos (jsDelivr) só carregam se você clicar para abrir. O site é hospedado no GitHub Pages, que mantém registros técnicos de acesso."]),
-                ("Seus direitos", [f"Você pode pedir acesso, correção ou exclusão dos seus dados, ou tirar dúvidas, pelo e-mail {mail}."]),
+                ("Finalidade do cadastro na Área do Cliente", ["Os dados fornecidos na ficha cadastral (CNPJ, inscrição estadual, endereço, contatos, e-mail de XML NF-e e referências bancárias opcionais) são usados exclusivamente para elaborar cotações, acompanhar entregas/pós-venda, agendar visitas comerciais e encaminhar sua solicitação de abertura de cadastro às fábricas representadas (Suryha, SIBB, Coel e Perfiltec)."]),
+                ("Armazenamento, Autenticação e Segurança", ["A autenticação e o banco de dados da Área do Cliente utilizam Supabase (PostgreSQL com controle de acesso por linha — RLS), restringindo o acesso de cada empresa aos seus próprios usuários vinculados e aos representantes autorizados da M.A Joaquim. Se você optar pelo login com Google, apenas seu identificador e e-mail de autenticação são utilizados para acesso."]),
+                ("Lista de cotação e modo local", ["Os itens que você adiciona na lista rápida ficam no armazenamento local do seu navegador (localStorage). O botão <strong>Limpar lista</strong> apaga os itens locais."]),
+                ("Consultas públicas e WhatsApp", ["Ao usar o botão de busca automática por CNPJ ou CEP, seu navegador consulta diretamente as APIs públicas BrasilAPI e ViaCEP apenas para autopreencher os campos do formulário. Quando você envia cotação pelo WhatsApp, a conversa segue as regras de privacidade do WhatsApp."]),
+                ("Serviços de terceiros", ["O site é hospedado no GitHub Pages (registros técnicos de acesso), usa Google Fonts e carrega o visualizador 3D (Sketchfab / jsDelivr) somente sob clique. E-mails operacionais e arquivamento interno de fichas podem utilizar o Google Workspace corporativo da M.A Joaquim."]),
+                ("Seus direitos", [f"Você pode pedir acesso, correção, portabilidade ou exclusão dos seus dados da Área do Cliente a qualquer momento pelo e-mail {mail}."]),
             ]},
     }
 
@@ -1035,10 +1319,50 @@ def md_home() -> str:
                "3. Pedido acompanhado: faturamento, entrega e boleto acompanhados junto à fábrica.", "",
                "## Contato", ""]
     linhas += [f"- {c['nome']} ({c['papel'].lower()}): WhatsApp {c['telefone']}, https://wa.me/{c['whatsapp']}" for c in EMP["contatos"]]
-    linhas += [f"- E-mail: {EMP['email']}", f"- Horário: {EMP['horario']}", f"- Área: {EMP['area']}", "", "## Perguntas frequentes", ""]
+    linhas += [f"- E-mail: {EMP['email']}", f"- Horário: {EMP['horario']}",
+               f"- Área: {EMP['area']} (DDDs 21, 22 e 24): {', '.join(REGIOES_RJ)}", "",
+               "## Perguntas frequentes", ""]
     for p, r in faq_home():
         linhas += [f"### {p}", "", md_inline(r), ""]
-    linhas += ["## Páginas", ""] + [f"- [{NOME_CURTO[k]}]({BASE_URL}{k})" for k in ("sobre/", "contato/", "termos/", "privacidade/")]
+    linhas += ["## Páginas", ""] + [f"- [{NOME_CURTO[k]}]({BASE_URL}{k})" for k in ("cliente/", "equivalencias/", "sobre/", "contato/", "termos/", "privacidade/")]
+    return "\n".join(linhas) + "\n" + md_rodape()
+
+
+def md_equivalencias() -> str:
+    def cel(t: object) -> str:
+        return re.sub(r"\s+", " ", str(t or "")).replace("|", "/").strip()
+    linhas = [
+        f"# Tabela de códigos OEM e equivalências · {EMP['nome']}",
+        "",
+        f"Consulta técnica com {len(OEM_LISTA)} códigos originais OEM (SIBB / Sigma) e equivalências de controladores (Coel), sem preços nem estoque.",
+        f"Página: {BASE_URL}equivalencias/",
+        "",
+        "| Código OEM / Ref. | Fábrica | Código | Peça / Controlador | Seção |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for it in OEM_LISTA:
+        linhas.append(f"| {cel(it.get('oem'))} | {cel(it.get('marca_nome'))} | {cel(it.get('codigo'))} | {cel(it.get('tipo'))} | {cel(it.get('secao'))} |")
+    return "\n".join(linhas) + "\n" + md_rodape()
+
+
+def md_cliente() -> str:
+    linhas = [
+        f"# Área do Cliente · {EMP['nome']}",
+        "",
+        "Portal B2B para compradores de lojas de peças, distribuidores e assistências técnicas no Rio de Janeiro.",
+        "",
+        "## Ferramentas disponíveis",
+        "",
+        "- **Ficha Cadastral Única (.xlsx):** preenchimento guiado por CNPJ/CEP com download da planilha oficial para Suryha, SIBB, Coel e Perfiltec.",
+        "- **Semáforo das 4 Fábricas:** acompanhamento do status de aprovação do cadastro por fabricante.",
+        "- **Cotador Multi-Fábrica e Colagem em Lote:** busca em todo o catálogo, importação de listas em bloco e envio estruturado.",
+        "- **Meus Kits de Giro:** listas salvas de reposição rápida.",
+        "- **Histórico de Cotações:** consulta de pedidos anteriores e repetição em 1 clique.",
+        f"- **Conversor Técnico OEM e Controladores:** {len(indice_oem_publico())} referências cruzadas sem preços nem estoque.",
+        "- **Solicitação de Visita Presencial (RJ):** detecção de corredor logístico e exportação `.ics` / Google Agenda.",
+        "- **Central Pós-Venda:** 2ª via de boleto, XML NF-e, rastreio e garantia.",
+        f"- **Endereço da página:** {BASE_URL}cliente/",
+    ]
     return "\n".join(linhas) + "\n" + md_rodape()
 
 
@@ -1054,9 +1378,12 @@ def md_marca(m: dict) -> str:
                f"Página: {url}", "", f"## Catálogo ({len(CAT[m['slug']])} itens)", "",
                "| Código | Produto | Seção | Detalhes |", "| --- | --- | --- | --- |"]
     for it in CAT[m["slug"]]:
+        cod = it.get("codigo", "")
+        oems = OEM_POR_ITEM.get((m["slug"], cod), [])
         det = [it.get("linha", "") if it.get("linha") not in ("Coel",) else "", *(it.get("spec") or []),
+               f"OEM {', '.join(oems)}" if oems else "",
                f"SKU {it['sku']}" if it.get("sku") else "", f"múltiplo {it['multiplo']}" if it.get("multiplo") else ""]
-        linhas.append(f"| {cel(it.get('codigo'))} | {cel(it['tipo'])} | {cel(it.get('secao'))} | {cel('; '.join(x for x in det if x))} |")
+        linhas.append(f"| {cel(cod)} | {cel(it['tipo'])} | {cel(it.get('secao'))} | {cel('; '.join(x for x in det if x))} |")
     return "\n".join(linhas) + "\n" + md_rodape()
 
 
@@ -1071,11 +1398,16 @@ def catalogo_json() -> dict:
     itens = []
     for m in MARCAS:
         for it in CAT[m["slug"]]:
-            itens.append({"marca": m["nome"], "marca_slug": m["slug"], "codigo": it.get("codigo", ""), "nome": it["tipo"],
-                          "secao": it.get("secao", ""), "detalhe": "; ".join(x for x in [it.get("linha", "") if it.get("linha") != "Coel" else "", *(it.get("spec") or []),
-                                                                                         f"SKU {it['sku']}" if it.get("sku") else ""] if x),
-                          "url": f"{BASE_URL}marcas/{m['slug']}/" + (f"?q={quote(it['codigo'])}#catalogo" if it.get("codigo") else "#catalogo"),
-                          "imagem": BASE_URL + it["img"] if it.get("img") else ""})
+            cod = it.get("codigo", "")
+            oems = OEM_POR_ITEM.get((m["slug"], cod), [])
+            reg = {"marca": m["nome"], "marca_slug": m["slug"], "codigo": cod, "nome": it["tipo"],
+                   "secao": it.get("secao", ""), "detalhe": "; ".join(x for x in [it.get("linha", "") if it.get("linha") != "Coel" else "", *(it.get("spec") or []),
+                                                                                  f"SKU {it['sku']}" if it.get("sku") else ""] if x),
+                   "url": f"{BASE_URL}marcas/{m['slug']}/" + (f"?q={quote(cod)}#catalogo" if cod else "#catalogo"),
+                   "imagem": BASE_URL + it["img"] if it.get("img") else ""}
+            if oems:
+                reg["oem"] = oems
+            itens.append(reg)
     return {"empresa": EMP["nome"], "site": BASE_URL, "atualizado": HOJE,
             "aviso": "Catálogo informativo com os códigos das fábricas. Sem preço nem estoque: ambos vêm na cotação pelo WhatsApp.",
             "contato": [{"nome": c["nome"], "whatsapp": f"https://wa.me/{c['whatsapp']}", "telefone": c["telefone"]} for c in EMP["contatos"]],
@@ -1088,6 +1420,8 @@ def llms_txt() -> str:
               "Não invente preço, estoque ou prazo: oriente a pessoa a pedir a cotação pelo WhatsApp.", "",
               "## Empresa", "",
               f"- [Início]({BASE_URL}): o que a empresa faz, categorias, como funciona e perguntas frequentes ([Markdown]({BASE_URL}index.md))",
+              f"- [Área do cliente]({BASE_URL}cliente/): cadastro por CNPJ, ficha oficial .xlsx das 4 fábricas, conversor OEM e cotações ([Markdown]({BASE_URL}cliente/index.md))",
+              f"- [Tabela de códigos OEM e equivalências]({BASE_URL}equivalencias/): {len(OEM_LISTA)} códigos originais linha branca (SIBB) e controladores (Coel) ([Markdown]({BASE_URL}equivalencias/index.md))",
               f"- [Sobre]({BASE_URL}sobre/): história, fábricas, quem atende e dados da empresa ([Markdown]({BASE_URL}sobre/index.md))",
               f"- [Contato]({BASE_URL}contato/): WhatsApp, e-mail, horário e área ([Markdown]({BASE_URL}contato/index.md))", "",
               "## Catálogos por fábrica", ""]
@@ -1116,6 +1450,7 @@ def favicons() -> None:
         return im.resize((lado, lado), Image.LANCZOS)
     for lado in (48, 96, 192, 512):
         desenha(lado, True).save(DIST / f"favicon-{lado}.png", optimize=True)
+    desenha(512, True).save(DIST / "img" / "logo-ma-joaquim.png", optimize=True)
     desenha(180, False).convert("RGB").save(DIST / "apple-touch-icon.png", optimize=True)
     desenha(256, True).save(DIST / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
     shutil.copyfile(DIST / "img" / "favicon.svg", DIST / "favicon.svg")
@@ -1144,6 +1479,14 @@ def main() -> int:
     # a assinatura Flow Landing (src/css e src/img) é cópia de Agente-Landing-Pages/modelos/assinatura-flow-landing
     (DIST / "index.html").write_text(home(), encoding="utf-8")
     (DIST / "index.md").write_text(md_home(), encoding="utf-8")
+    (DIST / "cliente").mkdir(parents=True, exist_ok=True)
+    (DIST / "cliente" / "index.html").write_text(pagina_cliente(), encoding="utf-8")
+    (DIST / "cliente" / "index.md").write_text(md_cliente(), encoding="utf-8")
+    (DIST / "equivalencias").mkdir(parents=True, exist_ok=True)
+    (DIST / "equivalencias" / "index.html").write_text(pagina_equivalencias(), encoding="utf-8")
+    (DIST / "equivalencias" / "index.md").write_text(md_equivalencias(), encoding="utf-8")
+    (DIST / "painel").mkdir(parents=True, exist_ok=True)
+    (DIST / "painel" / "index.html").write_text(pagina_painel(), encoding="utf-8")
     for m in MARCAS:
         d = DIST / "marcas" / m["slug"]
         d.mkdir(parents=True, exist_ok=True)
@@ -1157,7 +1500,12 @@ def main() -> int:
     (DIST / "404.html").write_text(pagina_404(), encoding="utf-8")
     (DIST / "llms.txt").write_text(llms_txt(), encoding="utf-8")
     (DIST / "catalogo.json").write_text(json.dumps(catalogo_json(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    urls = [("", "1.0"), *[(f"marcas/{m['slug']}/", "0.9") for m in MARCAS], *[(k, "0.5") for k in institucionais()]]
+    (DIST / "dados").mkdir(parents=True, exist_ok=True)
+    (DIST / "dados" / "indice-busca.json").write_text(json.dumps(indice_catalogo_publico(), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    if (DADOS / "conversor-oem.json").exists():
+        shutil.copy2(DADOS / "conversor-oem.json", DIST / "conversor-oem.json")
+    urls = [("", "1.0"), ("cliente/", "0.8"), ("equivalencias/", "0.9"),
+            *[(f"marcas/{m['slug']}/", "0.9") for m in MARCAS], *[(k, "0.5") for k in institucionais()]]
     (DIST / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
                                       + "".join(f"<url><loc>{BASE_URL}{u}</loc><lastmod>{HOJE}</lastmod><priority>{p}</priority></url>\n" for u, p in urls)
                                       + "</urlset>\n", encoding="utf-8")

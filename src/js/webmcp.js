@@ -47,7 +47,7 @@
         return catalogo().then(function (c) {
           var achados = c.itens.filter(function (i) {
             if (a.marca && i.marca_slug !== a.marca) return false;
-            var alvo = sem([i.codigo, i.nome, i.secao, i.detalhe, i.marca].join(' '));
+            var alvo = sem([i.codigo, i.nome, i.secao, i.detalhe, i.marca, (i.oem || []).join(' ')].join(' '));
             return termos.every(function (t) { return alvo.indexOf(t) !== -1; });
           });
           if (!achados.length) return texto('Nada encontrado para "' + a.termo + '". As fábricas têm mais itens que o site: a cotação pode ser pedida com foto ou código pelo WhatsApp.');
@@ -83,12 +83,12 @@
       description: 'Abre uma página pública do site.',
       inputSchema: {
         type: 'object',
-        properties: { pagina: { type: 'string', enum: ['inicio', 'suryha', 'sibb', 'coel', 'perfiltec', 'sobre', 'contato', 'termos', 'privacidade'] } },
+        properties: { pagina: { type: 'string', enum: ['inicio', 'cliente', 'equivalencias', 'suryha', 'sibb', 'coel', 'perfiltec', 'sobre', 'contato', 'termos', 'privacidade'] } },
         required: ['pagina'],
         additionalProperties: false
       },
       execute: function (a) {
-        var mapa = { inicio: '/', sobre: '/sobre/', contato: '/contato/', termos: '/termos/', privacidade: '/privacidade/' };
+        var mapa = { inicio: '/', cliente: '/cliente/', equivalencias: '/equivalencias/', sobre: '/sobre/', contato: '/contato/', termos: '/termos/', privacidade: '/privacidade/' };
         var destino = mapa[a.pagina] || '/marcas/' + a.pagina + '/';
         window.location.assign(destino);
         return Promise.resolve(texto('Abrindo ' + destino));
